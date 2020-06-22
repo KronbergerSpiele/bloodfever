@@ -1,0 +1,4 @@
+[submodule "libs/ks-stick"]
+	path = libs/ks-stick
+	url = https://github.com/ksjogo/ks-stick.git
+	branch = master

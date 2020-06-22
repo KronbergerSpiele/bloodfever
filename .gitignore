@@ -1,0 +1,12 @@
+
+# Godot-specific ignores
+.import/
+
+# Mono-specific ignores
+.mono/
+data_*/
+
+docs/
+!docs/index.html
+export/
+
