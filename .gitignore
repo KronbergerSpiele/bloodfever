@@ -6,7 +6,10 @@
 .mono/
 data_*/
 
-docs/
+!docs/
+docs/*
 !docs/index.html
+!docs/impressum.html
+
 export/
 
