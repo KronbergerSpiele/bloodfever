@@ -5,11 +5,16 @@ extends Node2D
 	#scale = Vector2(0,0)
 
 func _ready():
-	scale = Vector2(0,0)
-	$AnimationPlayer.play("appear")
-	print('base')
+	$lastScene.texture = Global.lastSceneSnapshot
+	$lastScene.scale = Vector2(1,1)
+	$lastSceneAnimation.play("disappear")
+	print(Global.lastSceneSnapshot)
 
 func switchTo(scene):
-	$AnimationPlayer.play("disappear")
-	yield($AnimationPlayer, "animation_finished")
+	var img = get_viewport().get_texture().get_data()
+	img.flip_y()
+	var tex = ImageTexture.new()
+	tex.create_from_image(img)
+	Global.lastSceneSnapshot = tex
+	
 	get_tree().change_scene(scene)

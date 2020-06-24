@@ -4,9 +4,6 @@
 
 [node name="Diner" instance=ExtResource( 1 )]
 
-[node name="back" parent="." index="0"]
-position = Vector2( 240, 160 )
-
 [node name="Draco" parent="actors" index="0"]
 position = Vector2( 32, 200 )
 linear_velocity = Vector2( 200, 100 )
