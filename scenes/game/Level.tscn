@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://actors/draco/Draco.tscn" type="PackedScene" id=1]
+[ext_resource path="res://actors/zombie/Zombie.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/game/diner_back.png" type="Texture" id=3]
+[ext_resource path="res://scenes/game/diner_front.png" type="Texture" id=4]
+
+[node name="Level" type="Node2D"]
+
+[node name="back" type="Sprite" parent="."]
+position = Vector2( 240, 160 )
+skew = 4.37114e-08
+texture = ExtResource( 3 )
+
+[node name="actors" type="Node" parent="."]
+
+[node name="Draco" parent="actors" instance=ExtResource( 1 )]
+skew = 4.37114e-08
+
+[node name="Zombie" parent="actors" instance=ExtResource( 2 )]
+position = Vector2( 173.335, 159.44 )
+skew = 4.37114e-08
+
+[node name="front" type="Sprite" parent="."]
+position = Vector2( 240, 160 )
+skew = 4.37114e-08
+z_index = 1
+texture = ExtResource( 4 )
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2( 0, 20 )
+polygon = PoolVector2Array( 0, 0, 488, 0, 488, -8, -8, -8, -8, 0, 0, 0 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls"]
+polygon = PoolVector2Array( 480, 0, 480, 320, 488, 320, 488, 0 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Walls"]
+skew = 4.37114e-08
+polygon = PoolVector2Array( -8, 0, -8, 320, 0, 320, 0, 0, -8, 0 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Walls"]
+skew = 4.37114e-08
+polygon = PoolVector2Array( -8, 320, 488, 320, 488, 328, -8, 328, -8, 320 )
