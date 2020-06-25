@@ -28,7 +28,7 @@ jobs:
       - name: Build
         run: |
           mkdir -p build
-          godot --export "ci" docs/game.html
+          godot --export-debug "ci" docs/game.html
           ls docs
       - name: Upload build
         uses: actions/upload-artifact@v1

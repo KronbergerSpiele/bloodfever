@@ -3,14 +3,14 @@
 [ext_resource path="res://libs/ks-page/Page.shader" type="Shader" id=1]
 [ext_resource path="res://scenes/loading/loading.png" type="Texture" id=2]
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 1 )
 shader_param/width = 48.0
 shader_param/height = 32.0
 shader_param/tex = ExtResource( 2 )
 
 [resource]
-material = SubResource( 2 )
+material = SubResource( 1 )
 flip_faces = true
 size = Vector2( 48, 32 )
 subdivide_width = 48
