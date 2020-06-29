@@ -1,9 +1,5 @@
 name: CI
 
-env:
-  GODOT_VERSION: 3.2.1
-  EXPORT_NAME: game
-
 on:
   push:
     branches:
@@ -14,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:mono-3.2.1
+      image: barichello/godot-ci:mono-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -24,7 +20,7 @@ jobs:
         run: |
           mkdir -v -p ~/.local/share/godot/templates
           rm -rf ~/.local/share/godot/templates/*
-          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable.mono ~/.local/share/godot/templates/${GODOT_VERSION}.stable.mono
+          mv /root/.local/share/godot/templates/* ~/.local/share/godot/templates/
       - name: Build
         run: |
           mkdir -p build
@@ -40,15 +36,28 @@ jobs:
     needs: build
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:mono-latest
+    env:
+      ITCHIO_USERNAME: ksjogo
+      ITCHIO_GAME: bloodfever
+      BUTLER_API_KEY: ${{ secrets.ITCHIO_API }}
     steps:
       - name: Download build
         uses: actions/download-artifact@v1
         with:
           name: docs
           path: docs
-      - name: Deploy 🚀
+      - name: Deploy Pages 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./docs
+      - name: Prepare Itch.io
+        run: |
+          rm ./docs/index.html ./docs/impressum.html
+          mv ./docs/game.html ./docs/index.html
+      - name: Deploy Itch.io
+        run: |
+          butler push ./docs $ITCHIO_USERNAME/$ITCHIO_GAME:web

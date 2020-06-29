@@ -49,4 +49,3 @@ anims/appear = SubResource( 1 )
 anims/disappear = SubResource( 2 )
 
 [node name="Page" parent="." instance=ExtResource( 3 )]
-visible = false
