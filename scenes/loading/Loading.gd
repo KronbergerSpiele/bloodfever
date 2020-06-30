@@ -1,4 +1,4 @@
-extends "res://scenes/base/Base.gd"
+extends "res://scenes/Base.gd"
 
 func _ready():
 	$Timer.start()

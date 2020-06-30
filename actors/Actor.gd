@@ -14,9 +14,11 @@ func _process(_delta: float):
 		if !$AnimatedSprite.playing:
 			$AnimatedSprite.play()
 		var rotation = linear_velocity.normalized().angle()
-		var nextOrientation = r315OrientationForRotation(rotation)
-		if $AnimatedSprite.animation != nextOrientation:
-			$AnimatedSprite.play(nextOrientation)
+		var nextAnimation = r315Prefix()
+		if r315HonorRotation():
+			nextAnimation += r315OrientationForRotation(rotation)
+		if $AnimatedSprite.animation != nextAnimation:
+			$AnimatedSprite.play(nextAnimation)
 
 func r315OrientationForRotation(rotation: float) -> String:
 	if rotation <= - PI * 7 / 8:
@@ -39,3 +41,9 @@ func r315OrientationForRotation(rotation: float) -> String:
 		return "R270"
 	else:
 		return "R000"
+
+func r315Prefix() -> String:
+	return ""
+
+func r315HonorRotation() -> bool:
+	return true
