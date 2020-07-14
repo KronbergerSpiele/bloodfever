@@ -15,6 +15,11 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "T",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "R045",
@@ -54,14 +59,11 @@ animations = [ {
 "loop": true,
 "name": "R090",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "T",
-"speed": 5.0
 } ]
 
 [node name="Coffin" instance=ExtResource( 1 )]
+mode = 1
+mass = 65535.0
 
 [node name="AnimatedSprite" parent="." index="1"]
 frames = SubResource( 1 )

@@ -38,7 +38,7 @@ func r315OrientationForRotation(rotation: float) -> String:
 	elif rotation > PI * 5 / 8 and rotation <= PI * 7 / 8:
 		return "R225"
 	elif rotation > PI * 7 / 8:
-		return "R270"
+		return "R180"
 	else:
 		return "R000"
 

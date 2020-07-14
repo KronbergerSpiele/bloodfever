@@ -33,11 +33,16 @@
 [ext_resource path="res://actors/draco/stdvampirT05.png" type="Texture" id=31]
 [ext_resource path="res://actors/draco/stdvampirT06.png" type="Texture" id=32]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 radius = 10.7972
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
+"frames": [ ExtResource( 28 ), ExtResource( 27 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "T",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 14 ), ExtResource( 4 ), ExtResource( 23 ) ],
 "loop": true,
 "name": "R045",
@@ -77,11 +82,6 @@ animations = [ {
 "loop": true,
 "name": "R090",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 28 ), ExtResource( 27 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 26 ) ],
-"loop": true,
-"name": "T",
-"speed": 5.0
 } ]
 
 [node name="Actor" type="RigidBody2D"]
@@ -90,9 +90,9 @@ script = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 3.03094, 14.2221 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 skew = 4.37114e-08
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 animation = "R000"
