@@ -4,4 +4,4 @@ func _ready():
 	pass
 
 func _process(delta):
-	$actors/Draco.linear_velocity = $Stick.output * 2
+	$actors/Draco.linear_velocity = $UI/Stick.output * 2

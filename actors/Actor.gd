@@ -8,6 +8,7 @@ func _ready():
 
 func _process(_delta: float):
 	var vel = linear_velocity.length()
+	z_index = position.y
 	if vel < 1:
 		$AnimatedSprite.stop()
 	else:
