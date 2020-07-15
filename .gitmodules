@@ -1,4 +1,8 @@
-[submodule "libs/ks-stick"]
-	path = libs/ks-stick
-	url = https://github.com/ksjogo/ks-stick.git
+[submodule "addons/ks-stick"]
+	path = addons/ks-stick
+	url = git@github.com:ksjogo/ks-stick.git
+	branch = master
+[submodule "addons/ks-page"]
+	path = addons/ks-page
+	url = git@github.com:ksjogo/ks-page.git
 	branch = master

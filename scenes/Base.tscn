@@ -2,8 +2,7 @@
 
 [ext_resource path="res://scenes/Base.gd" type="Script" id=1]
 [ext_resource path="res://scenes/game/diner_back.png" type="Texture" id=2]
-[ext_resource path="res://libs/ks-page/Page.tscn" type="PackedScene" id=3]
-
+[ext_resource path="res://addons/ks-page/Page.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "appear"
@@ -50,3 +49,4 @@ anims/appear = SubResource( 1 )
 anims/disappear = SubResource( 2 )
 
 [node name="Page" parent="." instance=ExtResource( 3 )]
+skew = 4.37114e-08

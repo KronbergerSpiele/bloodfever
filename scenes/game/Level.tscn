@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes/game/diner_back.png" type="Texture" id=3]
 [ext_resource path="res://scenes/game/diner_front.png" type="Texture" id=4]
 [ext_resource path="res://actors/coffin/Coffin.tscn" type="PackedScene" id=5]
-[ext_resource path="res://libs/ks-stick/Stick.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/ks-stick/Stick.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/game/Level.gd" type="Script" id=7]
 [ext_resource path="res://ui/Pause/Pause.tscn" type="PackedScene" id=8]
 [ext_resource path="res://ui/Lifebar/Lifebar.tscn" type="PackedScene" id=9]
@@ -68,9 +68,8 @@ texture = ExtResource( 4 )
 layer = 2
 
 [node name="Stick" parent="UI" instance=ExtResource( 6 )]
-position = Vector2( 73.7978, 254.636 )
+position = Vector2( 66.6154, 255.129 )
 skew = 4.37114e-08
-z_index = 9
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="UI"]
 skew = 4.37114e-08
