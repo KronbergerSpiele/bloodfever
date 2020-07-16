@@ -12,6 +12,13 @@ jobs:
     container:
       image: barichello/godot-ci:mono-latest
     steps:
+      - name: update git
+        # TODO: move this to a custom docker container
+        run: |
+          echo "deb http://deb.debian.org/debian stretch-backports main" >> /etc/apt/sources.list.d/sources.list
+          apt update
+          apt install -y -t stretch-backports git
+          git --version
       - name: Checkout
         uses: actions/checkout@v2
         with:
