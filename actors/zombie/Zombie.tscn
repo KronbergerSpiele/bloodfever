@@ -84,6 +84,7 @@ animations = [ {
 } ]
 
 [node name="Zombie" instance=ExtResource( 1 )]
+collision_layer = 2
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2( 1.8652, 14.2221 )

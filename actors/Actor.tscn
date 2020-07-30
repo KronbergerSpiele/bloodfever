@@ -38,11 +38,6 @@ radius = 10.7972
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 28 ), ExtResource( 27 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 26 ) ],
-"loop": true,
-"name": "T",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 14 ), ExtResource( 4 ), ExtResource( 23 ) ],
 "loop": true,
 "name": "R045",
@@ -82,6 +77,11 @@ animations = [ {
 "loop": true,
 "name": "R090",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 27 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "T",
+"speed": 5.0
 } ]
 
 [node name="Actor" type="RigidBody2D"]
@@ -96,3 +96,5 @@ shape = SubResource( 1 )
 skew = 4.37114e-08
 frames = SubResource( 2 )
 animation = "R000"
+[connection signal="body_entered" from="." to="." method="_onBodyEntered"]
+[connection signal="body_exited" from="." to="." method="_onBodyExcited"]

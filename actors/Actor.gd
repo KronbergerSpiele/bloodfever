@@ -1,4 +1,10 @@
 extends RigidBody2D
+class_name Actor
+
+export(int) var hitpoints = 100
+export(int) var damage = 2
+
+var touchingBodies = []
 
 func _init():
 	inertia = INF
@@ -7,6 +13,13 @@ func _ready():
 	$AnimatedSprite.play('R000')
 
 func _process(_delta: float):
+	r315HandleGraphics()
+	r315HandleCollisions()
+
+func r315HandleCollisions():
+	pass
+
+func r315HandleGraphics() -> void:
 	var vel = linear_velocity.length()
 	z_index = position.y
 	if vel < 1:
@@ -48,3 +61,10 @@ func r315Prefix() -> String:
 
 func r315HonorRotation() -> bool:
 	return true
+
+func _onBodyEntered(body: Actor):
+	touchingBodies.append(body)
+
+func _onBodyExcited(body: Actor):
+	var idx = touchingBodies.find(body)
+	touchingBodies.remove(idx)

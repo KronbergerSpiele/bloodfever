@@ -8,15 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "RigidBody2D",
+"class": "Actor",
+"language": "GDScript",
+"path": "res://actors/Actor.gd"
+} ]
 _global_script_class_icons={
-
+"Actor": ""
 }
 
 [application]
 
 config/name="BloodFever"
-run/main_scene="res://scenes/loading/Loading.tscn"
+run/main_scene="res://scenes/game/Diner.tscn"
 config/icon="res://icon.png"
 
 [autoload]

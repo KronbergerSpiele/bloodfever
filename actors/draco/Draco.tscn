@@ -1,5 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://actors/Actor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://actors/draco/Draco.gd" type="Script" id=2]
 
 [node name="Draco" instance=ExtResource( 1 )]
+collision_mask = 2
+contacts_reported = 100
+contact_monitor = true
+script = ExtResource( 2 )
