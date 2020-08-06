@@ -9,11 +9,6 @@ position = Vector2( 32, 200 )
 linear_velocity = Vector2( 200, 100 )
 applied_force = Vector2( -10, -10 )
 
-[node name="Zombie" parent="actors" index="1"]
-position = Vector2( 80, 176 )
-linear_velocity = Vector2( -100, 100 )
-applied_force = Vector2( 20, -20 )
-
 [node name="Car" type="StaticBody2D" parent="." index="4"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Car" index="0"]

@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://actors/draco/Draco.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/zombie/Zombie.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/game/diner_back.png" type="Texture" id=3]
 [ext_resource path="res://scenes/game/diner_front.png" type="Texture" id=4]
-[ext_resource path="res://actors/coffin/Coffin.tscn" type="PackedScene" id=5]
 [ext_resource path="res://addons/ks-stick/Stick.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/game/Level.gd" type="Script" id=7]
 [ext_resource path="res://ui/Pause/Pause.tscn" type="PackedScene" id=8]
@@ -42,14 +41,10 @@ polygon = PoolVector2Array( -8, 320, 488, 320, 488, 328, -8, 328, -8, 320 )
 [node name="actors" type="Node" parent="."]
 
 [node name="Draco" parent="actors" instance=ExtResource( 1 )]
-position = Vector2( 219, 116 )
-skew = 4.37114e-08
+position = Vector2( 146.573, 161.659 )
 
 [node name="Zombie" parent="actors" instance=ExtResource( 2 )]
-position = Vector2( 173.335, 159.44 )
-skew = 4.37114e-08
-
-[node name="Coffin" parent="actors" instance=ExtResource( 5 )]
+position = Vector2( 263.495, 162.488 )
 
 [node name="Foreground" type="CanvasLayer" parent="."]
 
