@@ -65,6 +65,7 @@
     <Compile Include="scenes\game\Level.cs" />
     <Compile Include="scenes\loading\Loading.cs" />
     <Compile Include="scenes\menu\Menu.cs" />
+    <Compile Include="ui\Pause\Pause.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
