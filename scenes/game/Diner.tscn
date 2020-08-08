@@ -8,6 +8,16 @@
 position = Vector2( 32, 200 )
 linear_velocity = Vector2( 200, 100 )
 applied_force = Vector2( -10, -10 )
+hitpoints = null
+damage = null
+
+[node name="Zombie" parent="actors" index="1"]
+hitpoints = null
+damage = null
+
+[node name="Coffin" parent="actors" index="2"]
+hitpoints = null
+damage = null
 
 [node name="Car" type="StaticBody2D" parent="." index="4"]
 

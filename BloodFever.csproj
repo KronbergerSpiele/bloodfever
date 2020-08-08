@@ -57,6 +57,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Global.cs" />
     <Compile Include="actors\Actor.cs" />
     <Compile Include="actors\draco\Draco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
