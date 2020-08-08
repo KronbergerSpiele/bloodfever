@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: ksjogo/ks-godot-ci:latest
+      image: kronbergerspiele/ks-godot-ci:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -38,7 +38,7 @@ jobs:
     if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     container:
-      image: ksjogo/ks-godot-ci:latest
+      image: kronbergerspiele/ks-godot-ci:latest
     env:
       ITCHIO_USERNAME: ksjogo
       ITCHIO_GAME: bloodfever
