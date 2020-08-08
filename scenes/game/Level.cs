@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Level : Node2D
+public class Level : Base
 {
     public Node UI()
     {
