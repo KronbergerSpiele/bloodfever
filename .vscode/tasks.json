@@ -4,10 +4,8 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "dotnet",
-            "args": [
-                "build"
-            ],
+            "command": "msbuild",
+            "args": [],
             "group": "build",
             "presentation": {
                 "reveal": "silent"
