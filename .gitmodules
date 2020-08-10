@@ -1,8 +1,8 @@
 [submodule "addons/ks-stick"]
 	path = addons/ks-stick
-	url = git@github.com:ksjogo/ks-stick.git
+	url = git@github.com:kronbergerspiele/ks-stick.git
 	branch = master
 [submodule "addons/ks-page"]
 	path = addons/ks-page
-	url = git@github.com:ksjogo/ks-page.git
+	url = git@github.com:kronbergerspiele/ks-page.git
 	branch = master

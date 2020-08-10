@@ -3,14 +3,11 @@ using System;
 
 public class Level : Base
 {
+    public KSStick Stick;
+
     public Node UI()
     {
         return GetNode("UI");
-    }
-
-    public Node Stick()
-    {
-        return GetNode("UI/Stick");
     }
 
     public Actor Draco()
@@ -20,11 +17,13 @@ public class Level : Base
 
     public override void _Ready()
     {
+        Stick = new KSStick(
+            GetNode("UI/Stick")
+        );
     }
 
     public override void _Process(float delta)
     {
-        var output = (Vector2)Stick().Get("output");
-        Draco().LinearVelocity = output * 2;
+        Draco().LinearVelocity = Stick.Output() * 2;
     }
 }

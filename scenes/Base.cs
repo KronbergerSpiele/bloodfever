@@ -3,6 +3,8 @@ using System;
 
 public class Base : Node2D
 {
+    public KSPage Page;
+
     public Sprite LastScene()
     {
         return GetNode<Sprite>("lastScene");
@@ -20,6 +22,7 @@ public class Base : Node2D
 
     public override void _Ready()
     {
+        Page = new KSPage(GetNode("Page"));
         LastScene().Texture = Global().LastSceneSnapshot;
         LastScene().Scale = new Vector2(1, 1);
         LastSceneAnimation().Play("disappear");

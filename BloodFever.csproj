@@ -68,5 +68,8 @@
     <Compile Include="ui\Lifebar\Lifebar.cs" />
     <Compile Include="ui\Pause\Pause.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="addons\**\*.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
