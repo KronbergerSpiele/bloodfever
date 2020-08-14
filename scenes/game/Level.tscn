@@ -27,13 +27,16 @@ position = Vector2( 0, 20 )
 polygon = PoolVector2Array( 0, 0, 488, 0, 488, -8, -8, -8, -8, 0, 0, 0 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2( -3, 0 )
 polygon = PoolVector2Array( 480, 0, 480, 320, 488, 320, 488, 0 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Walls"]
+position = Vector2( 5, 0 )
 polygon = PoolVector2Array( -8, 0, -8, 320, 0, 320, 0, 0, -8, 0 )
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Walls"]
-polygon = PoolVector2Array( -8, 320, 488, 320, 488, 328, -8, 328, -8, 320 )
+position = Vector2( 0, 5 )
+polygon = PoolVector2Array( -8, 320, 488, 320, 488, 328, 376.721, 328, -8, 328, -8, 320 )
 
 [node name="actors" type="Node" parent="."]
 
@@ -49,7 +52,6 @@ position = Vector2( 316.843, 156.683 )
 
 [node name="Lifebar" parent="Foreground" instance=ExtResource( 9 )]
 position = Vector2( 452, 48 )
-health = 50
 
 [node name="front" type="Sprite" parent="Foreground"]
 position = Vector2( 240, 160 )
