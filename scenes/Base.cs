@@ -20,6 +20,13 @@ public class Base : Node2D
         return GetNode<Global>("/root/Global");
     }
 
+    protected Random _random = new Random();
+
+    protected float RandRange(float min, float max)
+    {
+        return (float)_random.NextDouble() * (max - min) + min;
+    }
+
     public override void _Ready()
     {
         Page = new KSPage(GetNode("Page"));

@@ -3,6 +3,9 @@ using System;
 
 public class Level : Base
 {
+    [Export]
+    public PackedScene ZombieTemplate;
+
     public KSStick Stick;
 
     public Node UI()
@@ -25,5 +28,18 @@ public class Level : Base
     public override void _Process(float delta)
     {
         Draco().LinearVelocity = Stick.Output() * 2;
+    }
+
+    public void OnSpawnTimer()
+    {
+        var mobSpawnLocation = GetNode<PathFollow2D>("SpawnPath/SpawnLocation");
+        mobSpawnLocation.Offset = _random.Next();
+
+        var mobInstance = (Actor)ZombieTemplate.Instance();
+        AddChild(mobInstance);
+
+        mobInstance.Position = mobSpawnLocation.Position;
+
+        // mobInstance.LinearVelocity = new Vector2(RandRange(150f, 250f), 0).Rotated(direction);
     }
 }
