@@ -18,6 +18,11 @@ public class Level : Base
         return GetNode<Draco>("actors/Draco");
     }
 
+    public Node Actors()
+    {
+        return GetNode("actors");
+    }
+
     public override void _Ready()
     {
         Stick = new KSStick(
@@ -36,10 +41,8 @@ public class Level : Base
         mobSpawnLocation.Offset = _random.Next();
 
         var mobInstance = (Actor)ZombieTemplate.Instance();
-        AddChild(mobInstance);
+        Actors().AddChild(mobInstance);
 
         mobInstance.Position = mobSpawnLocation.Position;
-
-        // mobInstance.LinearVelocity = new Vector2(RandRange(150f, 250f), 0).Rotated(direction);
     }
 }

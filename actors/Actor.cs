@@ -14,10 +14,10 @@ public class Actor : RigidBody2D, IComparable
 
     public int CompareTo(object obj)
     {
-        if (obj == null) return 1;
+        if (obj == null)
+            return 1;
 
-        Actor otherActor = obj as Actor;
-        if (otherActor != null)
+        if (obj is Actor otherActor)
             return GetInstanceId().CompareTo(otherActor.GetInstanceId());
         else
             throw new ArgumentException("Object is not a Actor");
@@ -106,13 +106,15 @@ public class Actor : RigidBody2D, IComparable
         return "R000";
     }
 
-    public virtual void onBodyEntered(Actor body)
+    public virtual void onBodyEntered(Node body)
     {
-        touchingBodies.Add(body);
+        if (body is Actor actor)
+            touchingBodies.Add(actor);
     }
 
-    public virtual void onBodyExcited(Actor body)
+    public virtual void onBodyExcited(Node body)
     {
-        touchingBodies.Remove(body);
+        if (body is Actor actor)
+            touchingBodies.Remove(actor);
     }
 }

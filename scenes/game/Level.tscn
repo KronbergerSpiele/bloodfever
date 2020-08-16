@@ -12,7 +12,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 5.49983, 20.6886, 0, 0, 0, 0, 476.962, 20.4132, 0, 0, 0, 0, 475.585, 310.671, 0, 0, 0, 0, 3.8475, 315.077, 0, 0, 0, 0, 6.0506, 20.1378 )
+"points": PoolVector2Array( 0, 0, 0, 0, 7.9783, 9.67314, 0, 0, 0, 0, 474.483, 13.8039, 0, 0, 0, 0, 475.585, 314.251, 0, 0, 0, 0, 89.2173, 314.526, 0, 0, 0, 0, 87.8404, 280.929, 0, 0, 0, 0, 6.87675, 280.378, 0, 0, 0, 0, 7.9783, 20.964 )
 }
 
 [node name="Level" type="Node2D"]
@@ -44,11 +44,11 @@ polygon = PoolVector2Array( 0, 0, 488, 0, 488, -8, -8, -8, -8, 0, 0, 0 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls"]
 position = Vector2( -3, 0 )
-polygon = PoolVector2Array( 480, 0, 480, 320, 488, 320, 488, 0 )
+polygon = PoolVector2Array( 480, 0, 480.41, 325.216, 488.209, 325.119, 488, 0 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Walls"]
 position = Vector2( 5, 0 )
-polygon = PoolVector2Array( -8, 0, -8, 320, 0, 320, 0, 0, -8, 0 )
+polygon = PoolVector2Array( -8, 0, -8.00462, 325.081, -0.0131035, 325.129, 0, 0, -8, 0 )
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Walls"]
 position = Vector2( 0, 5 )
