@@ -12,7 +12,7 @@
 script = ExtResource( 2 )
 
 [node name="menu" type="Sprite" parent="." index="0"]
-position = Vector2( 240, 160 )
+position = Vector2( 239.449, 160 )
 texture = ExtResource( 3 )
 
 [node name="Label" parent="." index="2" instance=ExtResource( 5 )]
@@ -32,13 +32,14 @@ margin_left = 100.0
 margin_right = 199.0
 margin_bottom = 36.0
 
-[node name="Button" type="Button" parent="." index="5"]
+[node name="Button" type="Button" parent="." index="4"]
 margin_left = 355.842
-margin_top = 154.746
-margin_right = 367.842
-margin_bottom = 174.746
+margin_top = 155.297
+margin_right = 380.842
+margin_bottom = 175.297
 custom_styles/normal = SubResource( 1 )
 text = "test"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="pressed" from="Button" to="." method="OnStartPressed"]

@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Pause : Base
+public class Pause : Node2D
 {
     public Node2D Overlay()
     {
@@ -10,13 +10,14 @@ public class Pause : Base
 
     public override void _EnterTree()
     {
+        base._EnterTree();
         Overlay().Visible = false;
     }
 
     public override void _Ready()
     {
+        base._Ready();
         Overlay().Visible = false;
-
     }
 
     public void OnPauseButtonPressed()

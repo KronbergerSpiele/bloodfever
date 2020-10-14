@@ -7,13 +7,10 @@
 [node name="Loading" instance=ExtResource( 2 )]
 script = ExtResource( 3 )
 
-[node name="lastScene" parent="." index="0"]
-z_index = 10
-
-[node name="Timer" type="Timer" parent="." index="2"]
+[node name="Timer" type="Timer" parent="." index="1"]
 one_shot = true
 
-[node name="loading" type="Sprite" parent="." index="3"]
+[node name="loading" type="Sprite" parent="." index="2"]
 position = Vector2( 240, 160 )
 texture = ExtResource( 1 )
 [connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]

@@ -17,6 +17,7 @@ public class Lifebar : Node2D
 
     public override void _Process(float delta)
     {
+        base._Process(delta);
         Health += HealthIncome;
 
         HealthIncome = 0;

@@ -33,8 +33,8 @@ autostart = true
 curve = SubResource( 1 )
 
 [node name="SpawnLocation" type="PathFollow2D" parent="SpawnPath"]
-position = Vector2( 5.49983, 20.6886 )
-rotation = -0.000583473
+position = Vector2( 7.9783, 9.67314 )
+rotation = 0.00885432
 
 [node name="Walls" type="StaticBody2D" parent="."]
 

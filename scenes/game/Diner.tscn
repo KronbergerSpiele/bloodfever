@@ -4,12 +4,16 @@
 
 [node name="Diner" instance=ExtResource( 1 )]
 
-[node name="Draco" parent="actors" index="0"]
-position = Vector2( 32, 200 )
-linear_velocity = Vector2( 200, 100 )
-applied_force = Vector2( -10, -10 )
+[node name="SpawnLocation" parent="SpawnPath" index="0"]
+position = Vector2( 7.9783, 9.67314 )
+rotation = 0.00885432
 
 [node name="Car" type="StaticBody2D" parent="." index="4"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Car" index="0"]
 polygon = PoolVector2Array( 0, 288, 96, 288, 96, 304, 80, 320, 0, 320 )
+
+[node name="Draco" parent="actors" index="0"]
+position = Vector2( 32, 200 )
+linear_velocity = Vector2( 200, 100 )
+applied_force = Vector2( -10, -10 )

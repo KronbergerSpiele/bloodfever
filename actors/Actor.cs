@@ -30,12 +30,14 @@ public class Actor : RigidBody2D, IComparable
 
     public override void _Ready()
     {
+        base._Ready();
         Inertia = float.PositiveInfinity;
         GetNode<AnimatedSprite>("AnimatedSprite").Play("R000");
     }
 
     public override void _Process(float delta)
     {
+        base._Process(delta);
         r315HandleGraphics();
         r315HandleCollisions();
     }

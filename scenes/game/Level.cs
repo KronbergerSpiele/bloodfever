@@ -25,13 +25,15 @@ public class Level : Base
 
     public override void _Ready()
     {
+        base._Ready();
         Stick = new KSStick(
-            GetNode("UI/Stick")
-        );
+                   GetNode("UI/Stick")
+               );
     }
 
     public override void _Process(float delta)
     {
+        base._Process(delta);
         Draco().LinearVelocity = Stick.Output() * 2;
     }
 

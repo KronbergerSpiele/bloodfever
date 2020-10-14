@@ -5,16 +5,6 @@ public class Base : Node2D
 {
     public KSPage Page;
 
-    public Sprite LastScene()
-    {
-        return GetNode<Sprite>("lastScene");
-    }
-
-    public AnimationPlayer LastSceneAnimation()
-    {
-        return GetNode<AnimationPlayer>("lastSceneAnimation");
-    }
-
     public Global Global()
     {
         return GetNode<Global>("/root/Global");
@@ -29,10 +19,9 @@ public class Base : Node2D
 
     public override void _Ready()
     {
-        Page = new KSPage(GetNode("Page"));
-        LastScene().Texture = Global().LastSceneSnapshot;
-        LastScene().Scale = new Vector2(1, 1);
-        LastSceneAnimation().Play("disappear");
+        base._Ready();
+        GD.Print("base ready");
+        Page = new KSPage(GetNode("Page"), Global().LastSceneSnapshot);
     }
 
     public void switchTo(String scene)
