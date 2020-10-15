@@ -16,7 +16,8 @@ _global_script_class_icons={
 [application]
 
 config/name="BloodFever"
-run/main_scene="res://scenes/game/Diner.tscn"
+run/main_scene="res://scenes/loading/Loading.tscn"
+boot_splash/image="res://scenes/loading/loading.png"
 config/icon="res://icon.png"
 
 [autoload]
