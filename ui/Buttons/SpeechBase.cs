@@ -22,6 +22,8 @@ public class SpeechBase : TextureButton
 
     private Label LI()
     {
-        return GetNode<Label>("Label");
+        if (HasNode("Label"))
+            return GetNode<Label>("Label");
+        return null;
     }
 }

@@ -28,9 +28,9 @@ label = "Start"
 
 [node name="About" parent="." index="4" instance=ExtResource( 6 )]
 margin_left = 258.863
-margin_top = 234.905
+margin_top = 235.18
 margin_right = 451.863
-margin_bottom = 289.905
+margin_bottom = 290.18
 label = "About"
 [connection signal="pressed" from="Start" to="." method="OnStartPressed"]
 [connection signal="pressed" from="About" to="." method="OnAboutPressed"]

@@ -51,12 +51,11 @@ public class Base : Node2D
 
 
         var layer = new CanvasLayer();
-        layer.Layer = 128;
+        layer.Layer = 99;
 
         var tmp = new Sprite();
         tmp.Texture = tex;
         tmp.Position = new Vector2(240, 160);
-        tmp.ZIndex = 11000000;
 
         layer.AddChild(tmp);
 
