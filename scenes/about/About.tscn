@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/Base.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/about/aboutscreen_blank.png" type="Texture" id=2]
+[ext_resource path="res://scenes/about/textfield_about.png" type="Texture" id=3]
+[ext_resource path="res://ui/Buttons/Close.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/about/About.cs" type="Script" id=5]
+[ext_resource path="res://ui/Label.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://ui/Laffayette.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 10
+use_filter = true
+font_data = SubResource( 1 )
+
+[node name="About" instance=ExtResource( 1 )]
+script = ExtResource( 5 )
+
+[node name="aboutscreen_blank" type="Sprite" parent="." index="1"]
+position = Vector2( 240, 160 )
+texture = ExtResource( 2 )
+
+[node name="textfield_about" type="Sprite" parent="." index="2"]
+position = Vector2( 142, 160 )
+texture = ExtResource( 3 )
+
+[node name="Close" parent="." index="3" instance=ExtResource( 4 )]
+margin_left = 465.128
+margin_top = 5.78311
+margin_right = 564.128
+margin_bottom = 90.7831
+rect_scale = Vector2( -1, 1 )
+
+[node name="Label" parent="." index="4" instance=ExtResource( 6 )]
+margin_left = 36.6264
+margin_top = 87.5729
+margin_right = 197.626
+margin_bottom = 231.573
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+text = "Code/Game/Sound:
+Johannes Goslar
+Art:
+Lars-Arne Kalusky 
+Old Guard:
+Felix, Olivier, 
+Roland, Soeren"
+
+[node name="Label2" parent="." index="5" instance=ExtResource( 6 )]
+margin_left = 13.6059
+margin_top = 308.256
+margin_right = 502.606
+margin_bottom = 452.256
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+text = "Copyright (c) 2020 Johannes Goslar, Lars-Arne Kalusky, dkd Internet Service GmbH
+"
+[connection signal="pressed" from="Close" to="." method="OnAboutPressed"]

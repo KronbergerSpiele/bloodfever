@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/menu/Menu.cs" type="Script" id=2]
 [ext_resource path="res://scenes/menu/menu.png" type="Texture" id=3]
 [ext_resource path="res://ui/BitmapLabel.tscn" type="PackedScene" id=4]
-[ext_resource path="res://ui/Buttons/SpeechButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://ui/Buttons/SpeechLeft.tscn" type="PackedScene" id=6]
 
 [node name="Menu" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -19,10 +19,18 @@ margin_left = 100.0
 margin_right = 199.0
 margin_bottom = 36.0
 
-[node name="Node2D" parent="." index="3" instance=ExtResource( 6 )]
-margin_left = 250.051
-margin_top = 194.423
-margin_right = 443.051
-margin_bottom = 249.423
+[node name="Start" parent="." index="3" instance=ExtResource( 6 )]
+margin_left = 257.762
+margin_top = 171.291
+margin_right = 450.762
+margin_bottom = 226.291
 label = "Start"
-[connection signal="pressed" from="Node2D" to="." method="OnStartPressed"]
+
+[node name="About" parent="." index="4" instance=ExtResource( 6 )]
+margin_left = 258.863
+margin_top = 234.905
+margin_right = 451.863
+margin_bottom = 289.905
+label = "About"
+[connection signal="pressed" from="Start" to="." method="OnStartPressed"]
+[connection signal="pressed" from="About" to="." method="OnAboutPressed"]

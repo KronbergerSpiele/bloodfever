@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ButtonSpeechNormal.png-5f57a63aabe955e8fc9a287cf329a885.stex"
+path="res://.import/SpeechLeftNormal.png-5d42a927d44e3623f5205469a2306552.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/Buttons/ButtonSpeechNormal.png"
-dest_files=[ "res://.import/ButtonSpeechNormal.png-5f57a63aabe955e8fc9a287cf329a885.stex" ]
+source_file="res://ui/Buttons/SpeechLeftNormal.png"
+dest_files=[ "res://.import/SpeechLeftNormal.png-5d42a927d44e3623f5205469a2306552.stex" ]
 
 [params]
 

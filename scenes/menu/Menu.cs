@@ -7,4 +7,9 @@ public class Menu : Base
     {
         switchTo("res://scenes/game/Diner.tscn");
     }
+
+    public void OnAboutPressed()
+    {
+        switchTo("res://scenes/about/About.tscn");
+    }
 }

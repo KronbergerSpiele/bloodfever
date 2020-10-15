@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 [Tool]
-public class SpeechButton : TextureButton
+public class SpeechBase : TextureButton
 {
     [Export]
     public string label
