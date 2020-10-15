@@ -7,6 +7,9 @@
 [node name="Loading" instance=ExtResource( 2 )]
 script = ExtResource( 3 )
 
+[node name="Page" parent="CanvasLayer" index="0"]
+position = Vector2( -0.550781, 0 )
+
 [node name="Timer" type="Timer" parent="." index="1"]
 one_shot = true
 

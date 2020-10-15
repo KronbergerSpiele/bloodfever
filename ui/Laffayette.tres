@@ -1,0 +1,10 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://ui/Laffayette.ttf"
+
+[resource]
+size = 20
+outline_size = 1
+use_filter = true
+font_data = SubResource( 1 )

@@ -17,11 +17,27 @@ public class Base : Node2D
         return (float)_random.NextDouble() * (max - min) + min;
     }
 
-    public override void _Ready()
+    public override void _EnterTree()
     {
-        base._Ready();
-        GD.Print("base ready");
-        Page = new KSPage(GetNode("Page"), Global().LastSceneSnapshot);
+        base._EnterTree();
+        Page = new KSPage(GetNode("CanvasLayer/Page"), Global().LastSceneSnapshot);
+    }
+
+    protected int ticks = 0;
+
+    public override void _Process(float delta)
+    {
+        base._Process(delta);
+        // clear the old overlaying image on the second process
+        // to allow rendering of everything on the first
+        if (++ticks >= 2)
+        {
+            if (Global().LastScene != this && Global().LastSceneLayer != null)
+            {
+                GetTree().GetRoot().RemoveChild(Global().LastSceneLayer);
+                Global().LastSceneLayer = null;
+            }
+        }
     }
 
     public void switchTo(String scene)
@@ -32,5 +48,21 @@ public class Base : Node2D
         tex.CreateFromImage(img);
         Global().LastSceneSnapshot = tex;
         GetTree().ChangeScene(scene);
+
+
+        var layer = new CanvasLayer();
+        layer.Layer = 128;
+
+        var tmp = new Sprite();
+        tmp.Texture = tex;
+        tmp.Position = new Vector2(240, 160);
+        tmp.ZIndex = 11000000;
+
+        layer.AddChild(tmp);
+
+        GetTree().GetRoot().AddChild(layer);
+
+        Global().LastSceneLayer = layer;
+        Global().LastScene = this;
     }
 }
