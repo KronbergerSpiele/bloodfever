@@ -52,7 +52,7 @@ public class Base : Node2D
         var img = oldTex.GetData();
         img.FlipY();
         var tex = new ImageTexture();
-        tex.CreateFromImage(img);
+        tex.CreateFromImage(img, 0);
         Global().LastSceneSnapshot = tex;
         GetTree().ChangeScene(scene);
 
