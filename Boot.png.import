@@ -2,17 +2,17 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/loading.png-cabb256d3f0f366cacc9010d067fd45f.s3tc.stex"
-path.etc="res://.import/loading.png-cabb256d3f0f366cacc9010d067fd45f.etc.stex"
+path.s3tc="res://.import/Boot.png-c62343e77f1ef94b720fc7d4802c4a42.s3tc.stex"
+path.etc2="res://.import/Boot.png-c62343e77f1ef94b720fc7d4802c4a42.etc2.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
+"imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
 }
 
 [deps]
 
-source_file="res://scenes/loading/loading.png"
-dest_files=[ "res://.import/loading.png-cabb256d3f0f366cacc9010d067fd45f.s3tc.stex", "res://.import/loading.png-cabb256d3f0f366cacc9010d067fd45f.etc.stex" ]
+source_file="res://Boot.png"
+dest_files=[ "res://.import/Boot.png-c62343e77f1ef94b720fc7d4802c4a42.s3tc.stex", "res://.import/Boot.png-c62343e77f1ef94b720fc7d4802c4a42.etc2.stex" ]
 
 [params]
 

@@ -17,7 +17,10 @@ _global_script_class_icons={
 
 config/name="BloodFever"
 run/main_scene="res://scenes/loading/Loading.tscn"
-boot_splash/image="res://scenes/loading/loading.png"
+boot_splash/image="res://Boot.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 
 [autoload]
@@ -47,9 +50,4 @@ pointing/emulate_touch_from_mouse=true
 [rendering]
 
 quality/driver/driver_name="GLES2"
-quality/2d/use_pixel_snap=true
-vram_compression/import_etc=true
-vram_compression/import_etc2=false
-environment/default_clear_color=Color( 0, 0, 0, 1 )
 quality/depth/hdr=false
-environment/default_environment="res://default_env.tres"

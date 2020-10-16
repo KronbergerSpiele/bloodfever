@@ -42,13 +42,19 @@ public class Base : Node2D
 
     public void switchTo(String scene)
     {
-        var img = GetViewport().GetTexture().GetData();
+        var oldTex = GetViewport().GetTexture();
+        var oldWidth = oldTex.GetWidth();
+        var oldHeight = oldTex.GetHeight();
+        var scalex = 480.0f / oldWidth;
+        var scaley = 320.0f / oldHeight;
+        GD.Print(oldHeight, ",", oldWidth, ",", oldTex.HasAlpha(), scalex, scaley);
+
+        var img = oldTex.GetData();
         img.FlipY();
         var tex = new ImageTexture();
         tex.CreateFromImage(img);
         Global().LastSceneSnapshot = tex;
         GetTree().ChangeScene(scene);
-
 
         var layer = new CanvasLayer();
         layer.Layer = 99;
@@ -56,7 +62,8 @@ public class Base : Node2D
         var tmp = new Sprite();
         tmp.Texture = tex;
         tmp.Position = new Vector2(240, 160);
-
+        tmp.Scale = new Vector2(scalex, scaley);
+        GD.Print(tmp.Scale);
         layer.AddChild(tmp);
 
         GetTree().GetRoot().AddChild(layer);
