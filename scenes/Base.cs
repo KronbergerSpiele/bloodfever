@@ -47,12 +47,12 @@ public class Base : Node2D
         var oldHeight = oldTex.GetHeight();
         var scalex = 480.0f / oldWidth;
         var scaley = 320.0f / oldHeight;
-        GD.Print(oldHeight, ",", oldWidth, ",", oldTex.HasAlpha(), scalex, scaley);
 
         var img = oldTex.GetData();
         img.FlipY();
         var tex = new ImageTexture();
         tex.CreateFromImage(img, 0);
+
         Global().LastSceneSnapshot = tex;
         GetTree().ChangeScene(scene);
 
@@ -63,7 +63,6 @@ public class Base : Node2D
         tmp.Texture = tex;
         tmp.Position = new Vector2(240, 160);
         tmp.Scale = new Vector2(scalex, scaley);
-        GD.Print(tmp.Scale);
         layer.AddChild(tmp);
 
         GetTree().GetRoot().AddChild(layer);
