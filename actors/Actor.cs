@@ -4,7 +4,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public class Actor : ActorFs, IComparable
+public class Actor : ActorFs
 {
     [Export]
     private int hitpoints = 100;
@@ -14,17 +14,6 @@ public class Actor : ActorFs, IComparable
 
     protected SortedSet<Actor> touchingBodies = new SortedSet<Actor>();
 
-    public int CompareTo(object obj)
-    {
-        if (obj == null)
-            return 1;
-
-        if (obj is Actor otherActor)
-            return GetInstanceId().CompareTo(otherActor.GetInstanceId());
-        else
-            throw new ArgumentException("Object is not a Actor");
-    }
-
     public AnimatedSprite _AnimatedSprite()
     {
         return GetNode<AnimatedSprite>("AnimatedSprite");
@@ -32,6 +21,7 @@ public class Actor : ActorFs, IComparable
 
     public override void _Ready()
     {
+        GD.Print("actor");
         base._Ready();
         Inertia = float.PositiveInfinity;
         GetNode<AnimatedSprite>("AnimatedSprite").Play("R000");
