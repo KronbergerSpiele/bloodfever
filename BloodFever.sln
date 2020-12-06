@@ -1,8 +1,8 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloodFever", "BloodFever.csproj", "{4DF9DF58-091A-432E-BF1E-4A28DC8BDD43}"
-EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BloodFeverFs", "BloodFeverFs.fsproj", "{6FC76146-BCCC-40BD-BD5E-4789A2B66665}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloodFever", "BloodFever.csproj", "{4DF9DF58-091A-432E-BF1E-4A28DC8BDD43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

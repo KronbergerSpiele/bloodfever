@@ -1,19 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Godot.NET.Sdk/3.2.3">
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
   </PropertyGroup>
-
+  <ItemGroup>
+    <Compile Include="actors/**/*.fs" />
+    <Compile Include="scenes/**/*.fs" />
+    <Compile Include="ui/**/*.fs" />
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="GodotSharp">
       <HintPath>.mono/assemblies/Debug/GodotSharp.dll</HintPath>
     </Reference>
   </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="actors\**\*.fs" />
-    <Compile Include="scenes\**\*.fs" />
-    <Compile Include="ui\**\*.fs" />
-  </ItemGroup>
-
 </Project>
