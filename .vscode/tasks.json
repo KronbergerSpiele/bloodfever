@@ -5,7 +5,9 @@
             "label": "build",
             "type": "shell",
             "command": "msbuild",
-            "args": [],
+            "args": [
+                "BloodFever.sln"
+            ],
             "group": "build",
             "presentation": {
                 "reveal": "silent"

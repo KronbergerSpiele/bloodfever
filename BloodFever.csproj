@@ -16,20 +16,16 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Global.cs" />
-    <Compile Include="actors\Actor.cs" />
-    <Compile Include="actors\draco\Draco.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="scenes\about\About.cs" />
-    <Compile Include="scenes\Base.cs" />
-    <Compile Include="scenes\game\Level.cs" />
-    <Compile Include="scenes\loading\Loading.cs" />
-    <Compile Include="scenes\menu\Menu.cs" />
-    <Compile Include="ui\Buttons\SpeechBase.cs" />
-    <Compile Include="ui\Lifebar\Lifebar.cs" />
-    <Compile Include="ui\Pause\Pause.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="actors\**\*.cs" />
+    <Compile Include="scenes\**\*.cs" />
+    <Compile Include="ui\**\*.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="addons\**\*.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="BloodFeverFs.fsproj" />
   </ItemGroup>
 </Project>

@@ -1,8 +1,10 @@
+using BloodFeverFs;
+
 using Godot;
 using System;
 using System.Collections.Generic;
 
-public class Actor : RigidBody2D, IComparable
+public class Actor : ActorFs, IComparable
 {
     [Export]
     private int hitpoints = 100;

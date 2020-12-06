@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="GodotSharp">
+      <HintPath>.mono/assemblies/Debug/GodotSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="actors\**\*.fs" />
+    <Compile Include="scenes\**\*.fs" />
+    <Compile Include="ui\**\*.fs" />
+  </ItemGroup>
+
+</Project>
