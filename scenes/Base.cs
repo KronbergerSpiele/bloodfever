@@ -34,7 +34,7 @@ public class Base : Node2D
         {
             if (Global().LastScene != this && Global().LastSceneLayer != null)
             {
-                GetTree().GetRoot().RemoveChild(Global().LastSceneLayer);
+                GetTree().Root.RemoveChild(Global().LastSceneLayer);
                 Global().LastSceneLayer = null;
             }
         }
@@ -65,7 +65,7 @@ public class Base : Node2D
         tmp.Scale = new Vector2(scalex, scaley);
         layer.AddChild(tmp);
 
-        GetTree().GetRoot().AddChild(layer);
+        GetTree().Root.AddChild(layer);
 
         Global().LastSceneLayer = layer;
         Global().LastScene = this;

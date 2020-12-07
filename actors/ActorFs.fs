@@ -1,7 +1,6 @@
 namespace BloodFeverFs
 
 open Godot
-open System.Collections.Generic
 open System
 
 type ActorFs() =
@@ -19,7 +18,7 @@ type ActorFs() =
         let sprite = node :?> AnimatedSprite
         sprite
 
-    member this.TouchingBodies = new SortedSet<ActorFs>()
+    member this.TouchingBodies = new System.Collections.Generic.SortedSet<ActorFs>()
 
     override this.Equals(yobj) =
         match yobj with

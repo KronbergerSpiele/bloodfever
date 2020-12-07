@@ -39,7 +39,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "godot-fsharp-tools" )
+enabled=PoolStringArray(  )
 
 [input_devices]
 
