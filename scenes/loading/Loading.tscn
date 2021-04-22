@@ -16,4 +16,5 @@ one_shot = true
 [node name="Splash" type="Sprite" parent="." index="2"]
 position = Vector2( 240, 160 )
 texture = ExtResource( 5 )
+
 [connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]

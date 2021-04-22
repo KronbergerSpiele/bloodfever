@@ -1,4 +1,4 @@
-﻿<Project Sdk="Godot.NET.Sdk/3.2.3">
+﻿<Project Sdk="Godot.NET.Sdk/3.3.0">
   <PropertyGroup>
     <ProjectGuid>{4DF9DF58-091A-432E-BF1E-4A28DC8BDD43}</ProjectGuid>
     <OutputType>Library</OutputType>
