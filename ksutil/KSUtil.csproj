@@ -1,18 +1,10 @@
 <Project Sdk="Godot.NET.Sdk/3.3.0">
   <PropertyGroup>
-    <ProjectGuid>{ 3b4d87f0-f9b8-11eb-9a03-0242ac130003 }</ProjectGuid>
+    <ProjectGuid>{3b4d87f0-f9b8-11eb-9a03-0242ac130003}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>KSUtil</RootNamespace>
     <AssemblyName>KSUtil</AssemblyName>
-    <GodotProjectGeneratorVersion>1.0.0.0</GodotProjectGeneratorVersion>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <!--The following properties were overriden during migration to prevent errors.
-    Enabling them may require other manual changes to the project and its files.-->
-    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <Deterministic>false</Deterministic>
+    <OtherFlags>$(OtherFlags) --standalone</OtherFlags>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="ExportFlagsEnumAttribute.cs" />
-  </ItemGroup>
 </Project>

@@ -22,11 +22,16 @@ jobs:
           mkdir -v -p ~/.local/share/godot/templates
           rm -rf ~/.local/share/godot/templates/*
           mv /root/.local/share/godot/templates/* ~/.local/share/godot/templates/
-      - name: Build
+      - name: Prepare build
         run: |
           mkdir -p build
-          godot --export "ci" docs/game.html
+      - name: Build Solutions
+        run: |
+          dotnet build BloodFever.sln
           cat /github/home/.local/share/godot/mono/mono_logs/*
+      - name: Export
+        run: |
+          godot --export "ci" docs/game.html
           ls docs
       - name: Upload build
         uses: actions/upload-artifact@v1

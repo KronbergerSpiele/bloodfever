@@ -40,6 +40,12 @@ window/stretch/aspect="keep"
 
 enabled=PoolStringArray(  )
 
+[global]
+
+mono=false
+build=false
+tool=false
+
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
