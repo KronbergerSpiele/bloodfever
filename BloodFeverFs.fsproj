@@ -10,9 +10,6 @@
     <Compile Include="ui/**/*.fs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="KSUtil/KSUtil.csproj" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Update="FSharp.Core" Version="5.0.0"  />
   </ItemGroup>
 </Project>
