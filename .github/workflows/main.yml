@@ -33,6 +33,11 @@ jobs:
           create_release: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload build
+        uses: actions/upload-artifact@v1
+        with:
+          name: docs
+          path: docs
 
   # build:
   #   runs-on: ubuntu-latest
@@ -58,38 +63,33 @@ jobs:
   #     - name: Show docs
   #       run: |
   #         ls docs
-  #     - name: Upload build
-  #       uses: actions/upload-artifact@v1
-  #       with:
-  #         name: docs
-  #         path: docs
 
-  # deploy:
-  #   needs: build
-  #   if: github.ref == 'refs/heads/master'
-  #   runs-on: ubuntu-latest
-  #   container:
-  #     image: kronbergerspiele/ks-godot-ci:latest
-  #   env:
-  #     ITCHIO_USERNAME: ksjogo
-  #     ITCHIO_GAME: bloodfever
-  #     BUTLER_API_KEY: ${{ secrets.ITCHIO_API }}
-  #   steps:
-  #     - name: Download build
-  #       uses: actions/download-artifact@v1
-  #       with:
-  #         name: docs
-  #         path: docs
-  #     - name: Deploy Pages 🚀
-  #       uses: peaceiris/actions-gh-pages@v3
-  #       with:
-  #         github_token: ${{ secrets.GITHUB_TOKEN }}
-  #         publish_branch: gh-pages
-  #         publish_dir: ./docs
-  #     - name: Prepare Itch.io
-  #       run: |
-  #         rm ./docs/index.html ./docs/impressum.html
-  #         mv ./docs/game.html ./docs/index.html
-  #     - name: Deploy Itch.io
-  #       run: |
-  #         butler push ./docs $ITCHIO_USERNAME/$ITCHIO_GAME:web
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    # container:
+    #   image: kronbergerspiele/ks-godot-ci:latest
+    env:
+      ITCHIO_USERNAME: ksjogo
+      ITCHIO_GAME: bloodfever
+      BUTLER_API_KEY: ${{ secrets.ITCHIO_API }}
+    steps:
+      - name: Download build
+        uses: actions/download-artifact@v1
+        with:
+          name: docs
+          path: docs
+      - name: Deploy Pages 🚀
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./docs
+      - name: Prepare Itch.io
+        run: |
+          rm ./docs/index.html ./docs/impressum.html
+          mv ./docs/game.html ./docs/index.html
+      # - name: Deploy Itch.io
+      #   run: |
+      #     butler push ./docs $ITCHIO_USERNAME/$ITCHIO_GAME:web
