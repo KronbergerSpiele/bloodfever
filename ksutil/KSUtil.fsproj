@@ -4,13 +4,7 @@
     <OtherFlags>$(OtherFlags) --standalone</OtherFlags>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="util/**/*.fs" />
-    <Compile Include="actors/**/*.fs" />
-    <Compile Include="scenes/**/*.fs" />
-    <Compile Include="ui/**/*.fs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="KSUtil/KSUtil.fsproj" />
+    <Compile Include="**/*.fs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Update="FSharp.Core" Version="5.0.0"  />
