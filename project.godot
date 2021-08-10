@@ -46,6 +46,7 @@ pointing/emulate_touch_from_mouse=true
 
 [mono]
 
+export/include_scripts_content=true
 f#_tools/auto_generate_f#_scripts=false
 f#_tools/default_output_dir=""
 f#_tools/default_namespace=""
