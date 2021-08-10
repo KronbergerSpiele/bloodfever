@@ -26,6 +26,7 @@ jobs:
         run: |
           mkdir -p build
           godot --export-debug "ci" docs/game.html
+          cat /github/home/.local/share/godot/mono/mono_logs/*
           ls docs
       - name: Upload build
         uses: actions/upload-artifact@v1
