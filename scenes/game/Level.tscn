@@ -83,4 +83,5 @@ position = Vector2( 66.6154, 255.129 )
 [node name="TouchScreenButton" type="TouchScreenButton" parent="UI" index="1"]
 
 [node name="Pause" parent="UI" index="2" instance=ExtResource( 8 )]
+
 [connection signal="timeout" from="SpawnTimer" to="." method="OnSpawnTimer"]

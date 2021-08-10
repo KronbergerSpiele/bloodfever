@@ -25,4 +25,7 @@
   <ItemGroup>
     <ProjectReference Include="BloodFeverFs.fsproj" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="KSUtil/KSUtil.csproj" />
+  </ItemGroup>
 </Project>

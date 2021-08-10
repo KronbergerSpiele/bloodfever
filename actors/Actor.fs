@@ -2,6 +2,14 @@ namespace BloodFeverFs
 
 open Godot
 open System
+open KSUtil
+
+[<Flags>]
+type ActorType =
+    | None = 0x0
+    | Player = 0x1
+    | Goal = 0x2
+    | Enemy = 0x4
 
 type ActorFs() =
     inherit RigidBody2D()
@@ -12,13 +20,17 @@ type ActorFs() =
     [<Export>]
     let damage = 2
 
+    [<ExportFlagsEnum(typedefof<ActorType>)>]
+    let takeDamageFrom = 0
+
     member this._AnimatedSprite() =
         let path = new NodePath "AnimatedSprite"
         let node = this.GetNode path
         let sprite = node :?> AnimatedSprite
         sprite
 
-    member this.TouchingBodies = new System.Collections.Generic.SortedSet<ActorFs>()
+    member this.TouchingBodies =
+        new System.Collections.Generic.SortedSet<ActorFs>()
 
     override this.Equals(yobj) =
         match yobj with
@@ -44,25 +56,27 @@ type ActorFs() =
         this.R315HandleCollisions()
         this.R315HandleGraphics()
 
-    abstract R315Prefix: unit -> string
+    abstract R315Prefix : unit -> string
     default this.R315Prefix() = ""
 
-    abstract R315HonorRotation: unit -> bool
+    abstract R315HonorRotation : unit -> bool
     default this.R315HonorRotation() = true
 
-    abstract R315HandleCollisions: unit -> unit
+    abstract R315HandleCollisions : unit -> unit
     default this.R315HandleCollisions() = ()
 
-    abstract R315HandleGraphics: unit -> unit
+    abstract R315HandleGraphics : unit -> unit
 
     default this.R315HandleGraphics() =
         let sprite = this._AnimatedSprite ()
         let vel = this.LinearVelocity.Length()
         this.ZIndex <- int this.Position.y
+
         if vel < 1.0f then
             sprite.Stop()
         else
-            if not (sprite.Playing) then sprite.Play()
+            if not (sprite.Playing) then
+                sprite.Play()
 
             let nextAnimation =
                 if this.R315HonorRotation() then
@@ -71,48 +85,36 @@ type ActorFs() =
                 else
                     this.R315Prefix()
 
-            if nextAnimation <> sprite.Animation then sprite.Play nextAnimation
+            if nextAnimation <> sprite.Animation then
+                sprite.Play nextAnimation
 
 
-    abstract R315OrientationForRotation: float32 -> string
+    abstract R315OrientationForRotation : float32 -> string
 
     default this.R315OrientationForRotation rot =
         let rotation = float rot
+
         if rotation <= -Math.PI * 7.0 / 8.0 then
             "R180"
-        else if rotation > -Math.PI
-                * 7.0
-                / 8.0
+        else if rotation > -Math.PI * 7.0 / 8.0
                 && rotation <= -Math.PI * 5.0 / 8.0 then
             "R135"
-        else if rotation > -Math.PI
-                * 5.0
-                / 8.0
+        else if rotation > -Math.PI * 5.0 / 8.0
                 && rotation <= -Math.PI * 3.0 / 8.0 then
             "R090"
-        else if rotation > -Math.PI
-                * 3.0
-                / 8.0
+        else if rotation > -Math.PI * 3.0 / 8.0
                 && rotation <= -Math.PI * 1.0 / 8.0 then
             "R045"
-        else if rotation > -Math.PI
-                * 1.0
-                / 8.0
+        else if rotation > -Math.PI * 1.0 / 8.0
                 && rotation <= Math.PI * 1.0 / 8.0 then
             "R000"
-        else if rotation > Math.PI
-                * 1.0
-                / 8.0
+        else if rotation > Math.PI * 1.0 / 8.0
                 && rotation <= Math.PI * 3.0 / 8.0 then
             "R315"
-        else if rotation > Math.PI
-                * 3.0
-                / 8.0
+        else if rotation > Math.PI * 3.0 / 8.0
                 && rotation <= Math.PI * 5.0 / 8.0 then
             "R270"
-        else if rotation > Math.PI
-                * 5.0
-                / 8.0
+        else if rotation > Math.PI * 5.0 / 8.0
                 && rotation <= Math.PI * 7.0 / 8.0 then
             "R225"
         else if rotation > Math.PI * 7.0 / 8.0 then
