@@ -2,7 +2,7 @@ namespace BloodFeverFs
 
 open Godot
 open System
-open KSUtil
+// open KSUtil
 
 [<Flags>]
 type ActorType =
@@ -20,7 +20,7 @@ type ActorFs() =
     [<Export>]
     let damage = 2
 
-    [<ExportFlagsEnum(typedefof<ActorType>)>]
+    // [<ExportFlagsEnum(typedefof<ActorType>)>]
     let takeDamageFrom = 0
 
     member this._AnimatedSprite() =

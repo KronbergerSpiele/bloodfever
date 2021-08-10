@@ -13,9 +13,6 @@
     <ProjectReference Include="KSUtil/KSUtil.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="GodotSharp">
-      <HintPath>.mono/assemblies/Debug/GodotSharp.dll</HintPath>
-    </Reference>
     <PackageReference Update="FSharp.Core" Version="5.0.0"  />
   </ItemGroup>
 </Project>

@@ -25,13 +25,11 @@ jobs:
       - name: Prepare build
         run: |
           mkdir -p build
-      - name: Build Solutions
+      - name: Build and Export
         run: |
-          dotnet build BloodFever.sln
-          cat /github/home/.local/share/godot/mono/mono_logs/*
-      - name: Export
+          godot --export-debug "ci" docs/game.html
+      - name: Show docs
         run: |
-          godot --export "ci" docs/game.html
           ls docs
       - name: Upload build
         uses: actions/upload-artifact@v1
