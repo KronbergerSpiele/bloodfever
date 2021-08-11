@@ -64,6 +64,7 @@ animations = [ {
 [node name="Coffin" instance=ExtResource( 1 )]
 mode = 1
 mass = 65535.0
+takeDamageFrom = 4
 
 [node name="AnimatedSprite" parent="." index="1"]
 frames = SubResource( 1 )

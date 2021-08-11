@@ -12,6 +12,7 @@
     <Compile Include="actors\**\*.cs" />
     <Compile Include="scenes\**\*.cs" />
     <Compile Include="ui\**\*.cs" />
+    <Compile Include="ExportFlagsEnumAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="addons\**\*.cs" />
