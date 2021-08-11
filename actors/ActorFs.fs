@@ -2,6 +2,7 @@ namespace BloodFeverFs
 
 open Godot
 open System
+open KSUtil
 
 type ActorFs() =
     inherit RigidBody2D()
