@@ -13,7 +13,7 @@ type ExportFlagsEnumAttribute(enumType: Type) =
         let flagNamesByFlag = new Dictionary<uint64, List<string>>()
         let mutable flag = uint64 1
         for name in Enum.GetNames enumType do
-            let value = Enum.Parse(enumType, name) :?> uint64
+            let value = Convert.ToUInt64(Enum.Parse(enumType, name))
             while value > flag do
                 if not (flagNamesByFlag.ContainsKey flag) then
                     flagNamesByFlag.Add(flag, new List<string>())

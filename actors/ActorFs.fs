@@ -4,6 +4,13 @@ open Godot
 open System
 open KSUtil
 
+[<Flags>]
+type ActorType =
+    | None = 0x0
+    | Player = 0x1
+    | Goal = 0x2
+    | Enemy = 0x4
+
 type ActorFs() =
     inherit RigidBody2D()
 
@@ -12,6 +19,9 @@ type ActorFs() =
 
     [<Export>]
     let damage = 2
+
+    [<ExportFlagsEnum(typedefof<ActorType>)>]
+    let takeDamageFrom = 0
 
     member this._AnimatedSprite() =
         let path = new NodePath "AnimatedSprite"
@@ -39,6 +49,7 @@ type ActorFs() =
         base._Ready ()
         this.Inertia <- System.Single.PositiveInfinity
         this._AnimatedSprite().Play "R000"
+        GD.Print(hitpoints," ", damage," ", takeDamageFrom)
 
     override this._Process delta =
         base._Process delta
