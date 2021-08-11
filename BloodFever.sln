@@ -4,6 +4,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BloodFeverFs", "BloodFeverF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloodFever", "BloodFever.csproj", "{4DF9DF58-091A-432E-BF1E-4A28DC8BDD43}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "KSUtil", "ksutil\KSUtil.fsproj", "{E6B6A9C4-2578-47F4-9E0D-A059DAE14227}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,5 +25,11 @@ Global
 		{6FC76146-BCCC-40BD-BD5E-4789A2B66665}.ExportDebug|Any CPU.Build.0 = Debug|Any CPU
 		{6FC76146-BCCC-40BD-BD5E-4789A2B66665}.ExportRelease|Any CPU.ActiveCfg = Debug|Any CPU
 		{6FC76146-BCCC-40BD-BD5E-4789A2B66665}.ExportRelease|Any CPU.Build.0 = Debug|Any CPU
+		{E6B6A9C4-2578-47F4-9E0D-A059DAE14227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6B6A9C4-2578-47F4-9E0D-A059DAE14227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6B6A9C4-2578-47F4-9E0D-A059DAE14227}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{E6B6A9C4-2578-47F4-9E0D-A059DAE14227}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{E6B6A9C4-2578-47F4-9E0D-A059DAE14227}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{E6B6A9C4-2578-47F4-9E0D-A059DAE14227}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
 	EndGlobalSection
 EndGlobal

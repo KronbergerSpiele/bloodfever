@@ -4,14 +4,11 @@
     <OtherFlags>$(OtherFlags) --standalone</OtherFlags>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="actors/**/*.fs" />
-    <Compile Include="scenes/**/*.fs" />
-    <Compile Include="ui/**/*.fs" />
+    <Compile Include="**/*.fs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="ksutil/KSUtil.fsproj" />
     <Reference Include="GodotSharp">
-      <HintPath>.mono/assemblies/Debug/GodotSharp.dll</HintPath>
+      <HintPath>../.mono/assemblies/Debug/GodotSharp.dll</HintPath>
     </Reference>
     <PackageReference Update="FSharp.Core" Version="5.0.0"  />
   </ItemGroup>

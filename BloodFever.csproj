@@ -1,13 +1,10 @@
 ﻿<Project Sdk="Godot.NET.Sdk/3.3.0">
   <PropertyGroup>
-    <ProjectGuid>{4DF9DF58-091A-432E-BF1E-4A28DC8BDD43}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>BloodFever</RootNamespace>
     <AssemblyName>BloodFever</AssemblyName>
     <GodotProjectGeneratorVersion>1.0.0.0</GodotProjectGeneratorVersion>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <!--The following properties were overriden during migration to prevent errors.
-    Enabling them may require other manual changes to the project and its files.-->
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   </PropertyGroup>
   <ItemGroup>
