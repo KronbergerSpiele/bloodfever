@@ -1,5 +1,7 @@
 <Project Sdk="Godot.NET.Sdk/3.3.0">
   <PropertyGroup>
+    <RootNamespace>BloodFeverFs</RootNamespace>
+    <AssemblyName>BloodFeverFs</AssemblyName>
     <TargetFramework>netstandard2.1</TargetFramework>
     <OtherFlags>$(OtherFlags) --standalone</OtherFlags>
   </PropertyGroup>
