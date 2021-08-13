@@ -14,22 +14,25 @@ type ActorType =
 type ActorFs() =
     inherit RigidBody2D()
 
-    [<Export>]
-    let mutable hitpoints = 100
+    [<ExportFlagsEnum(typedefof<ActorType>)>]
+    member val actorType = 0 with get, set
 
     [<Export>]
-    let damage = 2
+    member val hitpoints = 100 with get, set
+
+    [<Export>]
+    member val damage = 2 with get, set
 
     [<ExportFlagsEnum(typedefof<ActorType>)>]
-    let takeDamageFrom = 0
+    member val takeDamageFrom = 0 with get, set
+
+    member val TouchingBodies = new System.Collections.Generic.SortedSet<ActorFs>()
 
     member this._AnimatedSprite() =
         let path = new NodePath "AnimatedSprite"
         let node = this.GetNode path
         let sprite = node :?> AnimatedSprite
         sprite
-
-    member this.TouchingBodies = new System.Collections.Generic.SortedSet<ActorFs>()
 
     override this.Equals(yobj) =
         match yobj with
@@ -49,7 +52,7 @@ type ActorFs() =
         base._Ready ()
         this.Inertia <- System.Single.PositiveInfinity
         this._AnimatedSprite().Play "R000"
-        GD.Print(hitpoints," ", damage," ", takeDamageFrom)
+        // GD.Print(this.hitpoints," ", this.damage," ", this.takeDamageFrom)
 
     override this._Process delta =
         base._Process delta
