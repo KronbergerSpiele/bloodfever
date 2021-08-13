@@ -1,7 +1,8 @@
 <Project Sdk="Godot.NET.Sdk/3.3.0">
   <PropertyGroup>
+    <RootNamespace>KSUtil</RootNamespace>
+    <AssemblyName>KSUtil</AssemblyName>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <OtherFlags>$(OtherFlags) --standalone</OtherFlags>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="**/*.fs" />
