@@ -59,9 +59,11 @@ polygon = PoolVector2Array( -8, 320, 488, 320, 488, 328, 376.721, 328, -8, 328, 
 
 [node name="Draco" parent="actors" index="0" instance=ExtResource( 1 )]
 position = Vector2( 146.573, 161.659 )
+mode = 0
 
 [node name="Zombie" parent="actors" index="1" instance=ExtResource( 2 )]
 position = Vector2( 316.843, 156.683 )
+mode = 0
 
 [node name="Coffin" parent="actors" index="2" instance=ExtResource( 5 )]
 
@@ -85,3 +87,9 @@ position = Vector2( 66.6154, 255.129 )
 [node name="Pause" parent="UI" index="2" instance=ExtResource( 8 )]
 
 [connection signal="timeout" from="SpawnTimer" to="." method="OnSpawnTimer"]
+[connection signal="body_entered" from="actors/Draco" to="actors/Draco" method="OnBodyEntered"]
+[connection signal="body_exited" from="actors/Draco" to="actors/Draco" method="OnBodyExcited"]
+[connection signal="body_entered" from="actors/Zombie" to="actors/Zombie" method="OnBodyEntered"]
+[connection signal="body_exited" from="actors/Zombie" to="actors/Zombie" method="OnBodyExcited"]
+[connection signal="body_entered" from="actors/Coffin" to="actors/Coffin" method="OnBodyEntered"]
+[connection signal="body_exited" from="actors/Coffin" to="actors/Coffin" method="OnBodyExcited"]

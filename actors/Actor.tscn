@@ -86,6 +86,7 @@ animations = [ {
 
 [node name="Actor" type="RigidBody2D"]
 position = Vector2( 240, 160 )
+mode = 2
 script = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -95,5 +96,3 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "R000"
-[connection signal="body_entered" from="." to="." method="onBodyEntered"]
-[connection signal="body_exited" from="." to="." method="onBodyExcited"]

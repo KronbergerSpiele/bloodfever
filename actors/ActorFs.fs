@@ -11,11 +11,17 @@ type ActorType =
     | Goal = 0x2
     | Enemy = 0x4
 
+[<Flags>]
+type DamageMode =
+    | None = 0x0
+    | Deals = 0x1
+    | Takes = 0x2
+
 type ActorFs() =
     inherit RigidBody2D()
 
     [<ExportFlagsEnum(typedefof<ActorType>)>]
-    member val actorType = 0 with get, set
+    member val actorType = ActorType.None with get, set
 
     [<Export>]
     member val hitpoints = 100 with get, set
@@ -24,9 +30,11 @@ type ActorFs() =
     member val damage = 2 with get, set
 
     [<ExportFlagsEnum(typedefof<ActorType>)>]
-    member val takeDamageFrom = 0 with get, set
+    member val damageTakeFrom = ActorType.None with get, set
 
-    member val TouchingBodies = new System.Collections.Generic.SortedSet<ActorFs>()
+    [<ExportFlagsEnum(typedefof<DamageMode>)>]
+    member val damageMode = DamageMode.None with get, set
+
 
     member this._AnimatedSprite() =
         let path = new NodePath "AnimatedSprite"
@@ -50,34 +58,56 @@ type ActorFs() =
 
     override this._Ready() =
         base._Ready ()
-        this.Inertia <- System.Single.PositiveInfinity
+        this.Inertia <- Single.PositiveInfinity
         this._AnimatedSprite().Play "R000"
-        // GD.Print(this.hitpoints," ", this.damage," ", this.takeDamageFrom)
 
     override this._Process delta =
         base._Process delta
         this.R315HandleCollisions()
         this.R315HandleGraphics()
 
-    abstract R315Prefix: unit -> string
+    abstract R315Prefix : unit -> string
     default this.R315Prefix() = ""
 
-    abstract R315HonorRotation: unit -> bool
+    abstract R315HonorRotation : unit -> bool
     default this.R315HonorRotation() = true
 
-    abstract R315HandleCollisions: unit -> unit
-    default this.R315HandleCollisions() = ()
+    member this.CollidingActors =
+        [ for body in this.GetCollidingBodies() do
+              match body with
+              | :? ActorFs as actor -> yield actor
+              | _ -> () ]
 
-    abstract R315HandleGraphics: unit -> unit
+    abstract R315HandleCollisions : unit -> unit
+
+    default this.R315HandleCollisions() =
+        let potentiallyDealDamage (origin: ActorFs, target: ActorFs) =
+            if (target.damageTakeFrom &&& origin.actorType)
+               <> ActorType.None then
+                target.ApplyDamage(origin.damage, origin.actorType)
+
+        if (this.damageMode &&& DamageMode.Deals)
+           <> DamageMode.None then
+            for other in this.CollidingActors do
+                potentiallyDealDamage (this, other)
+
+        if (this.damageMode &&& DamageMode.Takes)
+           <> DamageMode.None then
+            for other in this.CollidingActors do
+                potentiallyDealDamage (other, this)
+
+    abstract R315HandleGraphics : unit -> unit
 
     default this.R315HandleGraphics() =
         let sprite = this._AnimatedSprite ()
         let vel = this.LinearVelocity.Length()
         this.ZIndex <- int this.Position.y
+
         if vel < 1.0f then
             sprite.Stop()
         else
-            if not (sprite.Playing) then sprite.Play()
+            if not (sprite.Playing) then
+                sprite.Play()
 
             let nextAnimation =
                 if this.R315HonorRotation() then
@@ -86,48 +116,36 @@ type ActorFs() =
                 else
                     this.R315Prefix()
 
-            if nextAnimation <> sprite.Animation then sprite.Play nextAnimation
+            if nextAnimation <> sprite.Animation then
+                sprite.Play nextAnimation
 
 
-    abstract R315OrientationForRotation: float32 -> string
+    abstract R315OrientationForRotation : float32 -> string
 
     default this.R315OrientationForRotation rot =
         let rotation = float rot
+
         if rotation <= -Math.PI * 7.0 / 8.0 then
             "R180"
-        else if rotation > -Math.PI
-                * 7.0
-                / 8.0
+        else if rotation > -Math.PI * 7.0 / 8.0
                 && rotation <= -Math.PI * 5.0 / 8.0 then
             "R135"
-        else if rotation > -Math.PI
-                * 5.0
-                / 8.0
+        else if rotation > -Math.PI * 5.0 / 8.0
                 && rotation <= -Math.PI * 3.0 / 8.0 then
             "R090"
-        else if rotation > -Math.PI
-                * 3.0
-                / 8.0
+        else if rotation > -Math.PI * 3.0 / 8.0
                 && rotation <= -Math.PI * 1.0 / 8.0 then
             "R045"
-        else if rotation > -Math.PI
-                * 1.0
-                / 8.0
+        else if rotation > -Math.PI * 1.0 / 8.0
                 && rotation <= Math.PI * 1.0 / 8.0 then
             "R000"
-        else if rotation > Math.PI
-                * 1.0
-                / 8.0
+        else if rotation > Math.PI * 1.0 / 8.0
                 && rotation <= Math.PI * 3.0 / 8.0 then
             "R315"
-        else if rotation > Math.PI
-                * 3.0
-                / 8.0
+        else if rotation > Math.PI * 3.0 / 8.0
                 && rotation <= Math.PI * 5.0 / 8.0 then
             "R270"
-        else if rotation > Math.PI
-                * 5.0
-                / 8.0
+        else if rotation > Math.PI * 5.0 / 8.0
                 && rotation <= Math.PI * 7.0 / 8.0 then
             "R225"
         else if rotation > Math.PI * 7.0 / 8.0 then
@@ -135,13 +153,10 @@ type ActorFs() =
         else
             "R000"
 
+    abstract ApplyDamage : int * ActorType -> unit
 
-    member this.onBodyEntered(body: Node) =
-        match body with
-        | :? ActorFs as actor -> this.TouchingBodies.Add actor
-        | _ -> false
+    default this.ApplyDamage(amount, from) =
+        this.hitpoints <- this.hitpoints - amount
 
-    member this.onBodyExcited(body: Node) =
-        match body with
-        | :? ActorFs as actor -> this.TouchingBodies.Remove actor
-        | _ -> false
+        if this.hitpoints <= 0 then
+            this.QueueFree()
