@@ -12,9 +12,9 @@ public class Level : Base
         return GetNode("UI");
     }
 
-    public Draco Draco()
+    public Actor Draco()
     {
-        return GetNode<Draco>("actors/Draco");
+        return GetNode<Actor>("actors/Draco");
     }
 
     public Node Actors()
