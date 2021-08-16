@@ -87,9 +87,3 @@ position = Vector2( 66.6154, 255.129 )
 [node name="Pause" parent="UI" index="2" instance=ExtResource( 8 )]
 
 [connection signal="timeout" from="SpawnTimer" to="." method="OnSpawnTimer"]
-[connection signal="body_entered" from="actors/Draco" to="actors/Draco" method="OnBodyEntered"]
-[connection signal="body_exited" from="actors/Draco" to="actors/Draco" method="OnBodyExcited"]
-[connection signal="body_entered" from="actors/Zombie" to="actors/Zombie" method="OnBodyEntered"]
-[connection signal="body_exited" from="actors/Zombie" to="actors/Zombie" method="OnBodyExcited"]
-[connection signal="body_entered" from="actors/Coffin" to="actors/Coffin" method="OnBodyEntered"]
-[connection signal="body_exited" from="actors/Coffin" to="actors/Coffin" method="OnBodyExcited"]
