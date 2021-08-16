@@ -12,10 +12,9 @@
     <Compile Include="actors\**\*.cs" />
     <Compile Include="scenes\**\*.cs" />
     <Compile Include="ui\**\*.cs" />
-    <Compile Include="ExportFlagsEnumAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addons\**\*.cs" />
+    <Compile Include="ksgodot\**\*.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="BloodFeverFs.fsproj" />
