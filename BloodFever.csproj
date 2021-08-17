@@ -14,9 +14,7 @@
     <Compile Include="ui\**\*.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ksgodot\**\*.cs" />
-  </ItemGroup>
-  <ItemGroup>
+    <!-- <ProjectReference Include="ksgodot/KSGodot.fsproj" /> -->
     <ProjectReference Include="BloodFeverFs.fsproj" />
   </ItemGroup>
 </Project>

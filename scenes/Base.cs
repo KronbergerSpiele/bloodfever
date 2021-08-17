@@ -1,9 +1,10 @@
 using Godot;
 using System;
+using KSGodot;
 
 public class Base : Node2D
 {
-    public KSPage Page;
+    public Page Page;
 
     public Global Global()
     {
@@ -20,7 +21,7 @@ public class Base : Node2D
     public override void _EnterTree()
     {
         base._EnterTree();
-        Page = new KSPage(GetNode("CanvasLayer/Page"), Global().LastSceneSnapshot);
+        Page = new Page(GetNode("CanvasLayer/Page"), Global().LastSceneSnapshot);
     }
 
     protected int ticks = 0;

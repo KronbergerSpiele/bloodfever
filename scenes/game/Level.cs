@@ -1,11 +1,12 @@
 using Godot;
+using KSGodot;
 
 public class Level : Base
 {
     [Export]
     public PackedScene ZombieTemplate;
 
-    public KSStick Stick;
+    public Stick Stick;
 
     public Node UI()
     {
@@ -25,9 +26,7 @@ public class Level : Base
     public override void _Ready()
     {
         base._Ready();
-        Stick = new KSStick(
-                   GetNode("UI/Stick")
-               );
+        Stick = new Stick(GetNode("UI/Stick"));
     }
 
     public override void _Process(float delta)

@@ -17,17 +17,21 @@ jobs:
         with:
           persist-credentials: false
           submodules: true
-      - name: Setup
+
+      - name: Setup Templates
+        if: ${{ !env.ACT }}
         run: |
           mkdir -v -p ~/.local/share/godot/templates
           rm -rf ~/.local/share/godot/templates/*
           mv /root/.local/share/godot/templates/* ~/.local/share/godot/templates/
-      - name: Build
+
+      - name: Build and Export
         run: |
-          mkdir -p build
           godot --export-debug "ci" docs/game.html
-          ls docs
+          ls -lah docs
+
       - name: Upload build
+        if: ${{ !env.ACT }}
         uses: actions/upload-artifact@v1
         with:
           name: docs
@@ -45,20 +49,27 @@ jobs:
       BUTLER_API_KEY: ${{ secrets.ITCHIO_API }}
     steps:
       - name: Download build
+        if: ${{ !env.ACT }}
         uses: actions/download-artifact@v1
         with:
           name: docs
           path: docs
+
       - name: Deploy Pages 🚀
+        if: ${{ !env.ACT }}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
           publish_dir: ./docs
+
       - name: Prepare Itch.io
+        if: ${{ !env.ACT }}
         run: |
           rm ./docs/index.html ./docs/impressum.html
           mv ./docs/game.html ./docs/index.html
+
       - name: Deploy Itch.io
+        if: ${{ !env.ACT }}
         run: |
           butler push ./docs $ITCHIO_USERNAME/$ITCHIO_GAME:web
