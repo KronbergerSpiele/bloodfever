@@ -1,3 +1,1 @@
-using BloodFeverFs;
-
-public class Actor : ActorFs { }
+public class Actor : BloodFeverFs.Actor { }

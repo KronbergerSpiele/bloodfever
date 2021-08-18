@@ -17,7 +17,7 @@ type DamageMode =
     | Deals = 0x1
     | Takes = 0x2
 
-type ActorFs() =
+type Actor() =
     inherit RigidBody2D()
 
     [<ExportFlagsEnum(typedefof<ActorType>)>]
@@ -44,7 +44,7 @@ type ActorFs() =
 
     override this.Equals(yobj) =
         match yobj with
-        | :? ActorFs as y -> (this.GetInstanceId() = y.GetInstanceId())
+        | :? Actor as y -> (this.GetInstanceId() = y.GetInstanceId())
         | _ -> false
 
     override x.GetHashCode() =
@@ -53,7 +53,7 @@ type ActorFs() =
     interface System.IComparable with
         member x.CompareTo yobj =
             match yobj with
-            | :? ActorFs as y -> x.GetInstanceId().CompareTo(y.GetInstanceId())
+            | :? Actor as y -> x.GetInstanceId().CompareTo(y.GetInstanceId())
             | _ -> invalidArg "yobj" "cannot compare values of different types"
 
     override this._Ready() =
@@ -75,13 +75,13 @@ type ActorFs() =
     member this.CollidingActors =
         [ for body in this.GetCollidingBodies() do
               match body with
-              | :? ActorFs as actor -> yield actor
+              | :? Actor as actor -> yield actor
               | _ -> () ]
 
     abstract R315HandleCollisions : unit -> unit
 
     default this.R315HandleCollisions() =
-        let potentiallyDealDamage (origin: ActorFs, target: ActorFs) =
+        let potentiallyDealDamage (origin: Actor, target: Actor) =
             if (target.damageTakeFrom &&& origin.actorType)
                <> ActorType.None then
                 target.ApplyDamage(origin.damage, origin.actorType)
