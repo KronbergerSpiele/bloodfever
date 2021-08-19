@@ -27,7 +27,9 @@ jobs:
 
       - name: Build and Export
         run: |
-          godot --export-debug "ci" docs/game.html
+          godot --export-debug "ci" docs/game.html > build.log
+          cat build.log
+          grep -qv "Failed to build project" build.log
           ls -lah docs
 
       - name: Upload build
