@@ -2,7 +2,7 @@ using Godot;
 using System;
 using KSGodot;
 
-public class Base : Node2D
+public class Base : BloodFeverFs.Base
 {
     public Page Page;
 

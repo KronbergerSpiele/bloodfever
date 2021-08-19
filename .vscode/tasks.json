@@ -4,14 +4,15 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "msbuild",
+            "command": "dotnet",
             "args": [
+                "build",
                 "BloodFever.sln"
             ],
             "group": "build",
-            "presentation": {
-                "reveal": "silent"
-            },
+            // "presentation": {
+            //     "reveal": "silent"
+            // },
             "problemMatcher": "$msCompile"
         }
     ]

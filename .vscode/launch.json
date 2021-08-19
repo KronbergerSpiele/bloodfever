@@ -22,7 +22,7 @@
             "launch_game_instance": true,
             "launch_scene": true,
             "preLaunchTask": "build",
-            "scene_file": "./scenes/loading/Loading.tscn"
+            // "scene_file": "./scenes/loading/Loading.tscn"
         },
         {
             "name": "Attach",
