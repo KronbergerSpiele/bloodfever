@@ -2,7 +2,7 @@ namespace BloodFeverFs
 
 open Godot
 open System
-open KSUtil
+open KSGodot
 
 [<Flags>]
 type ActorType =

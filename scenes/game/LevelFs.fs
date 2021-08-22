@@ -3,5 +3,5 @@ namespace BloodFeverFs
 open Godot
 open System
 
-// type LevelFs() = 
-    // inherit Base()
+type Level() =
+    inherit Base()

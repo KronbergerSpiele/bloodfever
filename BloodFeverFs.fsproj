@@ -6,9 +6,7 @@
     <OtherFlags>$(OtherFlags) --standalone</OtherFlags>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="actors/**/*.fs" />
-    <Compile Include="scenes/**/*.fs" />
-    <Compile Include="ui/**/*.fs" />
+    <Compile Include="**/*.fs" Exclude="ksgodot/**/*.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="ksgodot/KSGodot.fsproj" />

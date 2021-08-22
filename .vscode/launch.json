@@ -2,6 +2,18 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Run Diner",
+            "type": "godot",
+            "request": "launch",
+            "project": "${workspaceFolder}",
+            "port": 6007,
+            "address": "127.0.0.1",
+            "launch_game_instance": true,
+            "launch_scene": true,
+            "preLaunchTask": "build",
+            "scene_file": "./scenes/game/Diner.tscn"
+        },
+        {
             "name": "Run",
             "type": "godot",
             "request": "launch",

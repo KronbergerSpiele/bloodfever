@@ -4,6 +4,6 @@ public class About : Base
 {
     public void OnAboutPressed()
     {
-        switchTo("res://scenes/menu/Menu.tscn");
+        SwitchTo("res://scenes/menu/Menu.tscn");
     }
 }

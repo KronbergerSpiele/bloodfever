@@ -1,7 +1,7 @@
 using Godot;
 using KSGodot;
 
-public class Level : Base
+public class Level : BloodFeverFs.Level
 {
     [Export]
     public PackedScene ZombieTemplate;
@@ -38,7 +38,7 @@ public class Level : Base
     public void OnSpawnTimer()
     {
         var mobSpawnLocation = GetNode<PathFollow2D>("SpawnPath/SpawnLocation");
-        mobSpawnLocation.Offset = _random.Next();
+        mobSpawnLocation.Offset = NextRandom();
 
         var mobInstance = (Actor)ZombieTemplate.Instance();
         Actors().AddChild(mobInstance);

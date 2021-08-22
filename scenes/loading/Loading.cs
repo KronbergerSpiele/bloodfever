@@ -10,6 +10,6 @@ public class Loading : Base
 
     public void OnTimerTimeout()
     {
-        switchTo("res://scenes/menu/Menu.tscn");
+        SwitchTo("res://scenes/menu/Menu.tscn");
     }
 }
