@@ -18,7 +18,6 @@ _data = {
 
 [node name="Level" instance=ExtResource( 10 )]
 script = ExtResource( 7 )
-ZombieTemplate = ExtResource( 2 )
 
 [node name="Background" type="CanvasLayer" parent="." index="1"]
 layer = -1
