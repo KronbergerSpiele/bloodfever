@@ -1,1 +1,1 @@
-public class Actor : BloodFeverFs.Actor { }
+public class Actor : BloodFeverFs.Actors.Actor { }

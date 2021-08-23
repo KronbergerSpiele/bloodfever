@@ -1,2 +1,1 @@
-public class Base : BloodFeverFs.Base { }
-
+public class Base : BloodFeverFs.Scene.Base { }

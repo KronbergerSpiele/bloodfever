@@ -6,6 +6,9 @@
     <OtherFlags>$(OtherFlags) --standalone</OtherFlags>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Global.fs" />
+    <Compile Include="scenes/Base.fs" />
+    <Compile Include="actors/Actor.fs" />
     <Compile Include="**/*.fs" Exclude="ksgodot/**/*.fs" />
   </ItemGroup>
   <ItemGroup>

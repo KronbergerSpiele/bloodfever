@@ -1,4 +1,4 @@
-namespace BloodFeverFs
+namespace BloodFeverFs.Actors
 
 open Godot
 open System

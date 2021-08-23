@@ -1,1 +1,1 @@
-public class Level : BloodFeverFs.Level { }
+public class Level : BloodFeverFs.Scene.Level { }

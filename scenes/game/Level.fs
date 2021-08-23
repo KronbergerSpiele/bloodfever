@@ -1,5 +1,6 @@
-namespace BloodFeverFs
+namespace BloodFeverFs.Scene
 
+open BloodFeverFs.Actors
 open Godot
 open KSGodot
 open KSGodotUtils
