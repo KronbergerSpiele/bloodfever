@@ -32,5 +32,6 @@ margin_top = 235.18
 margin_right = 451.863
 margin_bottom = 290.18
 label = "About"
+
 [connection signal="pressed" from="Start" to="." method="OnStartPressed"]
 [connection signal="pressed" from="About" to="." method="OnAboutPressed"]
