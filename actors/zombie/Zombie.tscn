@@ -37,11 +37,6 @@ radius = 10.9608
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
-"loop": true,
-"name": "T",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 20 ), ExtResource( 11 ), ExtResource( 24 ) ],
 "loop": true,
 "name": "R270",
@@ -81,6 +76,11 @@ animations = [ {
 "loop": true,
 "name": "R045",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "T",
+"speed": 5.0
 } ]
 
 [node name="Zombie" instance=ExtResource( 1 )]
@@ -94,4 +94,5 @@ position = Vector2( 1.8652, 14.2221 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" parent="." index="1"]
+position = Vector2( 0, 0.275391 )
 frames = SubResource( 2 )

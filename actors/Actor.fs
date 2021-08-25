@@ -3,6 +3,7 @@ namespace BloodFeverFs.Actors
 open Godot
 open System
 open KSGodot
+open KSGodotUtils
 
 [<Flags>]
 type ActorType =
@@ -35,12 +36,11 @@ type Actor() =
     [<ExportFlagsEnum(typedefof<DamageMode>)>]
     member val damageMode = DamageMode.None with get, set
 
+    member this.Sprite() =
+        this.getNode<AnimatedSprite> ("AnimatedSprite")
 
-    member this._AnimatedSprite() =
-        let path = new NodePath "AnimatedSprite"
-        let node = this.GetNode path
-        let sprite = node :?> AnimatedSprite
-        sprite
+    member this.Animations() =
+        this.getNode<AnimationPlayer> ("AnimationPlayer")
 
     override this.Equals(yobj) =
         match yobj with
@@ -59,7 +59,7 @@ type Actor() =
     override this._Ready() =
         base._Ready ()
         this.Inertia <- Single.PositiveInfinity
-        this._AnimatedSprite().Play "R000"
+        this.Sprite().Play "R000"
 
     override this._Process delta =
         base._Process delta
@@ -99,7 +99,7 @@ type Actor() =
     abstract R315HandleGraphics : unit -> unit
 
     default this.R315HandleGraphics() =
-        let sprite = this._AnimatedSprite ()
+        let sprite = this.Sprite()
         let vel = this.LinearVelocity.Length()
         this.ZIndex <- int this.Position.y
 
@@ -157,6 +157,8 @@ type Actor() =
 
     default this.ApplyDamage(amount, from) =
         this.hitpoints <- this.hitpoints - amount
+
+        this.Animations().Play("Hit")
 
         if this.hitpoints <= 0 then
             this.QueueFree()
