@@ -13,4 +13,4 @@ type Global() =
     member val LastScene: Option<Node2D> = None with get, set
 
 
-    member this.Audio() = this.getNode<Audio> ("/root/Audio")
+    member this.BackgroundAudio() = this.getNode<BackgroundAudio> ("/root/Audio")

@@ -26,7 +26,7 @@ type Base() =
         if not (isNull this.backgroundMusic) then
             this
                 .Global()
-                .Audio()
+                .BackgroundAudio()
                 .PlayBackground(this.backgroundMusic)
 
     member val private ticks = 0 with get, set

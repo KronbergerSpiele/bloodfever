@@ -1,5 +1,7 @@
 namespace BloodFeverFs.Actors
 
+open BloodFeverFs.Audio
+
 open Godot
 open System
 open KSGodot
@@ -28,6 +30,9 @@ type Actor() =
     member val hitpoints = 100 with get, set
 
     [<Export>]
+    member val hitSound: AudioStream = null with get, set
+
+    [<Export>]
     member val damage = 2 with get, set
 
     [<ExportFlagsEnum(typedefof<ActorType>)>]
@@ -41,6 +46,9 @@ type Actor() =
 
     member this.Animations() =
         this.getNode<AnimationPlayer> ("AnimationPlayer")
+
+    member this.Audio() =
+        this.getNode<LocalAudio> ("AudioPlayer")
 
     override this.Equals(yobj) =
         match yobj with
@@ -159,6 +167,11 @@ type Actor() =
         this.hitpoints <- this.hitpoints - amount
 
         this.Animations().Play("Hit")
+
+        if not (isNull this.hitSound) then
+            this.Audio().Stop()
+            this.Audio().Stream <- this.hitSound
+            this.Audio().Play()
 
         if this.hitpoints <= 0 then
             this.QueueFree()

@@ -3,7 +3,7 @@ namespace BloodFeverFs.Audio
 open Godot
 open KSGodotUtils
 
-type Audio() =
+type BackgroundAudio() =
     inherit Node()
 
     member this.BackgroundPlayer0() =

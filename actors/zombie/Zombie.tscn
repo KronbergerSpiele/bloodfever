@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://actors/Actor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/zombie/zombieR315S0.png" type="Texture" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://actors/zombie/zombieT06.png" type="Texture" id=29]
 [ext_resource path="res://actors/zombie/zombieR225S2.png" type="Texture" id=30]
 [ext_resource path="res://actors/zombie/zombieR0S1.png" type="Texture" id=31]
+[ext_resource path="res://actors/zombie/hit.ogg" type="AudioStream" id=32]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 10.9608
@@ -87,6 +88,7 @@ animations = [ {
 collision_layer = 4
 collision_mask = 7
 actorType = 4
+hitSound = ExtResource( 32 )
 damageTakeFrom = 1
 
 [node name="CollisionShape2D" parent="." index="0"]
