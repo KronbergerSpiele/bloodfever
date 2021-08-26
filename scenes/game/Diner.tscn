@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/game/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/game/diner.ogg" type="AudioStream" id=2]
 
 [node name="Diner" instance=ExtResource( 1 )]
+backgroundMusic = ExtResource( 2 )
 
 [node name="Car" type="StaticBody2D" parent="." index="3"]
 

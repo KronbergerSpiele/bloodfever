@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/diner.ogg-3ee311752d6baf5548b4bd8071eaad01.oggstr"
+
+[deps]
+
+source_file="res://scenes/game/diner.ogg"
+dest_files=[ "res://.import/diner.ogg-3ee311752d6baf5548b4bd8071eaad01.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -6,6 +6,7 @@
     <OtherFlags>$(OtherFlags) --standalone</OtherFlags>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="audio/**/*.fs" />
     <Compile Include="Global.fs" />
     <Compile Include="scenes/Base.fs" />
     <Compile Include="actors/Actor.fs" />

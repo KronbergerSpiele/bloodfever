@@ -9,6 +9,9 @@ open System
 type Base() =
     inherit Node2D()
 
+    [<Export>]
+    member val backgroundMusic: AudioStream = null with get, set
+
     member val Page: Option<Page> = None with get, set
 
     member val private random = Random()
@@ -19,6 +22,12 @@ type Base() =
     override this._EnterTree() =
         base._EnterTree ()
         this.Page <- Some(Page(this.getNode ("CanvasLayer/Page"), this.Global().LastSceneSnapshot))
+
+        if not (isNull this.backgroundMusic) then
+            this
+                .Global()
+                .Audio()
+                .PlayBackground(this.backgroundMusic)
 
     member val private ticks = 0 with get, set
 
