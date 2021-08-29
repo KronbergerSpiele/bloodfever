@@ -1,10 +1,9 @@
 namespace BloodFeverFs.Actors
 
-open BloodFeverFs.Audio
-
 open Godot
 open System
 open KSGodot
+open KSGodot.Audio
 open KSGodotUtils
 
 [<Flags>]
@@ -169,9 +168,9 @@ type Actor() =
         this.Animations().Play("Hit")
 
         if not (isNull this.hitSound) then
-            this.Audio().Stop()
-            this.Audio().Stream <- this.hitSound
-            this.Audio().Play()
+            GD.Print("hit hit")
+            // this.Audio().Stream <- this.hitSound
+            // this.Audio().Play()
 
         if this.hitpoints <= 0 then
             this.QueueFree()

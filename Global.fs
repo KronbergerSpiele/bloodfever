@@ -1,6 +1,6 @@
 namespace BloodFeverFs
 
-open BloodFeverFs.Audio
+open KSGodot.Audio
 
 open Godot
 open KSGodotUtils
@@ -13,4 +13,5 @@ type Global() =
     member val LastScene: Option<Node2D> = None with get, set
 
 
-    member this.BackgroundAudio() = this.getNode<BackgroundAudio> ("/root/Audio")
+    member this.BackgroundAudio() =
+        this.getNode<BackgroundAudio> ("/root/Audio")
