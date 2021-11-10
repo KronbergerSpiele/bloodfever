@@ -168,9 +168,7 @@ type Actor() =
         this.Animations().Play("Hit")
 
         if not (isNull this.hitSound) then
-            GD.Print("hit hit")
-            // this.Audio().Stream <- this.hitSound
-            // this.Audio().Play()
+            this.Audio().Play(this.hitSound, "hit")
 
         if this.hitpoints <= 0 then
             this.QueueFree()

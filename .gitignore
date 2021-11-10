@@ -19,3 +19,5 @@ obj/
 .vs/
 .ionide/
 .fake
+
+.DS_Store
