@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/about/aboutscreen_blank.png" type="Texture" id=2]
 [ext_resource path="res://scenes/about/textfield_about.png" type="Texture" id=3]
 [ext_resource path="res://ui/Buttons/Close.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/about/About.cs" type="Script" id=5]
+[ext_resource path="res://scenes/about/About.gd" type="Script" id=5]
 [ext_resource path="res://ui/Label.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFontData" id=1]
@@ -53,9 +53,10 @@ margin_left = 13.6059
 margin_top = 308.256
 margin_right = 502.606
 margin_bottom = 452.256
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Copyright (c) 2020 Johannes Goslar, Lars-Arne Kalusky, dkd Internet Service GmbH
 "
-[connection signal="pressed" from="Close" to="." method="OnAboutPressed"]
+
+[connection signal="pressed" from="Close" to="." method="onClose"]

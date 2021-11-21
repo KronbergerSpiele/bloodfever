@@ -1,0 +1,22 @@
+{
+  "name": "bloodfever",
+  "version": "1.0.0",
+  "description": "BloodFever ---------- Copyright (c) 2021 Johannes Goslar, Lars-Arne Kalusky, dkd Internet Service GmbH. All rights reserved.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KronbergerSpiele/bloodfever.git"
+  },
+  "author": "",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/KronbergerSpiele/bloodfever/issues"
+  },
+  "homepage": "https://github.com/KronbergerSpiele/bloodfever#readme",
+  "dependencies": {
+    "ts2gd": "github:KronbergerSpiele/ts2gd"
+  }
+}

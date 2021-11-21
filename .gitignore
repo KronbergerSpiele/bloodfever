@@ -1,4 +1,7 @@
 
+# ts2gd
+_godot_defs/
+
 # Godot-specific ignores
 .import/
 
@@ -21,3 +24,4 @@ obj/
 .fake
 
 .DS_Store
+/node_modules/

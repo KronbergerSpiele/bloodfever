@@ -8,8 +8,98 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Base",
+"class": "About",
+"language": "GDScript",
+"path": "res://scenes/about/About.gd"
+}, {
+"base": "ActorEquality",
+"class": "Actor",
+"language": "GDScript",
+"path": "res://actors/Actor.gd"
+}, {
+"base": "RigidBody2D",
+"class": "ActorEquality",
+"language": "GDScript",
+"path": "res://actors/ActorEquality.gd"
+}, {
+"base": "Node",
+"class": "BackgroundAudio",
+"language": "GDScript",
+"path": "res://ksgodot/audio/BackgroundAudio.gd"
+}, {
+"base": "Node2D",
+"class": "Base",
+"language": "GDScript",
+"path": "res://scenes/Base.gd"
+}, {
+"base": "Node",
+"class": "GlobalHelper",
+"language": "GDScript",
+"path": "res://Global.gd"
+}, {
+"base": "Base",
+"class": "Level",
+"language": "GDScript",
+"path": "res://scenes/game/Level.gd"
+}, {
+"base": "Node2D",
+"class": "Lifebar",
+"language": "GDScript",
+"path": "res://ui/Lifebar/Lifebar.gd"
+}, {
+"base": "Base",
+"class": "Loading",
+"language": "GDScript",
+"path": "res://scenes/loading/Loading.gd"
+}, {
+"base": "Node",
+"class": "LocalAudio",
+"language": "GDScript",
+"path": "res://ksgodot/audio/LocalAudio.gd"
+}, {
+"base": "Base",
+"class": "Menu",
+"language": "GDScript",
+"path": "res://scenes/menu/Menu.gd"
+}, {
+"base": "Node2D",
+"class": "Page",
+"language": "GDScript",
+"path": "res://ksgodot/page/Page.gd"
+}, {
+"base": "Node2D",
+"class": "Pause",
+"language": "GDScript",
+"path": "res://ui/Pause/Pause.gd"
+}, {
+"base": "TextureButton",
+"class": "SpeechBase",
+"language": "GDScript",
+"path": "res://ui/Buttons/SpeechBase.gd"
+}, {
+"base": "Node2D",
+"class": "Stick",
+"language": "GDScript",
+"path": "res://ksgodot/stick/Stick.gd"
+} ]
 _global_script_class_icons={
+"About": "",
+"Actor": "",
+"ActorEquality": "",
+"BackgroundAudio": "",
+"Base": "",
+"GlobalHelper": "",
+"Level": "",
+"Lifebar": "",
+"Loading": "",
+"LocalAudio": "",
+"Menu": "",
+"Page": "",
+"Pause": "",
+"SpeechBase": "",
+"Stick": ""
 }
 
 [application]
@@ -24,7 +114,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Audio="*res://ksgodot/audio/Audio.tscn"
+Audio="*res://ksgodot/audio/BackgroundAudio.tscn"
 Global="*res://Global.tscn"
 
 [display]
@@ -49,12 +139,6 @@ pointing/emulate_touch_from_mouse=true
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Goal"
 2d_physics/layer_3="Enemy"
-
-[mono]
-
-f#_tools/auto_generate_f#_scripts=false
-f#_tools/default_output_dir=""
-f#_tools/default_namespace=""
 
 [physics]
 

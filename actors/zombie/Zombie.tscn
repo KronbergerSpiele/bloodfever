@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://actors/Actor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/zombie/zombieR315S0.png" type="Texture" id=2]
@@ -31,26 +31,15 @@
 [ext_resource path="res://actors/zombie/zombieT06.png" type="Texture" id=29]
 [ext_resource path="res://actors/zombie/zombieR225S2.png" type="Texture" id=30]
 [ext_resource path="res://actors/zombie/zombieR0S1.png" type="Texture" id=31]
-[ext_resource path="res://actors/zombie/hit.ogg" type="AudioStream" id=32]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 10.9608
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 10 ), ExtResource( 6 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": true,
-"name": "R135",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 19 ), ExtResource( 31 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "R000",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 30 ) ],
-"loop": true,
-"name": "R225",
+"name": "R180",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 16 ), ExtResource( 3 ) ],
@@ -58,9 +47,19 @@ animations = [ {
 "name": "R045",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "R180",
+"name": "R090",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "R225",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "T",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ), ExtResource( 23 ), ExtResource( 25 ) ],
@@ -68,14 +67,14 @@ animations = [ {
 "name": "R315",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 31 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "R090",
+"name": "R000",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 6 ), ExtResource( 12 ) ],
 "loop": true,
-"name": "T",
+"name": "R135",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 20 ), ExtResource( 11 ), ExtResource( 24 ) ],
@@ -88,8 +87,7 @@ animations = [ {
 collision_layer = 4
 collision_mask = 7
 actorType = 4
-hitSound = ExtResource( 32 )
-damageTakeFrom = 1
+damageTakenFrom = 1
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2( 1.8652, 14.2221 )

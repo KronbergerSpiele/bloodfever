@@ -2,7 +2,7 @@
 
 [ext_resource path="res://ui/Buttons/SpeechLeftSelected.png" type="Texture" id=1]
 [ext_resource path="res://ui/Buttons/SpeechLeftNormal.png" type="Texture" id=2]
-[ext_resource path="res://ui/Buttons/SpeechBase.cs" type="Script" id=3]
+[ext_resource path="res://ui/Buttons/SpeechBase.gd" type="Script" id=3]
 [ext_resource path="res://ui/Laffayette.tres" type="DynamicFont" id=4]
 
 [node name="Node2D" type="TextureButton"]
@@ -15,7 +15,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-label = "abcdefg"
+label = "dummy"
 
 [node name="Label" type="Label" parent="."]
 anchor_top = -0.0100136
@@ -24,9 +24,9 @@ margin_left = 82.0652
 margin_top = 17.6247
 margin_right = 161.065
 margin_bottom = 38.6247
-custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "abcdefg"
+custom_fonts/font = ExtResource( 4 )
+text = "dummy"
 align = 1
 valign = 1
 __meta__ = {

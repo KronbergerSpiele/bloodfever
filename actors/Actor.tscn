@@ -15,7 +15,7 @@
 [ext_resource path="res://actors/draco/stdvampirR225S2.png" type="Texture" id=13]
 [ext_resource path="res://actors/draco/stdvampirR45S0.png" type="Texture" id=14]
 [ext_resource path="res://actors/draco/stdvampirR0S1.png" type="Texture" id=15]
-[ext_resource path="res://actors/Actor.cs" type="Script" id=16]
+[ext_resource path="res://actors/Actor.gd" type="Script" id=16]
 [ext_resource path="res://actors/draco/stdvampirR135S0.png" type="Texture" id=17]
 [ext_resource path="res://actors/draco/stdvampirR135S1.png" type="Texture" id=18]
 [ext_resource path="res://actors/draco/stdvampirR270S1.png" type="Texture" id=19]
@@ -32,26 +32,16 @@
 [ext_resource path="res://actors/draco/stdvampirT04.png" type="Texture" id=30]
 [ext_resource path="res://actors/draco/stdvampirT05.png" type="Texture" id=31]
 [ext_resource path="res://actors/draco/stdvampirT06.png" type="Texture" id=32]
-[ext_resource path="res://ksgodot/audio/LocalAudio.cs" type="Script" id=33]
+[ext_resource path="res://ksgodot/audio/LocalAudio.gd" type="Script" id=33]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 10.7972
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 20 ), ExtResource( 2 ) ],
 "loop": true,
-"name": "R135",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 25 ), ExtResource( 15 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "R000",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 22 ), ExtResource( 7 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "R225",
+"name": "R180",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 14 ), ExtResource( 4 ), ExtResource( 23 ) ],
@@ -59,9 +49,19 @@ animations = [ {
 "name": "R045",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 20 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 24 ), ExtResource( 21 ) ],
 "loop": true,
-"name": "R180",
+"name": "R090",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 7 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "R225",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 27 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "T",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 3 ) ],
@@ -69,14 +69,14 @@ animations = [ {
 "name": "R315",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 24 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 25 ), ExtResource( 15 ), ExtResource( 8 ) ],
 "loop": true,
-"name": "R090",
+"name": "R000",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 28 ), ExtResource( 27 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 26 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "T",
+"name": "R135",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ), ExtResource( 19 ), ExtResource( 10 ) ],
@@ -117,5 +117,5 @@ animation = "R000"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Hit = SubResource( 3 )
 
-[node name="AudioPlayer" type="Node2D" parent="."]
+[node name="LocalAudio" type="Node" parent="."]
 script = ExtResource( 33 )

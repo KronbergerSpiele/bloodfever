@@ -1,1 +1,0 @@
-public class Lifebar : BloodFeverFs.UI.Lifebar { }

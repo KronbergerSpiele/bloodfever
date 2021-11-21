@@ -1,1 +1,0 @@
-public class Pause : BloodFeverFs.UI.Pause { }
