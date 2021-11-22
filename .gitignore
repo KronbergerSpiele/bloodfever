@@ -6,11 +6,6 @@ _godot_defs/
 # Godot-specific ignores
 .import/
 
-# Mono-specific ignores
-.mono/
-mono_crash.*
-data_*/
-
 !docs/
 docs/*
 !docs/index.html

@@ -25,6 +25,11 @@ jobs:
           rm -rf ~/.local/share/godot/templates/*
           mv /root/.local/share/godot/templates/* ~/.local/share/godot/templates/
 
+      - name: Precompile
+        run: |
+          npm i
+          npm run build
+
       - name: Build and Export
         run: |
           godot --export-debug "ci" docs/game.html > build.log

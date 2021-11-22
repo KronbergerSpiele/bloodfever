@@ -35,14 +35,7 @@
             "launch_scene": true,
             "preLaunchTask": "build",
             // "scene_file": "./scenes/loading/Loading.tscn"
-        },
-        {
-            "name": "Attach",
-            "type": "mono",
-            "request": "attach",
-            "address": "localhost",
-            "port": 23685,
-        },
+        }
     ],
     "compounds": [
         {

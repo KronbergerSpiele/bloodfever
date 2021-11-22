@@ -4,6 +4,7 @@
   "description": "BloodFever ---------- Copyright (c) 2021 Johannes Goslar, Lars-Arne Kalusky, dkd Internet Service GmbH. All rights reserved.",
   "main": "index.js",
   "scripts": {
+    "build": "ts2gd --buildLibraries --buildOnly",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +18,6 @@
   },
   "homepage": "https://github.com/KronbergerSpiele/bloodfever#readme",
   "dependencies": {
-    "ts2gd": "github:KronbergerSpiele/ts2gd"
+    "ts2gd": "github:johnfn/ts2gd"
   }
 }
