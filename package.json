@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "ts2gd --buildLibraries --buildOnly",
+    "watch": "ts2gd --buildLibraries",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +19,6 @@
   },
   "homepage": "https://github.com/KronbergerSpiele/bloodfever#readme",
   "dependencies": {
-    "ts2gd": "github:johnfn/ts2gd"
+    "ts2gd": "github:KronbergerSpiele/ts2gd#main"
   }
 }

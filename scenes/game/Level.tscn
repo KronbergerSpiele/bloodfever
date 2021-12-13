@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://actors/draco/Draco.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/zombie/Zombie.tscn" type="PackedScene" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://ui/Pause/Pause.tscn" type="PackedScene" id=8]
 [ext_resource path="res://ui/Lifebar/Lifebar.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/Base.tscn" type="PackedScene" id=10]
-[ext_resource path="res://actors/Actor.gd" type="Script" id=11]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -60,15 +59,12 @@ polygon = PoolVector2Array( -8, 320, 488, 320, 488, 328, 376.721, 328, -8, 328, 
 [node name="Draco" parent="actors" index="0" instance=ExtResource( 1 )]
 position = Vector2( 146.573, 161.659 )
 mode = 0
-script = ExtResource( 11 )
 
 [node name="Zombie" parent="actors" index="1" instance=ExtResource( 2 )]
 position = Vector2( 316.843, 156.683 )
 mode = 0
-script = ExtResource( 11 )
 
 [node name="Coffin" parent="actors" index="2" instance=ExtResource( 5 )]
-script = ExtResource( 11 )
 
 [node name="Foreground" type="CanvasLayer" parent="." index="6"]
 

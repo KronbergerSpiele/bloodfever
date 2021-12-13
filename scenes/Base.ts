@@ -1,13 +1,15 @@
-class Base extends Node2D {
+import { GlobalHelper } from "Global";
+
+export class Base extends Node2D {
   @exports
   backgroundMusic: AudioStream | null = null;
 
   get Global() {
-    return this.get_node_unsafe<GlobalHelper>("/root/Global");
+    return this.get_node<GlobalHelper>("/root/Global");
   }
 
   get Page() {
-    return this.get_node_unsafe<Page>("CanvasLayer/Page");
+    return this.get_node("CanvasLayer/Page");
   }
 
   private random = new RandomNumberGenerator();

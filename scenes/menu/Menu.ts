@@ -1,4 +1,4 @@
-class Menu extends Base {
+export class Menu extends Base {
   onStartPressed() {
     this.switchTo("res://scenes/game/Diner.tscn");
   }

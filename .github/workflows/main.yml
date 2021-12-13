@@ -25,14 +25,24 @@ jobs:
           rm -rf ~/.local/share/godot/templates/*
           mv /root/.local/share/godot/templates/* ~/.local/share/godot/templates/
 
-      - name: Precompile
+      - name: Prepare deps
         run: |
           npm i
+
+      - name: Ensure ts2gd is up-to-date
+        run: |
+          cd node_modules/ts2gd
+          npm i
+          npm run tsc
+
+      - name: Precompile
+        run: |
           npm run build
+          ls -lah actors
 
       - name: Build and Export
         run: |
-          godot --export-debug "ci" docs/game.html > build.log
+          godot --export "ci" docs/game.html > build.log
           cat build.log
           grep -qv "Failed to build project" build.log
           ls -lah docs

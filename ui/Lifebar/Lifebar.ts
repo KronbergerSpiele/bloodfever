@@ -1,4 +1,4 @@
-class Lifebar extends Node2D {
+export class Lifebar extends Node2D {
   @exports
   health = 100;
 
@@ -6,7 +6,7 @@ class Lifebar extends Node2D {
   healthIncome = 0;
 
   get Bar() {
-    return this.get_node_unsafe<TextureProgress>("Bar");
+    return this.get_node("Bar");
   }
 
   _process(delta: float) {

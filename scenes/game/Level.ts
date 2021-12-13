@@ -1,4 +1,8 @@
-class Level extends Base {
+import { Actor } from "actors/Actor";
+import { Stick } from "ksgodot/stick/Stick";
+import { Base } from "scenes/Base";
+
+export class Level extends Base {
   ZombieTemplate: PackedScene<Actor> = load("res://actors/zombie/Zombie.tscn");
 
   get UI() {
