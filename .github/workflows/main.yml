@@ -25,20 +25,16 @@ jobs:
           rm -rf ~/.local/share/godot/templates/*
           mv /root/.local/share/godot/templates/* ~/.local/share/godot/templates/
 
-      - name: Prepare deps
-        run: |
-          npm i
-
       - name: Ensure ts2gd is up-to-date
         run: |
-          cd node_modules/ts2gd
-          npm i
+          cd ts2gd.git
+          npm ci
           npm run tsc
 
-      - name: Precompile
+      - name: Compile TypeScript
         run: |
+          npm ci
           npm run build
-          ls -lah actors
 
       - name: Build and Export
         run: |

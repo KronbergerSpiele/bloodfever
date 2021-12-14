@@ -1,11 +1,11 @@
-import { GlobalHelper } from "Global";
+import { Global } from "Global";
 
 export class Base extends Node2D {
   @exports
   backgroundMusic: AudioStream | null = null;
 
   get Global() {
-    return this.get_node<GlobalHelper>("/root/Global");
+    return this.get_node<Global>("/root/GlobalManager");
   }
 
   get Page() {

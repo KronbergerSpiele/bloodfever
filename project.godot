@@ -35,7 +35,7 @@ _global_script_classes=[ {
 "path": "res://scenes/Base.gd"
 }, {
 "base": "Node",
-"class": "GlobalHelper",
+"class": "Global",
 "language": "GDScript",
 "path": "res://Global.gd"
 }, {
@@ -90,7 +90,7 @@ _global_script_class_icons={
 "ActorEquality": "",
 "BackgroundAudio": "",
 "Base": "",
-"GlobalHelper": "",
+"Global": "",
 "Level": "",
 "Lifebar": "",
 "Loading": "",
@@ -114,8 +114,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Audio="*res://ksgodot/audio/BackgroundAudio.tscn"
-Global="*res://Global.tscn"
+AudioManager="*res://ksgodot/audio/BackgroundAudio.tscn"
+GlobalManager="*res://Global.tscn"
 
 [display]
 

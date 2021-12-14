@@ -1,6 +1,4 @@
-
 # ts2gd
-_godot_defs/
 *.gd
 
 # Godot-specific ignores
@@ -12,12 +10,6 @@ docs/*
 !docs/impressum.html
 
 export/
-
-bin/
-obj/
-.vs/
-.ionide/
-.fake
 
 .DS_Store
 /node_modules/
