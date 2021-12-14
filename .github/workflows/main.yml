@@ -35,10 +35,12 @@ jobs:
         run: |
           npm ci
           npm run build
+          ls -lah scenes/loading
+          ls -lah scenes
 
       - name: Build and Export
         run: |
-          godot --export "ci" docs/game.html > build.log
+          godot --export-debug "ci" docs/game.html > build.log
           cat build.log
           grep -qv "Failed to build project" build.log
           ls -lah docs
