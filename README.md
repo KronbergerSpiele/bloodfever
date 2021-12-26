@@ -1,4 +1,4 @@
-## BloodFever
+## bloodfever
 
 A game about a vegetarian vampire defending his coffin. Originally created for iOS back in 2011, click on the teaser for the old trailer on youtube:
 
