@@ -1,3 +1,5 @@
+import { ActorEquality } from "actors/ActorEquality";
+
 enum ActorType {
   None = 0x0,
   Player = 0x1,
@@ -11,7 +13,7 @@ enum DamageMode {
   Takes = 0x2,
 }
 
-class Actor extends ActorEquality {
+export class Actor extends ActorEquality {
   @export_flags("Player", "Goal", "Enemy")
   public actorType: ActorType = ActorType.None;
 
@@ -35,16 +37,16 @@ class Actor extends ActorEquality {
   // public hitSound: AudioStream | null = null;
 
   public get Sprite() {
-    return this.get_node_unsafe<AnimatedSprite>("AnimatedSprite");
+    return this.get_node("AnimatedSprite");
   }
 
   public get Animations() {
-    return this.get_node_unsafe<AnimationPlayer>("AnimationPlayer");
+    return this.get_node("AnimationPlayer");
   }
 
-  public get Audio() {
-    return this.get_node("AudioPlayer");
-  }
+  // public get Audio() {
+  //   return this.get_node("AudioPlayer");
+  // }
 
   public _ready() {
     this.inertia = INF;

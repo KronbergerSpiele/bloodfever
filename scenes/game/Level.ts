@@ -1,24 +1,27 @@
-class Level extends Base {
+import { Actor } from "actors/Actor";
+import { Base } from "scenes/Base";
+
+export class Level extends Base {
   ZombieTemplate: PackedScene<Actor> = load("res://actors/zombie/Zombie.tscn");
 
   get UI() {
-    return this.get_node_unsafe<CanvasLayer>("UI");
+    return this.get_node("UI");
   }
 
   get Draco() {
-    return this.get_node_unsafe<Actor>("actors/Draco");
+    return this.get_node("actors/Draco");
   }
 
   get Actors() {
-    return this.get_node_unsafe<Node>("actors");
+    return this.get_node("actors");
   }
 
   get Stick() {
-    return this.get_node_unsafe<Stick>("UI/Stick");
+    return this.get_node("UI/Stick");
   }
 
   get spawnLocation() {
-    return this.get_node_unsafe<PathFollow2D>("SpawnPath/SpawnLocation");
+    return this.get_node("SpawnPath/SpawnLocation");
   }
 
   _process() {

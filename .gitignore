@@ -1,14 +1,8 @@
-
 # ts2gd
-_godot_defs/
+*.gd
 
 # Godot-specific ignores
 .import/
-
-# Mono-specific ignores
-.mono/
-mono_crash.*
-data_*/
 
 !docs/
 docs/*
@@ -16,12 +10,6 @@ docs/*
 !docs/impressum.html
 
 export/
-
-bin/
-obj/
-.vs/
-.ionide/
-.fake
 
 .DS_Store
 /node_modules/

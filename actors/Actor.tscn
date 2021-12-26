@@ -44,16 +44,6 @@ animations = [ {
 "name": "R180",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 4 ), ExtResource( 23 ) ],
-"loop": true,
-"name": "R045",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 24 ), ExtResource( 21 ) ],
-"loop": true,
-"name": "R090",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 22 ), ExtResource( 7 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "R225",
@@ -64,6 +54,26 @@ animations = [ {
 "name": "T",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 9 ), ExtResource( 19 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "R270",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "R135",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 24 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "R090",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 4 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "R045",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "R315",
@@ -72,16 +82,6 @@ animations = [ {
 "frames": [ ExtResource( 25 ), ExtResource( 15 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "R000",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "R135",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ), ExtResource( 19 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "R270",
 "speed": 5.0
 } ]
 

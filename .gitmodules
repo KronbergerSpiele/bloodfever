@@ -2,3 +2,7 @@
 	path = ksgodot
 	url = git@github.com:KronbergerSpiele/ks-godot.git
 	branch = master
+[submodule "ts2gd.git"]
+	path = ts2gd.git
+	url = https://github.com/KronbergerSpiele/ts2gd.git
+	branch = main

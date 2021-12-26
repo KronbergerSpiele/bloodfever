@@ -1,6 +1,6 @@
-class Pause extends Node2D {
+export class Pause extends Node2D {
   get Overlay() {
-    return this.get_node_unsafe<Node2D>("Overlay");
+    return this.get_node("Overlay");
   }
 
   _enter_tree() {

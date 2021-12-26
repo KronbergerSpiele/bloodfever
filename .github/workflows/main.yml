@@ -25,9 +25,21 @@ jobs:
           rm -rf ~/.local/share/godot/templates/*
           mv /root/.local/share/godot/templates/* ~/.local/share/godot/templates/
 
+      - name: Ensure ts2gd is up-to-date
+        run: |
+          cd ts2gd.git
+          npm ci
+          npm run tsc
+
+      - name: Compile TypeScript
+        run: |
+          chmod -R a+rw .
+          npm ci
+          npm run build
+
       - name: Build and Export
         run: |
-          godot --export-debug "ci" docs/game.html > build.log
+          godot --export "ci" docs/game.html > build.log
           cat build.log
           grep -qv "Failed to build project" build.log
           ls -lah docs

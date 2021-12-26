@@ -1,6 +1,8 @@
-class Loading extends Base {
+import { Base } from "scenes/Base";
+
+export class Loading extends Base {
   get Timer() {
-    return this.get_node_unsafe<Timer>("Timer");
+    return this.get_node("Timer");
   }
 
   _ready() {

@@ -1,7 +1,7 @@
 @tool
-class SpeechBase extends TextureButton {
+export class SpeechBase extends TextureButton {
   get LI() {
-    return this.has_node("Label") ? this.get_node_unsafe<Label>("Label") : null;
+    return this.has_node("Label") ? this.get_node("Label") : null;
   }
 
   @exports

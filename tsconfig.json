@@ -10,6 +10,9 @@
     "esModuleInterop": true,
     "skipLibCheck": false,
     "baseUrl": ".",
-    "forceConsistentCasingInFileNames": true
-  }
+    "forceConsistentCasingInFileNames": true,
+  },
+  "exclude": [
+    "ts2gd.git"
+  ]
 }
