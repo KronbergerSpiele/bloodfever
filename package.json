@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/KronbergerSpiele/bloodfever#readme",
   "dependencies": {
-    "ts2gd": "file:ts2gd.git"
+    "@kronbergerspiele/ts2gd": "file:ts2gd.git"
   }
 }
