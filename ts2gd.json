@@ -1,4 +1,7 @@
 {
   "destination": "./",
-  "source": "./"
+  "source": "./",
+  "ignore": [
+    "**/ts2gd.git/**"
+  ]
 }

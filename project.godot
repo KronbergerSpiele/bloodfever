@@ -19,11 +19,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://actors/Actor.gd"
 }, {
-"base": "Reference",
-"class": "Actor2",
-"language": "GDScript",
-"path": "res://actors/Actor2.gd"
-}, {
 "base": "RigidBody2D",
 "class": "ActorEquality",
 "language": "GDScript",
@@ -92,7 +87,6 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "About": "",
 "Actor": "",
-"Actor2": "",
 "ActorEquality": "",
 "BackgroundAudio": "",
 "Base": "",
