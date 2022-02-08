@@ -36,10 +36,12 @@ jobs:
           chmod -R a+rw .
           npm ci
           npm run build
+          cat scenes/Base.gd
+          cat ksgodot/page/Page.gd
 
       - name: Build and Export
         run: |
-          godot --export "ci" docs/game.html > build.log
+          godot --export-debug "ci" docs/game.html > build.log
           cat build.log
           grep -qv "Failed to build project" build.log
           ls -lah docs
