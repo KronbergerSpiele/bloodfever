@@ -36,8 +36,7 @@ jobs:
           chmod -R a+rw .
           npm ci
           npm run build
-          cat scenes/Base.gd
-          cat ksgodot/page/Page.gd
+          ls **/*.gd
 
       - name: Build and Export
         run: |
