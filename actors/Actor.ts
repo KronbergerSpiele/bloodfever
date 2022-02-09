@@ -1,4 +1,4 @@
-import { ActorEquality } from "actors/ActorEquality";
+import ActorEquality from "./ActorEquality";
 
 enum ActorType {
   None = 0x0,
@@ -13,7 +13,7 @@ enum DamageMode {
   Takes = 0x2,
 }
 
-export class Actor extends ActorEquality {
+export default class Actor extends ActorEquality {
   @export_flags("Player", "Goal", "Enemy")
   public actorType: ActorType = ActorType.None;
 

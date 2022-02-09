@@ -1,4 +1,4 @@
-export class Lifebar extends Node2D {
+export default class Lifebar extends Node2D {
   @exports
   health: int = 100;
 

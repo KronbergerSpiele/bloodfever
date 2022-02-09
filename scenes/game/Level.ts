@@ -1,7 +1,7 @@
-import { Actor } from "actors/Actor";
-import { Base } from "scenes/Base";
+import Actor from "../../actors/Actor";
+import Base from "../Base";
 
-export class Level extends Base {
+export default class Level extends Base {
   ZombieTemplate: PackedScene<Actor> = load("res://actors/zombie/Zombie.tscn");
 
   get UI() {

@@ -1,1 +1,1 @@
-export class ActorEquality extends RigidBody2D {}
+export default class ActorEquality extends RigidBody2D {}
