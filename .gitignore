@@ -1,3 +1,6 @@
+# ts2gd
+_godot_defs
+
 # Godot-specific ignores
 .import/
 
