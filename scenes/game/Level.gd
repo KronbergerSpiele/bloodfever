@@ -5,6 +5,7 @@ var ZombieTemplate = load("res://actors/zombie/Zombie.tscn")
 
 func UI() -> CanvasLayer:
   return $UI as CanvasLayer
+
 func Draco() -> Actor:
   return $actors/Draco as Actor
 

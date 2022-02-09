@@ -3,7 +3,7 @@ class_name Base
 
 export(AudioStream) var backgroundMusic = null
 
-func Global():
+func Global() -> Global:
   return $"/root/GlobalManager" as Global
 func Page() -> Page:
   return $CanvasLayer/Page as Page
