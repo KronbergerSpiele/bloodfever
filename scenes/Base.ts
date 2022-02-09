@@ -1,6 +1,6 @@
-import { Global } from "Global";
+import Global from "../Global";
 
-export class Base extends Node2D {
+export default class Base extends Node2D {
   @exports
   backgroundMusic: AudioStream | null = null;
 

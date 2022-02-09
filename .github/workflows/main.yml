@@ -27,9 +27,9 @@ jobs:
 
       - name: Ensure ts2gd is up-to-date
         run: |
-          cd ts2gd.git
+          cd ts2gd
           npm ci
-          npm run tsc
+          npm run build
 
       - name: Compile TypeScript
         run: |

@@ -1,4 +1,6 @@
-export class About extends Base {
+import Base from "../Base";
+
+export default class About extends Base {
   onClose() {
     this.switchTo("res://scenes/menu/Menu.tscn");
   }

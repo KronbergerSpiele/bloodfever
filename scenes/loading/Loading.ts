@@ -1,6 +1,6 @@
-import { Base } from "scenes/Base";
+import Base from "../Base";
 
-export class Loading extends Base {
+export default class Loading extends Base {
   get Timer() {
     return this.get_node("Timer");
   }

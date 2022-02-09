@@ -1,6 +1,6 @@
-import { BackgroundAudio } from "ksgodot/audio/BackgroundAudio";
+import BackgroundAudio from "./ksgodot/audio/BackgroundAudio";
 
-export class Global extends Node {
+export default class Global extends Node {
   lastSceneSnapshot: ImageTexture | null = null;
   lastSceneLayer: CanvasLayer | null = null;
   lastScene: Node2D | null = null;
