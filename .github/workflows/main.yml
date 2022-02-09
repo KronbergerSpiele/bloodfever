@@ -16,7 +16,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           persist-credentials: false
-          submodules: true
 
       - name: Setup Templates
         if: ${{ !env.ACT }}
@@ -25,23 +24,9 @@ jobs:
           rm -rf ~/.local/share/godot/templates/*
           mv /root/.local/share/godot/templates/* ~/.local/share/godot/templates/
 
-      - name: Ensure ts2gd is up-to-date
-        run: |
-          cd ts2gd
-          npm ci
-          npm run build
-
-      - name: Compile TypeScript
-        run: |
-          chmod -R a+rw .
-          npm ci
-          npm run build
-          cat scenes/Base.gd
-          cat ksgodot/page/Page.gd
-
       - name: Build and Export
         run: |
-          godot --export-debug "ci" docs/game.html > build.log
+          godot --export "ci" docs/game.html > build.log
           cat build.log
           grep -qv "Failed to build project" build.log
           ls -lah docs

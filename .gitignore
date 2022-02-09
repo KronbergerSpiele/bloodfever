@@ -1,5 +1,4 @@
 # ts2gd
-*.gd
 _godot_defs
 
 # Godot-specific ignores
