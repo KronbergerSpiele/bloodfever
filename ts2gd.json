@@ -1,7 +1,0 @@
-{
-  "destination": "./",
-  "source": "./",
-  "ignore": [
-    "**/ts2gd/**"
-  ]
-}
