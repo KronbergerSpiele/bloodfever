@@ -8,70 +8,14 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    container:
-      image: kronbergerspiele/ks-godot-ci:latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          persist-credentials: false
-          submodules: true
-
-      - name: Setup Templates
-        if: ${{ !env.ACT }}
-        run: |
-          mkdir -v -p ~/.local/share/godot/templates
-          rm -rf ~/.local/share/godot/templates/*
-          mv /root/.local/share/godot/templates/* ~/.local/share/godot/templates/
-
-      - name: Build and Export
-        run: |
-          godot --export "ci" docs/game.html > build.log
-          cat build.log
-          grep -qv "Failed to build project" build.log
-          ls -lah docs
-
-      - name: Upload build
-        if: ${{ !env.ACT }}
-        uses: actions/upload-artifact@v1
-        with:
-          name: docs
-          path: docs
+    uses: KronbergerSpiele/ks-godot-ci/.github/workflows/build.yml@master
 
   deploy:
     needs: build
     if: github.ref == 'refs/heads/master'
-    runs-on: ubuntu-latest
-    container:
-      image: kronbergerspiele/ks-godot-ci:latest
-    env:
+    uses: KronbergerSpiele/ks-godot-ci/.github/workflows/deploy.yml@master
+    with:
       ITCHIO_USERNAME: ksjogo
       ITCHIO_GAME: bloodfever
-      BUTLER_API_KEY: ${{ secrets.ITCHIO_API }}
-    steps:
-      - name: Download build
-        if: ${{ !env.ACT }}
-        uses: actions/download-artifact@v1
-        with:
-          name: docs
-          path: docs
-
-      - name: Deploy Pages 🚀
-        if: ${{ !env.ACT }}
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: ./docs
-
-      - name: Prepare Itch.io
-        if: ${{ !env.ACT }}
-        run: |
-          rm ./docs/index.html ./docs/impressum.html
-          mv ./docs/game.html ./docs/index.html
-
-      - name: Deploy Itch.io
-        if: ${{ !env.ACT }}
-        run: |
-          butler push ./docs $ITCHIO_USERNAME/$ITCHIO_GAME:web
+    secrets:
+      ITCHIO_API: ${{ secrets.ITCHIO_API }}
