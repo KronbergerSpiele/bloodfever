@@ -4,10 +4,11 @@ _godot_defs
 # Godot-specific ignores
 .import/
 
-!docs/
-docs/*
+docs/
 !docs/index.html
 !docs/impressum.html
+!docs/index.js
+!docs/bridge.js
 
 export/
 

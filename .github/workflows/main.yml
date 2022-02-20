@@ -4,11 +4,13 @@ on:
   push:
     branches:
       - master
-#  pull_request:
+  pull_request:
 
 jobs:
   build:
     uses: KronbergerSpiele/ks-godot-ci/.github/workflows/build.yml@master
+    with:
+      COPY_BRIDGE: true
 
   deploy:
     needs: build
