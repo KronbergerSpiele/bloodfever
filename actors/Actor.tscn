@@ -39,9 +39,9 @@ radius = 10.7972
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 20 ), ExtResource( 2 ) ],
+"frames": [ ExtResource( 28 ), ExtResource( 27 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 26 ) ],
 "loop": true,
-"name": "R180",
+"name": "T",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 22 ), ExtResource( 7 ), ExtResource( 13 ) ],
@@ -49,19 +49,9 @@ animations = [ {
 "name": "R225",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 28 ), ExtResource( 27 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 26 ) ],
+"frames": [ ExtResource( 14 ), ExtResource( 4 ), ExtResource( 23 ) ],
 "loop": true,
-"name": "T",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ), ExtResource( 19 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "R270",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "R135",
+"name": "R045",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 24 ), ExtResource( 21 ) ],
@@ -69,9 +59,19 @@ animations = [ {
 "name": "R090",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 4 ), ExtResource( 23 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "R045",
+"name": "R135",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 19 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "R270",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 15 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "R000",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 3 ) ],
@@ -79,9 +79,9 @@ animations = [ {
 "name": "R315",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 25 ), ExtResource( 15 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 20 ), ExtResource( 2 ) ],
 "loop": true,
-"name": "R000",
+"name": "R180",
 "speed": 5.0
 } ]
 

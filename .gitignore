@@ -15,3 +15,6 @@ export/
 .DS_Store
 node_modules/
 !node_modules/.gdignore
+
+tests/.parcel-cache
+tests/dist

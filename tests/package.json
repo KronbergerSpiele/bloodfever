@@ -1,0 +1,25 @@
+{
+  "name": "@kronbergerspiele/bloodfever-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html --no-cache",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "gpl-3.0-or-later",
+  "dependencies": {
+    "@kronbergerspiele/jsgdbridge": "file:../jsgdbridge",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.3.2",
+    "@types/react": "^16.0.0",
+    "@types/react-dom": "^16.0.00"
+  },
+  "alias": {
+    "react": "./node_modules/react"
+  }
+}
