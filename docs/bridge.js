@@ -1,1 +1,0 @@
-../jsgdbridge/index.js

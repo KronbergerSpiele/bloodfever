@@ -8,5 +8,5 @@ var lastScene = null
 func BackgroundAudio() -> BackgroundAudio:
   return $"/root/AudioManager" as BackgroundAudio
 
-func JSGDBridge() -> JSGDBridgeManager:
-  return $"/root/JSGDBridgeManagerInstance" as JSGDBridgeManager
+func JSGD() -> JSGDAbstractClient:
+  return $"/root/JSGDClientManager".client as JSGDAbstractClient

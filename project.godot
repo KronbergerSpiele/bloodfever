@@ -14,16 +14,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/about/About.gd"
 }, {
-"base": "Node",
-"class": "AbstractBridge",
-"language": "GDScript",
-"path": "res://jsgdbridge/AbstractBridge.gd"
-}, {
-"base": "Node",
-"class": "AbstractJSGDBridgeManager",
-"language": "GDScript",
-"path": "res://jsgdbridge/AbstractJSGDBridgeManager.gd"
-}, {
 "base": "ActorEquality",
 "class": "Actor",
 "language": "GDScript",
@@ -49,10 +39,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Global.gd"
 }, {
-"base": "AbstractBridge",
-"class": "JSBridge",
+"base": "Node",
+"class": "JSGDAbstractClient",
 "language": "GDScript",
-"path": "res://jsgdbridge/JSBridge.gd"
+"path": "res://jsgdbridge/gd/JSGDAbstractClient.gd"
+}, {
+"base": "Node",
+"class": "JSGDAbstractClientManager",
+"language": "GDScript",
+"path": "res://jsgdbridge/gd/JSGDAbstractClientManager.gd"
+}, {
+"base": "JSGDAbstractClient",
+"class": "JSGDClient",
+"language": "GDScript",
+"path": "res://jsgdbridge/gd/JSGDClient.gd"
 }, {
 "base": "Base",
 "class": "Level",
@@ -79,11 +79,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/menu/Menu.gd"
 }, {
-"base": "AbstractBridge",
-"class": "MockBridge",
-"language": "GDScript",
-"path": "res://jsgdbridge/MockBridge.gd"
-}, {
 "base": "Node2D",
 "class": "Page",
 "language": "GDScript",
@@ -106,20 +101,19 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "About": "",
-"AbstractBridge": "",
-"AbstractJSGDBridgeManager": "",
 "Actor": "",
 "ActorEquality": "",
 "BackgroundAudio": "",
 "Base": "",
 "Global": "",
-"JSBridge": "",
+"JSGDAbstractClient": "",
+"JSGDAbstractClientManager": "",
+"JSGDClient": "",
 "Level": "",
 "Lifebar": "",
 "Loading": "",
 "LocalAudio": "",
 "Menu": "",
-"MockBridge": "",
 "Page": "",
 "Pause": "",
 "SpeechBase": "",
@@ -140,7 +134,7 @@ config/icon="res://icon.png"
 
 AudioManager="*res://ksgodot/audio/BackgroundAudio.tscn"
 GlobalManager="*res://Global.tscn"
-JSGDBridgeManager="*res://jsgdbridge/JSGDBridgeManager.gd"
+JSGDClientManager="*res://jsgdbridge/gd/JSGDClientManager.gd"
 
 [display]
 
