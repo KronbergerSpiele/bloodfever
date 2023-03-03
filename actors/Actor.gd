@@ -14,14 +14,14 @@ enum DamageMode {
   Takes = 0x2,
 }
 
-export(int, FLAGS, "Player", "Goal", "Enemy") var actorType = ActorType.None
-export(int, FLAGS, "Player", "Goal", "Enemy") var damageTakenFrom = ActorType.None
-export(int, FLAGS, "Deals", "Takes") var damageMode = DamageMode.None
-export(int) var hitpoints: int = 100
-export(int) var damage: int = 2
+@export var actorType = ActorType.None # (int, FLAGS, "Player", "Goal", "Enemy")
+@export var damageTakenFrom = ActorType.None # (int, FLAGS, "Player", "Goal", "Enemy")
+@export var damageMode = DamageMode.None # (int, FLAGS, "Deals", "Takes")
+@export var hitpoints: int = 100
+@export var damage: int = 2
 
-func Sprite() -> AnimatedSprite:
-  return $AnimatedSprite as AnimatedSprite
+func Sprite2D() -> AnimatedSprite2D:
+  return $AnimatedSprite2D as AnimatedSprite2D
   
 func Animations() -> AnimationPlayer:
   return $AnimationPlayer as AnimationPlayer
@@ -31,7 +31,7 @@ func Audio() -> AudioStreamPlayer2D:
 
 func _ready():
   self.inertia = INF
-  self.Sprite().play("R000")
+  self.Sprite2D().play("R000")
   self.contact_monitor = self.isActivelyHandlingDamage()
 
 func _process(_delta: float):
@@ -50,14 +50,15 @@ func r315HonorRotation():
   return true
 
 func r315HandleGraphics():
-  var sprite = self.Sprite()  
+  var sprite = self.Sprite2D()  
   var vel = self.linear_velocity.length()
   
   self.z_index = self.position.y
   if vel < 1:
-    return sprite.stop()
+    sprite.stop()
+    return
   
-  if not sprite.playing:
+  if not sprite.is_playing():
     sprite.play()
   
   var nextAnimation = self.r315Prefix() + self.R315OrientationForRotation() if self.r315HonorRotation() else self.r315Prefix()

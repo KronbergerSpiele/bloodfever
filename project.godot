@@ -6,128 +6,17 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
-
-_global_script_classes=[ {
-"base": "Base",
-"class": "About",
-"language": "GDScript",
-"path": "res://scenes/about/About.gd"
-}, {
-"base": "ActorEquality",
-"class": "Actor",
-"language": "GDScript",
-"path": "res://actors/Actor.gd"
-}, {
-"base": "RigidBody2D",
-"class": "ActorEquality",
-"language": "GDScript",
-"path": "res://actors/ActorEquality.gd"
-}, {
-"base": "Node",
-"class": "BackgroundAudio",
-"language": "GDScript",
-"path": "res://ksgodot/audio/BackgroundAudio.gd"
-}, {
-"base": "Node2D",
-"class": "Base",
-"language": "GDScript",
-"path": "res://scenes/Base.gd"
-}, {
-"base": "Node",
-"class": "Global",
-"language": "GDScript",
-"path": "res://Global.gd"
-}, {
-"base": "Node",
-"class": "JSGDAbstractClient",
-"language": "GDScript",
-"path": "res://jsgdbridge/gd/JSGDAbstractClient.gd"
-}, {
-"base": "Node",
-"class": "JSGDAbstractClientManager",
-"language": "GDScript",
-"path": "res://jsgdbridge/gd/JSGDAbstractClientManager.gd"
-}, {
-"base": "JSGDAbstractClient",
-"class": "JSGDClient",
-"language": "GDScript",
-"path": "res://jsgdbridge/gd/JSGDClient.gd"
-}, {
-"base": "Base",
-"class": "Level",
-"language": "GDScript",
-"path": "res://scenes/game/Level.gd"
-}, {
-"base": "Node2D",
-"class": "Lifebar",
-"language": "GDScript",
-"path": "res://ui/Lifebar/Lifebar.gd"
-}, {
-"base": "Base",
-"class": "Loading",
-"language": "GDScript",
-"path": "res://scenes/loading/Loading.gd"
-}, {
-"base": "Node",
-"class": "LocalAudio",
-"language": "GDScript",
-"path": "res://ksgodot/audio/LocalAudio.gd"
-}, {
-"base": "Base",
-"class": "Menu",
-"language": "GDScript",
-"path": "res://scenes/menu/Menu.gd"
-}, {
-"base": "Node2D",
-"class": "Page",
-"language": "GDScript",
-"path": "res://ksgodot/page/Page.gd"
-}, {
-"base": "Node2D",
-"class": "Pause",
-"language": "GDScript",
-"path": "res://ui/Pause/Pause.gd"
-}, {
-"base": "TextureButton",
-"class": "SpeechBase",
-"language": "GDScript",
-"path": "res://ui/Buttons/SpeechBase.gd"
-}, {
-"base": "Node2D",
-"class": "Stick",
-"language": "GDScript",
-"path": "res://ksgodot/stick/Stick.gd"
-} ]
-_global_script_class_icons={
-"About": "",
-"Actor": "",
-"ActorEquality": "",
-"BackgroundAudio": "",
-"Base": "",
-"Global": "",
-"JSGDAbstractClient": "",
-"JSGDAbstractClientManager": "",
-"JSGDClient": "",
-"Level": "",
-"Lifebar": "",
-"Loading": "",
-"LocalAudio": "",
-"Menu": "",
-"Page": "",
-"Pause": "",
-"SpeechBase": "",
-"Stick": ""
-}
+config_version=5
 
 [application]
 
 config/name="BloodFever"
 run/main_scene="res://scenes/loading/Loading.tscn"
+config/features=PackedStringArray("4.0")
+boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://Boot.png"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
-boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 
 [autoload]
@@ -138,16 +27,15 @@ JSGDClientManager="*res://jsgdbridge/gd/JSGDClientManager.gd"
 
 [display]
 
-window/size/width=480
-window/size/height=320
-window/size/test_width=480
-window/size/test_height=320
+window/size/viewport_width=480
+window/size/viewport_height=320
+window/size/window_width_override=480
+window/size/window_height_override=320
 window/stretch/mode="2d"
-window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray(  )
+enabled=PackedStringArray()
 
 [input_devices]
 
@@ -162,7 +50,7 @@ pointing/emulate_touch_from_mouse=true
 [physics]
 
 2d/default_gravity=0
-2d/default_gravity_vector=Vector2( 0, 0 )
+2d/default_gravity_vector=Vector2(0, 0)
 2d/default_angular_damp=inf
 
 [rendering]

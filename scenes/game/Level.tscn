@@ -2,8 +2,8 @@
 
 [ext_resource path="res://actors/draco/Draco.tscn" type="PackedScene" id=1]
 [ext_resource path="res://actors/zombie/Zombie.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/game/diner_back.png" type="Texture" id=3]
-[ext_resource path="res://scenes/game/diner_front.png" type="Texture" id=4]
+[ext_resource path="res://scenes/game/diner_back.png" type="Texture2D" id=3]
+[ext_resource path="res://scenes/game/diner_front.png" type="Texture2D" id=4]
 [ext_resource path="res://actors/coffin/Coffin.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ksgodot/stick/Stick.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/game/Level.gd" type="Script" id=7]
@@ -13,7 +13,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 7.9783, 9.67314, 0, 0, 0, 0, 474.483, 13.8039, 0, 0, 0, 0, 475.585, 314.251, 0, 0, 0, 0, 89.2173, 314.526, 0, 0, 0, 0, 87.8404, 280.929, 0, 0, 0, 0, 6.87675, 280.378, 0, 0, 0, 0, 7.9783, 20.964 )
+"points": PackedVector2Array( 0, 0, 0, 0, 7.9783, 9.67314, 0, 0, 0, 0, 474.483, 13.8039, 0, 0, 0, 0, 475.585, 314.251, 0, 0, 0, 0, 89.2173, 314.526, 0, 0, 0, 0, 87.8404, 280.929, 0, 0, 0, 0, 6.87675, 280.378, 0, 0, 0, 0, 7.9783, 20.964 )
 }
 
 [node name="Level" instance=ExtResource( 10 )]
@@ -22,7 +22,7 @@ script = ExtResource( 7 )
 [node name="Background" type="CanvasLayer" parent="." index="1"]
 layer = -1
 
-[node name="back" type="Sprite" parent="Background" index="0"]
+[node name="back" type="Sprite2D" parent="Background" index="0"]
 position = Vector2( 240, 160 )
 texture = ExtResource( 3 )
 
@@ -40,19 +40,19 @@ rotation = 0.00885432
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls" index="0"]
 position = Vector2( 0, 20 )
-polygon = PoolVector2Array( 0, 0, 488, 0, 488, -8, -8, -8, -8, 0, 0, 0 )
+polygon = PackedVector2Array( 0, 0, 488, 0, 488, -8, -8, -8, -8, 0, 0, 0 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Walls" index="1"]
 position = Vector2( -3, 0 )
-polygon = PoolVector2Array( 480, 0, 480.41, 325.216, 488.209, 325.119, 488, 0 )
+polygon = PackedVector2Array( 480, 0, 480.41, 325.216, 488.209, 325.119, 488, 0 )
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Walls" index="2"]
 position = Vector2( 5, 0 )
-polygon = PoolVector2Array( -8, 0, -8.00462, 325.081, -0.0131035, 325.129, 0, 0, -8, 0 )
+polygon = PackedVector2Array( -8, 0, -8.00462, 325.081, -0.0131035, 325.129, 0, 0, -8, 0 )
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Walls" index="3"]
 position = Vector2( 0, 5 )
-polygon = PoolVector2Array( -8, 320, 488, 320, 488, 328, 376.721, 328, -8, 328, -8, 320 )
+polygon = PackedVector2Array( -8, 320, 488, 320, 488, 328, 376.721, 328, -8, 328, -8, 320 )
 
 [node name="actors" type="Node" parent="." index="5"]
 
@@ -71,7 +71,7 @@ mode = 0
 [node name="Lifebar" parent="Foreground" index="0" instance=ExtResource( 9 )]
 position = Vector2( 452, 48 )
 
-[node name="front" type="Sprite" parent="Foreground" index="1"]
+[node name="front" type="Sprite2D" parent="Foreground" index="1"]
 position = Vector2( 240, 160 )
 texture = ExtResource( 4 )
 

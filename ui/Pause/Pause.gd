@@ -10,7 +10,7 @@ class_name Pause
 
 
 
-var Overlay setget , Overlay_get
+var Overlay : get = Overlay_get
 func Overlay_get():
   return self.get_node("Overlay")
 func _enter_tree():
@@ -18,5 +18,5 @@ func _enter_tree():
 func _ready():
   self.Overlay.visible = false
 func onPauseButtonPressed():
-  self.get_tree().set_input_as_handled()
+  self.get_viewport().set_input_as_handled()
 

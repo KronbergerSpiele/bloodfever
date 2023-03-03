@@ -1,7 +1,7 @@
 extends Node2D
 class_name Base
 
-export(AudioStream) var backgroundMusic = null
+@export var backgroundMusic: AudioStream = null
 
 func Global() -> Global:
   return $"/root/GlobalManager" as Global
@@ -39,19 +39,19 @@ func switchTo(scene):
   
   var scaleY = 320.0 / oldHeight
   
-  var img = oldTex.get_data()
+  var img = oldTex.get_image()
   
   img.flip_y()
   var tex = ImageTexture.new()
   
-  tex.create_from_image(img, 0)
+  tex.create_from_image(img) #,0
   self.Global().lastSceneSnapshot = tex
-  var _err = self.get_tree().change_scene(scene)
+  var _err = self.get_tree().change_scene_to_file(scene)
   
   var layer = CanvasLayer.new()
   
   layer.layer = 99
-  var tmp = Sprite.new()
+  var tmp = Sprite2D.new()
   
   tmp.texture = tex
   tmp.position = Vector2(240, 160)

@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/diner.ogg-3ee311752d6baf5548b4bd8071eaad01.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dl4hydnb80fev"
+path="res://.godot/imported/diner.ogg-3ee311752d6baf5548b4bd8071eaad01.oggvorbisstr"
 
 [deps]
 
 source_file="res://scenes/game/diner.ogg"
-dest_files=[ "res://.import/diner.ogg-3ee311752d6baf5548b4bd8071eaad01.oggstr" ]
+dest_files=["res://.godot/imported/diner.ogg-3ee311752d6baf5548b4bd8071eaad01.oggvorbisstr"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

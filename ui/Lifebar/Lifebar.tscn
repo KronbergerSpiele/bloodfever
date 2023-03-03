@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://ui/Lifebar/fill.png" type="Texture" id=1]
+[ext_resource path="res://ui/Lifebar/fill.png" type="Texture2D" id=1]
 [ext_resource path="res://ui/Lifebar/Lifebar.gd" type="Script" id=2]
 
 [node name="Lifebar" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Bar" type="TextureProgress" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Bar" type="TextureProgressBar" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
 value = 100.0
 texture_progress = ExtResource( 1 )
 fill_mode = 3

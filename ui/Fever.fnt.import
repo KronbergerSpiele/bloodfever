@@ -1,0 +1,16 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://rhmxn4qgmhu7"
+path="res://.godot/imported/Fever.fnt-0e915bb54e3ede65ee61c524443ebdcb.fontdata"
+
+[deps]
+
+source_file="res://ui/Fever.fnt"
+dest_files=["res://.godot/imported/Fever.fnt-0e915bb54e3ede65ee61c524443ebdcb.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true

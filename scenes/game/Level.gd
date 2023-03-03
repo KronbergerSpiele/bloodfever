@@ -22,8 +22,8 @@ func _process(_delta: float):
   self.Draco().linear_velocity = self.Stick().output * 2
 
 func onSpawnTimer():
-  self.SpawnLocation().unit_offset = self.nextRandom()
-  var mobInstance = self.ZombieTemplate.instance()
+  self.SpawnLocation().progress_ratio = self.nextRandom()
+  var mobInstance = self.ZombieTemplate.instantiate()
   
   self.Actors().add_child(mobInstance)
   mobInstance.position = self.SpawnLocation().position

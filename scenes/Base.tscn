@@ -1,14 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://b3ag375ri5jce"]
 
-[ext_resource path="res://scenes/Base.gd" type="Script" id=1]
-[ext_resource path="res://scenes/Base.ogg" type="AudioStream" id=2]
-[ext_resource path="res://ksgodot/page/Page.tscn" type="PackedScene" id=3]
+[ext_resource type="Script" path="res://scenes/Base.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://dc0fap3wqy7td" path="res://scenes/Base.ogg" id="2"]
+[ext_resource type="PackedScene" path="res://ksgodot/page/Page.tscn" id="3"]
 
 [node name="Base" type="Node2D"]
-script = ExtResource( 1 )
-backgroundMusic = ExtResource( 2 )
+script = ExtResource("1")
+backgroundMusic = ExtResource("2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 98
 
-[node name="Page" parent="CanvasLayer" instance=ExtResource( 3 )]
+[node name="Page" parent="CanvasLayer" instance=ExtResource("3")]

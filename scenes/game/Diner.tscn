@@ -9,7 +9,7 @@ backgroundMusic = ExtResource( 2 )
 [node name="Car" type="StaticBody2D" parent="." index="3"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Car" index="0"]
-polygon = PoolVector2Array( 0, 288, 96, 288, 96, 304, 80, 320, 0, 320 )
+polygon = PackedVector2Array( 0, 288, 96, 288, 96, 304, 80, 320, 0, 320 )
 
 [node name="Draco" parent="actors" index="0"]
 position = Vector2( 32, 200 )

@@ -1,37 +1,37 @@
 [gd_scene load_steps=37 format=2]
 
-[ext_resource path="res://actors/draco/stdvampirR315S0.png" type="Texture" id=1]
-[ext_resource path="res://actors/draco/stdvampirR180S2.png" type="Texture" id=2]
-[ext_resource path="res://actors/draco/stdvampirR315S2.png" type="Texture" id=3]
-[ext_resource path="res://actors/draco/stdvampirR45S1.png" type="Texture" id=4]
-[ext_resource path="res://actors/draco/stdvampirR135S2.png" type="Texture" id=5]
-[ext_resource path="res://actors/draco/stdvampirR315S1.png" type="Texture" id=6]
-[ext_resource path="res://actors/draco/stdvampirR225S1.png" type="Texture" id=7]
-[ext_resource path="res://actors/draco/stdvampirR0S2.png" type="Texture" id=8]
-[ext_resource path="res://actors/draco/stdvampirR270S0.png" type="Texture" id=9]
-[ext_resource path="res://actors/draco/stdvampirR270S2.png" type="Texture" id=10]
-[ext_resource path="res://actors/draco/stdvampirR90S0.png" type="Texture" id=11]
-[ext_resource path="res://actors/draco/stdvampirR180S0.png" type="Texture" id=12]
-[ext_resource path="res://actors/draco/stdvampirR225S2.png" type="Texture" id=13]
-[ext_resource path="res://actors/draco/stdvampirR45S0.png" type="Texture" id=14]
-[ext_resource path="res://actors/draco/stdvampirR0S1.png" type="Texture" id=15]
+[ext_resource path="res://actors/draco/stdvampirR315S0.png" type="Texture2D" id=1]
+[ext_resource path="res://actors/draco/stdvampirR180S2.png" type="Texture2D" id=2]
+[ext_resource path="res://actors/draco/stdvampirR315S2.png" type="Texture2D" id=3]
+[ext_resource path="res://actors/draco/stdvampirR45S1.png" type="Texture2D" id=4]
+[ext_resource path="res://actors/draco/stdvampirR135S2.png" type="Texture2D" id=5]
+[ext_resource path="res://actors/draco/stdvampirR315S1.png" type="Texture2D" id=6]
+[ext_resource path="res://actors/draco/stdvampirR225S1.png" type="Texture2D" id=7]
+[ext_resource path="res://actors/draco/stdvampirR0S2.png" type="Texture2D" id=8]
+[ext_resource path="res://actors/draco/stdvampirR270S0.png" type="Texture2D" id=9]
+[ext_resource path="res://actors/draco/stdvampirR270S2.png" type="Texture2D" id=10]
+[ext_resource path="res://actors/draco/stdvampirR90S0.png" type="Texture2D" id=11]
+[ext_resource path="res://actors/draco/stdvampirR180S0.png" type="Texture2D" id=12]
+[ext_resource path="res://actors/draco/stdvampirR225S2.png" type="Texture2D" id=13]
+[ext_resource path="res://actors/draco/stdvampirR45S0.png" type="Texture2D" id=14]
+[ext_resource path="res://actors/draco/stdvampirR0S1.png" type="Texture2D" id=15]
 [ext_resource path="res://actors/Actor.gd" type="Script" id=16]
-[ext_resource path="res://actors/draco/stdvampirR135S0.png" type="Texture" id=17]
-[ext_resource path="res://actors/draco/stdvampirR135S1.png" type="Texture" id=18]
-[ext_resource path="res://actors/draco/stdvampirR270S1.png" type="Texture" id=19]
-[ext_resource path="res://actors/draco/stdvampirR180S1.png" type="Texture" id=20]
-[ext_resource path="res://actors/draco/stdvampirR90S2.png" type="Texture" id=21]
-[ext_resource path="res://actors/draco/stdvampirR225S0.png" type="Texture" id=22]
-[ext_resource path="res://actors/draco/stdvampirR45S2.png" type="Texture" id=23]
-[ext_resource path="res://actors/draco/stdvampirR90S1.png" type="Texture" id=24]
-[ext_resource path="res://actors/draco/stdvampirR0S0.png" type="Texture" id=25]
-[ext_resource path="res://actors/draco/stdvampirT07.png" type="Texture" id=26]
-[ext_resource path="res://actors/draco/stdvampirT02.png" type="Texture" id=27]
-[ext_resource path="res://actors/draco/stdvampirT01.png" type="Texture" id=28]
-[ext_resource path="res://actors/draco/stdvampirT03.png" type="Texture" id=29]
-[ext_resource path="res://actors/draco/stdvampirT04.png" type="Texture" id=30]
-[ext_resource path="res://actors/draco/stdvampirT05.png" type="Texture" id=31]
-[ext_resource path="res://actors/draco/stdvampirT06.png" type="Texture" id=32]
+[ext_resource path="res://actors/draco/stdvampirR135S0.png" type="Texture2D" id=17]
+[ext_resource path="res://actors/draco/stdvampirR135S1.png" type="Texture2D" id=18]
+[ext_resource path="res://actors/draco/stdvampirR270S1.png" type="Texture2D" id=19]
+[ext_resource path="res://actors/draco/stdvampirR180S1.png" type="Texture2D" id=20]
+[ext_resource path="res://actors/draco/stdvampirR90S2.png" type="Texture2D" id=21]
+[ext_resource path="res://actors/draco/stdvampirR225S0.png" type="Texture2D" id=22]
+[ext_resource path="res://actors/draco/stdvampirR45S2.png" type="Texture2D" id=23]
+[ext_resource path="res://actors/draco/stdvampirR90S1.png" type="Texture2D" id=24]
+[ext_resource path="res://actors/draco/stdvampirR0S0.png" type="Texture2D" id=25]
+[ext_resource path="res://actors/draco/stdvampirT07.png" type="Texture2D" id=26]
+[ext_resource path="res://actors/draco/stdvampirT02.png" type="Texture2D" id=27]
+[ext_resource path="res://actors/draco/stdvampirT01.png" type="Texture2D" id=28]
+[ext_resource path="res://actors/draco/stdvampirT03.png" type="Texture2D" id=29]
+[ext_resource path="res://actors/draco/stdvampirT04.png" type="Texture2D" id=30]
+[ext_resource path="res://actors/draco/stdvampirT05.png" type="Texture2D" id=31]
+[ext_resource path="res://actors/draco/stdvampirT06.png" type="Texture2D" id=32]
 [ext_resource path="res://ksgodot/audio/LocalAudio.gd" type="Script" id=33]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -89,14 +89,14 @@ animations = [ {
 resource_name = "Hit"
 length = 0.2
 tracks/0/type = "value"
-tracks/0/path = NodePath("AnimatedSprite:modulate")
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array( 0, 0.1, 0.2 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
@@ -110,7 +110,7 @@ script = ExtResource( 16 )
 position = Vector2( 3.031, 13 )
 shape = SubResource( 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 frames = SubResource( 2 )
 animation = "R000"
 

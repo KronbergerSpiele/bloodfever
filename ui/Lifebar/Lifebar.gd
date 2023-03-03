@@ -10,9 +10,9 @@ class_name Lifebar
 
 
 
-var Bar setget , Bar_get
-export(int) var health: int = 100
-export(int) var healthIncome: int = 0
+var Bar : get = Bar_get
+@export var health: int: int = 100
+@export var healthIncome: int: int = 0
 func Bar_get():
   return self.get_node("Bar")
 func _process(_delta: float):
