@@ -2,7 +2,3 @@
 	path = ksgodot
 	url = git@github.com:KronbergerSpiele/ks-godot.git
 	branch = master
-[submodule "jsgdbridge"]
-	path = jsgdbridge
-	url = git@github.com:KronbergerSpiele/jsgdbridge.git
-	branch = master

@@ -7,6 +7,3 @@ var lastScene = null
 
 func BackgroundAudio() -> BackgroundAudio:
   return $"/root/AudioManager" as BackgroundAudio
-
-func JSGD() -> JSGDAbstractClient:
-  return $"/root/JSGDClientManager".client as JSGDAbstractClient
