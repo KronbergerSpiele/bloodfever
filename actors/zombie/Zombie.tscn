@@ -31,6 +31,7 @@
 [ext_resource path="res://actors/zombie/zombieT06.png" type="Texture2D" id=29]
 [ext_resource path="res://actors/zombie/zombieR225S2.png" type="Texture2D" id=30]
 [ext_resource path="res://actors/zombie/zombieR0S1.png" type="Texture2D" id=31]
+[ext_resource path="res://actors/zombie/hit.ogg" type="AudioStream" id=32]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 10.9608
@@ -88,6 +89,7 @@ collision_layer = 4
 collision_mask = 7
 actorType = 4
 damageTakenFrom = 1
+hitSound = ExtResource( 32 )
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2( 1.8652, 14.2221 )
