@@ -11,12 +11,13 @@ func nextRandom() -> float:
 func _ready():
   random.randomize()
   
-  # Handle page transition
+  # Handle page transition (only if page exists)
   var snapshot = GlobalManager.lastSceneSnapshot
-  if snapshot:
-    page.startWith(snapshot, snapshot)
-  else:
-    page.visible = false
+  if page:
+    if snapshot:
+      page.startWith(snapshot, snapshot)
+    else:
+      page.visible = false
   
   (GlobalManager as Global).BackgroundAudio().playBackground(backgroundMusic)
 
@@ -29,6 +30,7 @@ func _process(_delta: float):
       var root = get_tree().root
       if root and global.lastSceneLayer.get_parent() == root:
         root.remove_child(global.lastSceneLayer)
+        global.lastSceneLayer.queue_free()
       global.lastSceneLayer = null
 
 func switchTo(scene):
@@ -59,10 +61,7 @@ func switchTo(scene):
   var global = GlobalManager as Global
   global.lastSceneSnapshot = tex
   
-  # Change scene
-  get_tree().change_scene_to_file(scene)
-  
-  # Create overlay layer with snapshot
+  # Create overlay layer with snapshot BEFORE scene change
   var layer = CanvasLayer.new()
   layer.layer = 99
   
@@ -75,3 +74,6 @@ func switchTo(scene):
   
   global.lastSceneLayer = layer
   global.lastScene = self
+  
+  # Change scene (must be last)
+  get_tree().change_scene_to_file(scene)

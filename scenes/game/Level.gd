@@ -19,6 +19,7 @@ func SpawnLocation() -> PathFollow2D:
   return $SpawnPath/SpawnLocation as PathFollow2D
 
 func _process(_delta: float):
+  super._process(_delta)
   self.Draco().linear_velocity = self.Stick().output * 2
 
 func onSpawnTimer():

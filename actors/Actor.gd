@@ -2,10 +2,10 @@ extends ActorEquality
 class_name Actor
 
 enum ActorType {
-  None= 0x0,
-  Player= 0x1,
-  Goal= 0x2,
-  Enemy= 0x4,
+  None = 0x0,
+  Player = 0x1,
+  Goal = 0x2,
+  Enemy = 0x4,
 }
 
 enum DamageMode {
@@ -30,9 +30,12 @@ func Audio() -> AudioStreamPlayer2D:
   return $AudioPlayer as AudioStreamPlayer2D
 
 func _ready():
+  # Godot 4: Use freeze_mode and lock_rotation instead of inertia
+  self.lock_rotation = true
   self.inertia = INF
   self.Sprite2D().play("R000")
   self.contact_monitor = self.isActivelyHandlingDamage()
+  self.max_contacts_reported = 10 # Required for contact_monitor in Godot 4
 
 func _process(_delta: float):
   self.r315HandleGraphics()
@@ -50,7 +53,7 @@ func r315HonorRotation():
   return true
 
 func r315HandleGraphics():
-  var sprite = self.Sprite2D()  
+  var sprite = self.Sprite2D()
   var vel = self.linear_velocity.length()
   
   self.z_index = self.position.y

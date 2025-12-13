@@ -5,6 +5,7 @@ func Timer() -> Timer:
   return $Timer as Timer
 
 func _ready():
+  super._ready()
   self.Timer().start()
 
 func onTimerTimeout():
