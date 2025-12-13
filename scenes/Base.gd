@@ -1,63 +1,77 @@
-extends Node2D
-class_name Base
+class_name Base extends Node2D
 
 @export var backgroundMusic: AudioStream = null
 
-func Global() -> Global:
-  return $"/root/GlobalManager" as Global
-func Page() -> Page:
-  return $CanvasLayer/Page as Page
-  
+@onready var page: Page = $CanvasLayer/Page
 var random = RandomNumberGenerator.new()
-func nextRandom():
-  return self.random.randf()
+
+func nextRandom() -> float:
+  return random.randf()
 
 func _ready():
-  self.random.randomize()
-  self.Page().startWith(self.Global().lastSceneSnapshot, self.Global().lastSceneSnapshot)
-  self.Global().BackgroundAudio().playBackground(self.backgroundMusic)
+  random.randomize()
+  
+  # Handle page transition
+  var snapshot = GlobalManager.lastSceneSnapshot
+  if snapshot:
+    page.startWith(snapshot, snapshot)
+  else:
+    page.visible = false
+  
+  (GlobalManager as Global).BackgroundAudio().playBackground(backgroundMusic)
 
 var ticks: int = 0
 func _process(_delta: float):
-  if self.ticks < 2:
-    self.ticks += 1
-  else:
-    if self.Global().lastScene != self:
-      var layer = self.Global().lastSceneLayer
-      if layer:
-        self.get_tree().root.remove_child(layer)
-        self.Global().lastSceneLayer = null
+  ticks += 1
+  if ticks > 2:
+    var global = GlobalManager as Global
+    if global.lastScene != self and global.lastSceneLayer:
+      var root = get_tree().root
+      if root and global.lastSceneLayer.get_parent() == root:
+        root.remove_child(global.lastSceneLayer)
+      global.lastSceneLayer = null
 
 func switchTo(scene):
-  var oldTex = self.get_viewport().get_texture()
+  var root = get_tree().root
+  var viewport = get_viewport()
   
-  var oldWidth = oldTex.get_width()
+  # Wait for rendering to complete before capturing
+  await RenderingServer.frame_post_draw
   
-  var oldHeight = oldTex.get_height()
+  # Capture viewport texture
+  var img: Image = null
+  var viewport_tex = viewport.get_texture()
+  if viewport_tex:
+    img = viewport_tex.get_image()
   
-  var scaleX = 480.0 / oldWidth
+  # Fallback: create empty image if capture failed
+  if not img:
+    var vp_size = viewport.get_visible_rect().size
+    img = Image.create(int(vp_size.x), int(vp_size.y), false, Image.FORMAT_RGBA8)
+    img.fill(Color(0.1, 0.1, 0.1, 1.0))
   
-  var scaleY = 320.0 / oldHeight
+  # Scale snapshot to target resolution
+  var scaleX = 480.0 / img.get_width()
+  var scaleY = 320.0 / img.get_height()
   
-  var img = oldTex.get_image()
+  # Store snapshot for next scene transition
+  var tex = ImageTexture.create_from_image(img)
+  var global = GlobalManager as Global
+  global.lastSceneSnapshot = tex
   
-  img.flip_y()
-  var tex = ImageTexture.new()
+  # Change scene
+  get_tree().change_scene_to_file(scene)
   
-  tex.create_from_image(img) #,0
-  self.Global().lastSceneSnapshot = tex
-  var _err = self.get_tree().change_scene_to_file(scene)
-  
+  # Create overlay layer with snapshot
   var layer = CanvasLayer.new()
-  
   layer.layer = 99
-  var tmp = Sprite2D.new()
   
-  tmp.texture = tex
-  tmp.position = Vector2(240, 160)
-  tmp.scale = Vector2(scaleX, scaleY)
-  layer.add_child(tmp)
-  self.get_tree().root.add_child(layer)
-  self.Global().lastSceneLayer = layer
-  self.Global().lastScene = self
-
+  var sprite = Sprite2D.new()
+  sprite.texture = tex
+  sprite.position = Vector2(240, 160)
+  sprite.scale = Vector2(scaleX, scaleY)
+  layer.add_child(sprite)
+  root.add_child(layer)
+  
+  global.lastSceneLayer = layer
+  global.lastScene = self

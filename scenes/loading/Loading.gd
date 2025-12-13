@@ -9,4 +9,3 @@ func _ready():
 
 func onTimerTimeout():
   self.switchTo("res://scenes/menu/Menu.tscn")
-

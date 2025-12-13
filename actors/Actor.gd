@@ -115,4 +115,3 @@ func applyDamage(amount: int, _from):
   # }
   if self.hitpoints <= 0:
     self.queue_free()
-

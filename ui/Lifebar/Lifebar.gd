@@ -19,4 +19,3 @@ func _process(_delta: float):
   self.health += self.healthIncome
   self.healthIncome = 0
   self.Bar.value = self.health
-

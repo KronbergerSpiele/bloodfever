@@ -14,3 +14,4 @@ dest_files=["res://.godot/imported/Fever.fnt-0e915bb54e3ede65ee61c524443ebdcb.fo
 
 fallbacks=[]
 compress=true
+scaling_mode=2

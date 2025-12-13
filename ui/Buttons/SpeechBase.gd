@@ -21,4 +21,3 @@ func label_set(text: String):
 func label_get():
   var __gen = self.LI
   return ((__gen.text if __gen != null else null) if ((__gen.text if __gen != null else null)) != null else "")
-

@@ -1,12 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://dkwxn6l7xjtqr"]
 
-[ext_resource path="res://ui/Laffayette.tres" type="FontFile" id=1]
+[ext_resource type="FontFile" uid="uid://dj23fckhjvaq0" path="res://ui/Laffayette.ttf" id="1"]
 
 [node name="Label" type="Label"]
 offset_right = 40.0
 offset_bottom = 14.0
-custom_fonts/font = ExtResource( 1 )
+theme_override_fonts/font = ExtResource("1")
 text = "Test123"
-__meta__ = {
-"_edit_use_anchors_": false
-}

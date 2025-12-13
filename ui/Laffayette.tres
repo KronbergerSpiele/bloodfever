@@ -1,8 +1,6 @@
-[gd_resource type="FontFile" load_steps=2 format=2]
+[gd_resource type="FontFile" load_steps=2 format=3 uid="uid://bsjgkxp3xyh70"]
 
-[sub_resource type="FontFile" id=1]
-font_path = "res://ui/Laffayette.ttf"
+[ext_resource type="FontFile" uid="uid://dj23fckhjvaq0" path="res://ui/Laffayette.ttf" id="1"]
 
 [resource]
-use_filter = true
-font_data = SubResource( 1 )
+fallbacks = [ExtResource("1")]

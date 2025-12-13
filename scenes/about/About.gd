@@ -5,12 +5,8 @@ extends Base
 class_name About
 
 
-
-
-
 var Base = load("res://scenes/Base.gd")
 
 
 func onClose():
   self.switchTo("res://scenes/menu/Menu.tscn")
-

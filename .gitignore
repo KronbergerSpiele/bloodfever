@@ -2,6 +2,7 @@
 
 # Godot-specific ignores
 .import/
+*.gd.uid
 
 docs/
 !docs/index.html

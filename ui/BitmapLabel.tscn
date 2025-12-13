@@ -1,12 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://cv6ykdqd5vv1f"]
 
-[ext_resource path="res://ui/Fever.fnt" type="FontFile" id=1]
+[ext_resource type="FontFile" uid="uid://rhmxn4qgmhu7" path="res://ui/Fever.fnt" id="1"]
 
 [node name="BitmapLabel" type="Label"]
 offset_right = 40.0
 offset_bottom = 14.0
-custom_fonts/font = ExtResource( 1 )
+theme_override_fonts/font = ExtResource("1")
 text = "12345"
-__meta__ = {
-"_edit_use_anchors_": false
-}
