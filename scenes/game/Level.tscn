@@ -37,6 +37,8 @@ position = Vector2( 7.9783, 9.67314 )
 rotation = 0.00885432
 
 [node name="Walls" type="StaticBody2D" parent="." index="4"]
+collision_layer = 8
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls" index="0"]
 position = Vector2( 0, 20 )
