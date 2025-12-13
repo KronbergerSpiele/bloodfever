@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdxl5yl8djvxv"]
+[gd_scene load_steps=7 format=3 uid="uid://bst6l5dk60fj0"]
 
-[ext_resource type="PackedScene" uid="uid://bkl4r3hqqttqg" path="res://scenes/Base.tscn" id="1"]
-[ext_resource type="Texture2D" uid="uid://cmckbm782ow4j" path="res://scenes/about/aboutscreen_blank.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://dpgbj4o8s1g4h" path="res://scenes/about/textfield_about.png" id="3"]
-[ext_resource type="PackedScene" uid="uid://cu0i2qs7m6vxr" path="res://ui/Buttons/Close.tscn" id="4"]
-[ext_resource type="Script" path="res://scenes/about/About.gd" id="5"]
-[ext_resource type="PackedScene" uid="uid://dkwxn6l7xjtqr" path="res://ui/Label.tscn" id="6"]
-[ext_resource type="FontFile" uid="uid://dj23fckhjvaq0" path="res://ui/Laffayette.ttf" id="7"]
+[ext_resource type="PackedScene" uid="uid://b3ag375ri5jce" path="res://scenes/Base.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://x84oslisl756" path="res://scenes/about/aboutscreen_blank.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dq8an55s5d3ix" path="res://scenes/about/textfield_about.png" id="3"]
+[ext_resource type="PackedScene" path="res://ui/Buttons/Close.tscn" id="4"]
+[ext_resource type="Script" uid="uid://gh0abengoj3k" path="res://scenes/about/About.gd" id="5"]
+[ext_resource type="PackedScene" path="res://ui/Label.tscn" id="6"]
 
 [node name="About" instance=ExtResource("1")]
 script = ExtResource("5")
@@ -48,9 +47,8 @@ offset_right = 502.606
 offset_bottom = 452.256
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("7")
 theme_override_font_sizes/font_size = 10
-text = "Copyright (c) 2020 Johannes Goslar, Lars-Arne Kalusky, dkd Internet Service GmbH
+text = "Copyright (c) 2025 Johannes Goslar, Lars-Arne Kalusky, dkd Internet Service GmbH
 "
 
 [connection signal="pressed" from="Close" to="." method="onClose"]

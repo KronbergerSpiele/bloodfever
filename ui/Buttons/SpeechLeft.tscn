@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://4k6ptkjmyv2r"]
 
-[ext_resource type="Texture2D" uid="uid://c1u2lmyqcmmq7" path="res://ui/Buttons/SpeechLeftSelected.png" id="1"]
-[ext_resource type="Texture2D" uid="uid://cuxjlm2kpuomf" path="res://ui/Buttons/SpeechLeftNormal.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://d0sk2fucvbx3l" path="res://ui/Buttons/SpeechLeftSelected.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://bhyip8yiwvi0p" path="res://ui/Buttons/SpeechLeftNormal.png" id="2"]
 [ext_resource type="Script" path="res://ui/Buttons/SpeechBase.gd" id="3"]
 [ext_resource type="FontFile" uid="uid://dj23fckhjvaq0" path="res://ui/Laffayette.ttf" id="4"]
 

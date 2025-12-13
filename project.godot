@@ -22,7 +22,6 @@ config/icon="res://icon.png"
 
 AudioManager="*res://ksgodot/audio/BackgroundAudio.tscn"
 GlobalManager="*res://Global.tscn"
-JSGDClientManager="*res://jsgdbridge/gd/JSGDClientManager.gd"
 
 [display]
 
