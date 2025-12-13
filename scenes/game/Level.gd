@@ -1,30 +1,21 @@
 extends Base
 class_name Level
 
-var ZombieTemplate = load("res://actors/zombie/Zombie.tscn")
+const ZombieTemplate = preload("res://actors/zombie/Zombie.tscn")
 
-func UI() -> CanvasLayer:
-  return $UI as CanvasLayer
+@onready var ui: CanvasLayer = $UI
+@onready var draco: Actor = $actors/Draco
+@onready var actors: Node = $actors
+@onready var stick = $UI/Stick # Type 'Stick' not found in workspace, using loose typing or need class_name Stick
+@onready var spawn_location: PathFollow2D = $SpawnPath/SpawnLocation
 
-func Draco() -> Actor:
-  return $actors/Draco as Actor
-
-func Actors() -> Node:
-  return $actors
-
-func Stick() -> Stick:
-  return $UI/Stick as Stick
-
-func SpawnLocation() -> PathFollow2D:
-  return $SpawnPath/SpawnLocation as PathFollow2D
-
-func _process(_delta: float):
-  super._process(_delta)
-  self.Draco().linear_velocity = self.Stick().output * 2
+func _process(delta: float):
+	super._process(delta)
+	draco.linear_velocity = stick.output * 2
 
 func onSpawnTimer():
-  self.SpawnLocation().progress_ratio = self.nextRandom()
-  var mobInstance = self.ZombieTemplate.instantiate()
-  
-  self.Actors().add_child(mobInstance)
-  mobInstance.position = self.SpawnLocation().position
+	spawn_location.progress_ratio = nextRandom()
+	var mob_instance = ZombieTemplate.instantiate()
+	
+	actors.add_child(mob_instance)
+	mob_instance.position = spawn_location.position

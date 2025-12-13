@@ -1,12 +1,11 @@
 extends Base
 class_name Loading
 
-func Timer() -> Timer:
-  return $Timer as Timer
+@onready var timer: Timer = $Timer
 
 func _ready():
-  super._ready()
-  self.Timer().start()
+	super._ready()
+	timer.start()
 
 func onTimerTimeout():
-  self.switchTo("res://scenes/menu/Menu.tscn")
+	switchTo("res://scenes/menu/Menu.tscn")

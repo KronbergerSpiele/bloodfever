@@ -2,119 +2,104 @@ extends ActorEquality
 class_name Actor
 
 enum ActorType {
-  None = 0x0,
-  Player = 0x1,
-  Goal = 0x2,
-  Enemy = 0x4,
+	None = 0x0,
+	Player = 0x1,
+	Goal = 0x2,
+	Enemy = 0x4,
 }
 
 enum DamageMode {
-  None = 0x0,
-  Deals = 0x1,
-  Takes = 0x2,
+	None = 0x0,
+	Deals = 0x1,
+	Takes = 0x2,
 }
 
-@export var actorType = ActorType.None # (int, FLAGS, "Player", "Goal", "Enemy")
-@export var damageTakenFrom = ActorType.None # (int, FLAGS, "Player", "Goal", "Enemy")
-@export var damageMode = DamageMode.None # (int, FLAGS, "Deals", "Takes")
+@export_flags("Player", "Goal", "Enemy") var actorType: int = ActorType.None
+@export_flags("Player", "Goal", "Enemy") var damageTakenFrom: int = ActorType.None
+@export_flags("Deals", "Takes") var damageMode: int = DamageMode.None
 @export var hitpoints: int = 100
 @export var damage: int = 2
 
-func Sprite2D() -> AnimatedSprite2D:
-  return $AnimatedSprite2D as AnimatedSprite2D
-  
-func Animations() -> AnimationPlayer:
-  return $AnimationPlayer as AnimationPlayer
-
-func Audio() -> AudioStreamPlayer2D:
-  return $AudioPlayer as AudioStreamPlayer2D
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animations: AnimationPlayer = $AnimationPlayer
+# @onready var audio: AudioStreamPlayer2D = $AudioPlayer # Node not found in scene
 
 func _ready():
-  # Godot 4: Use freeze_mode and lock_rotation instead of inertia
-  self.lock_rotation = true
-  self.inertia = INF
-  self.Sprite2D().play("R000")
-  self.contact_monitor = self.isActivelyHandlingDamage()
-  self.max_contacts_reported = 10 # Required for contact_monitor in Godot 4
+	# Godot 4: Use freeze_mode and lock_rotation instead of inertia
+	lock_rotation = true
+	# inertia = INF # Not strictly necessary for locking rotation in Godot 4
+	
+	
+	# sprite.play("R000") # moved to _handle_graphics logic usually, but fine here
+	
+	contact_monitor = damageMode != DamageMode.None
+	max_contacts_reported = 10 # Required for contact_monitor
+
 
 func _process(_delta: float):
-  self.r315HandleGraphics()
+	_handle_graphics()
 
 func _physics_process(_delta: float):
-  self.r315HandleCollisions()
+	_handle_collisions()
 
-func isActivelyHandlingDamage():
-  return not not self.damageMode
+func _handle_graphics():
+	var vel_len = linear_velocity.length()
+	
+	z_index = int(position.y)
+	if vel_len < 1:
+		sprite.stop()
+		return
+	
+	if not sprite.is_playing():
+		sprite.play()
+	
+	var prefix = _get_animation_prefix()
+	var anim_name = prefix
+	
+	if _honor_rotation():
+		anim_name += _get_orientation_for_rotation()
+	
+	if anim_name != sprite.animation:
+		sprite.play(anim_name)
 
-func r315Prefix():
-  return ""
+func _get_animation_prefix() -> String:
+	return ""
 
-func r315HonorRotation():
-  return true
+func _honor_rotation() -> bool:
+	return true
 
-func r315HandleGraphics():
-  var sprite = self.Sprite2D()
-  var vel = self.linear_velocity.length()
-  
-  self.z_index = self.position.y
-  if vel < 1:
-    sprite.stop()
-    return
-  
-  if not sprite.is_playing():
-    sprite.play()
-  
-  var nextAnimation = self.r315Prefix() + self.R315OrientationForRotation() if self.r315HonorRotation() else self.r315Prefix()
-  
-  if nextAnimation != sprite.animation:
-    sprite.play(nextAnimation)
+func _get_orientation_for_rotation() -> String:
+	var rot = linear_velocity.angle()
+	# Map angle to 0-7 index. 0 = Right, clockwise positive.
+	# PI/4 = Down-Right (R315 in 360 deg CCW terms? No, R315 is -45 deg)
+	# Original code mapped PI/4 (Down-Right) to "R315". 
+	# "R315" likely means 315 degrees (CCW from East), which is -45 degrees (Down-Right).
+	
+	var index = int(round(rot / (PI / 4.0)))
+	var directions = ["R000", "R315", "R270", "R225", "R180", "R135", "R090", "R045"]
+	return directions[posmod(index, 8)]
 
-func R315OrientationForRotation():
-  var rot = self.linear_velocity.normalized().angle()
-  
-  if rot <= (-PI * 7) / 8:
-    return "R180"
-  elif rot > (-PI * 7) / 8 and rot <= (-PI * 5) / 8:
-    return "R135"
-  elif rot > (-PI * 5) / 8 and rot <= (-PI * 3) / 8:
-    return "R090"
-  elif rot > (-PI * 3) / 8 and rot <= (-PI * 1) / 8:
-    return "R045"
-  elif rot > (-PI * 1) / 8 and rot <= (PI * 1) / 8:
-    return "R000"
-  elif rot > (PI * 1) / 8 and rot <= (PI * 3) / 8:
-    return "R315"
-  elif rot > (PI * 3) / 8 and rot <= (PI * 5) / 8:
-    return "R270"
-  elif rot > (PI * 5) / 8 and rot <= (PI * 7) / 8:
-    return "R225"
-  elif rot > (PI * 7) / 8:
-    return "R180"
-  else:
-    return "R000"
+func _handle_collisions():
+	if damageMode == DamageMode.None:
+		return
+	
+	for other in get_colliding_bodies():
+		if not (other is ActorEquality):
+			continue
+			
+		if damageMode & DamageMode.Deals:
+			_potentially_deal_damage(self, other)
+		if damageMode & DamageMode.Takes:
+			_potentially_deal_damage(other, self)
 
-func r315HandleCollisions():
-  if not self.isActivelyHandlingDamage():
-    return
-  
-  for other in self.get_colliding_bodies():
-    if not (other is ActorEquality):
-      continue
-      
-    if self.damageMode & DamageMode.Deals:
-      self.potentiallyDealDamage(self, other)
-    if self.damageMode & DamageMode.Takes:
-      self.potentiallyDealDamage(other, self)
+func _potentially_deal_damage(origin, target):
+	if target.damageTakenFrom & origin.actorType:
+		target.apply_damage(origin.damage, origin.actorType)
 
-func potentiallyDealDamage(origin, target):
-  if target.damageTakenFrom & origin.actorType:
-    target.applyDamage(origin.damage, origin.actorType)
-
-func applyDamage(amount: int, _from):
-  self.hitpoints -= amount
-  self.Animations().play("Hit")
-  # if (this.hitSound) {
-  #   this.Audio.play(this.hitSound, "hit")
-  # }
-  if self.hitpoints <= 0:
-    self.queue_free()
+func apply_damage(amount: int, _from):
+	hitpoints -= amount
+	animations.play("Hit")
+	# if hitSound: audio.play(hitSound)
+	
+	if hitpoints <= 0:
+		queue_free()
