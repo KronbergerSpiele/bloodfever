@@ -1,76 +1,152 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=3 uid="uid://d03rxnptxlr7u"]
 
-[ext_resource path="res://actors/Actor.tscn" type="PackedScene" id=1]
-[ext_resource path="res://actors/coffin/sargR90S0.png" type="Texture2D" id=2]
-[ext_resource path="res://actors/coffin/sargR270S0.png" type="Texture2D" id=3]
-[ext_resource path="res://actors/coffin/sargR45S0.png" type="Texture2D" id=4]
-[ext_resource path="res://actors/coffin/sargR180S0.png" type="Texture2D" id=5]
-[ext_resource path="res://actors/coffin/sargR225S0.png" type="Texture2D" id=6]
-[ext_resource path="res://actors/coffin/sargR315S0.png" type="Texture2D" id=7]
-[ext_resource path="res://actors/coffin/sargR135S0.png" type="Texture2D" id=8]
-[ext_resource path="res://actors/coffin/sargR0S0.png" type="Texture2D" id=9]
-[ext_resource path="res://actors/coffin/sargT2.png" type="Texture2D" id=10]
-[ext_resource path="res://actors/coffin/sargT0.png" type="Texture2D" id=11]
-[ext_resource path="res://actors/coffin/sargT1.png" type="Texture2D" id=12]
+[ext_resource type="PackedScene" path="res://actors/Actor.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://dkjwff86r3thg" path="res://actors/coffin/sargR90S0.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://5q5ooajubuwp" path="res://actors/coffin/sargR270S0.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bgg3ce1yox8l8" path="res://actors/coffin/sargR45S0.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cwr4o6s6gkp8" path="res://actors/coffin/sargR180S0.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://drhbyb6l54up5" path="res://actors/coffin/sargR225S0.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://b2h7hxpmfho0g" path="res://actors/coffin/sargR315S0.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://ca33op652iqhh" path="res://actors/coffin/sargR135S0.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://dei7s4pgxbudw" path="res://actors/coffin/sargR0S0.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://dqt04tedh0ypp" path="res://actors/coffin/sargT2.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://vfj6k3kt6x28" path="res://actors/coffin/sargT0.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://bchyd4deoje8p" path="res://actors/coffin/sargT1.png" id="12"]
+[ext_resource type="Script" uid="uid://b2xmx788sl81j" path="res://actors/coffin/Coffin.gd" id="13"]
+[ext_resource type="AudioStream" uid="uid://16vauksqk1ts" path="res://actors/zombie/hit.ogg" id="14"]
 
-[sub_resource type="SpriteFrames" id=1]
-animations = [ {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 10 ) ],
+[sub_resource type="SpriteFrames" id="2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9")
+}],
 "loop": true,
-"name": "T",
+"name": &"R000",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4")
+}],
 "loop": true,
-"name": "R270",
+"name": &"R045",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2")
+}],
 "loop": true,
-"name": "R180",
+"name": &"R090",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8")
+}],
 "loop": true,
-"name": "R315",
+"name": &"R135",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5")
+}],
 "loop": true,
-"name": "R090",
+"name": &"R180",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6")
+}],
 "loop": true,
-"name": "R135",
+"name": &"R225",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3")
+}],
 "loop": true,
-"name": "R000",
+"name": &"R270",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7")
+}],
 "loop": true,
-"name": "R225",
+"name": &"R315",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}],
 "loop": true,
-"name": "R045",
+"name": &"T",
 "speed": 5.0
-} ]
+}]
 
-[node name="Coffin" instance=ExtResource( 1 )]
-input_pickable = true
+[sub_resource type="Animation" id="3"]
+resource_name = "Hit"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y1l4x"]
+_data = {
+&"Hit": SubResource("3")
+}
+
+[node name="Coffin" instance=ExtResource("1")]
+position = Vector2(0, 0)
 collision_layer = 2
 collision_mask = 5
+input_pickable = true
 mass = 65535.0
-max_contacts_reported = 100
 contact_monitor = true
+max_contacts_reported = 100
+script = ExtResource("13")
 actorType = 2
-damageTakeFrom = 4
 damageMode = 2
+hitpoints = 1000
+hitSound = ExtResource("14")
+
+[node name="CollisionShape2D" parent="." index="0"]
+visible = false
+disabled = true
 
 [node name="AnimatedSprite2D" parent="." index="1"]
-frames = SubResource( 1 )
+position = Vector2(-2, -13)
+sprite_frames = SubResource("2")
+animation = &"R000"
+offset = Vector2(0, 0)
+
+[node name="AnimationPlayer" parent="." index="2"]
+libraries = {
+&"": SubResource("AnimationLibrary_y1l4x")
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="4"]
+position = Vector2(1, 0)
+build_mode = 1
+polygon = PackedVector2Array(-0.03100586, 1, -22.031006, -3, -22.031006, -12, 3.9689941, -8, 14.968994, -11, 14.968994, -4)

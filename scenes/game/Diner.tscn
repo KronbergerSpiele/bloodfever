@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dyo6yf3b2sw3m"]
+[gd_scene load_steps=5 format=3 uid="uid://dyo6yf3b2sw3m"]
 
 [ext_resource type="PackedScene" path="res://scenes/game/Level.tscn" id="1"]
 [ext_resource type="AudioStream" uid="uid://dl4hydnb80fev" path="res://scenes/game/diner.ogg" id="2"]
+[ext_resource type="Script" uid="uid://qqk556milk1b" path="res://actors/Actor.gd" id="3_irmxu"]
 
 [node name="Diner" instance=ExtResource("1")]
 backgroundMusic = ExtResource("2")
@@ -13,4 +14,18 @@ polygon = PackedVector2Array(0, 288, 96, 288, 96, 304, 80, 320, 0, 320)
 
 [node name="Draco" parent="actors" index="0"]
 position = Vector2(32, 200)
+collision_mask = 6
 linear_velocity = Vector2(200, 100)
+
+[node name="Zombie" parent="actors" index="1"]
+collision_mask = 7
+script = ExtResource("3_irmxu")
+damage = 2.0
+hitSound = null
+
+[node name="Coffin" parent="actors" index="2"]
+position = Vector2(240, 160)
+
+[node name="Stick" parent="UI" index="0"]
+maxDistance = 45
+output = Vector2(0, 0)

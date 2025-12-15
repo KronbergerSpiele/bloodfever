@@ -1,6 +1,8 @@
 extends ActorEquality
 class_name Actor
 
+signal actor_died(actor_type: int)
+
 enum ActorType {
     None = 0x0,
     Player = 0x1,
@@ -17,8 +19,8 @@ enum DamageMode {
 @export_flags("Player", "Goal", "Enemy") var actorType: int = ActorType.None
 @export_flags("Player", "Goal", "Enemy") var damageTakenFrom: int = ActorType.None
 @export_flags("Deals", "Takes") var damageMode: int = DamageMode.None
-@export var hitpoints: int = 100
-@export var damage: int = 2
+@export var hitpoints: float = 100.0
+@export var damage: float = 2.0
 @export var hitSound: AudioStream
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -46,7 +48,7 @@ func _physics_process(_delta: float):
 func _handle_graphics():
     var vel_len = linear_velocity.length()
     
-    z_index = int(position.y)
+    # z_index handled by y_sort_enabled on actors container
     if vel_len < 1:
         sprite.stop()
         return
@@ -84,7 +86,13 @@ func _handle_collisions():
     if damageMode == DamageMode.None:
         return
     
+    # Debug: Print contacts if any
+    # var contacts = get_colliding_bodies()
+    # if contacts.size() > 0:
+    #    print("Contacts: ", contacts.size())
+
     for other in get_colliding_bodies():
+        # IMPORTANT: Godot 4 requires checking Node/Object type properly
         if not (other is ActorEquality):
             continue
             
@@ -94,13 +102,18 @@ func _handle_collisions():
             _potentially_deal_damage(other, self)
 
 func _potentially_deal_damage(origin, target):
-    if target.damageTakenFrom & origin.actorType:
-        target.apply_damage(origin.damage, origin.actorType)
+    # Fix: Use bitwise AND and check if result > 0
+    if (target.damageTakenFrom & origin.actorType) > 0:
+        # Cast to float to avoid potential type issues if damage comes from int source
+        target.apply_damage(float(origin.damage), origin.actorType)
 
-func apply_damage(amount: int, _from):
+func apply_damage(amount: float, _from):
     hitpoints -= amount
-    animations.play("Hit")
-    if hitSound: audio.play(hitSound)
+    if animations.has_animation("Hit"):
+        animations.play("Hit")
+    if hitSound:
+        audio.play(hitSound)
     
     if hitpoints <= 0:
+        emit_signal("actor_died", actorType)
         queue_free()

@@ -1,10 +1,218 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=36 format=3 uid="uid://de2gye2okea0g"]
 
-[ext_resource path="res://actors/Actor.tscn" type="PackedScene" id=1]
+[ext_resource type="PackedScene" path="res://actors/Actor.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://ccpqmtn45u8rb" path="res://actors/draco/stdvampirR0S0.png" id="2_m0h4q"]
+[ext_resource type="Texture2D" uid="uid://bfvsxc3855ee7" path="res://actors/draco/stdvampirR0S1.png" id="3_v5nlg"]
+[ext_resource type="Texture2D" uid="uid://dl6qb3hob06b0" path="res://actors/draco/stdvampirR0S2.png" id="4_w6vhh"]
+[ext_resource type="Texture2D" uid="uid://bjl0bsq2bqwxy" path="res://actors/draco/stdvampirR45S0.png" id="5_580v5"]
+[ext_resource type="Texture2D" uid="uid://dv1pvacjckswd" path="res://actors/draco/stdvampirR45S1.png" id="6_rrw02"]
+[ext_resource type="Texture2D" uid="uid://br2x4ou1jiatd" path="res://actors/draco/stdvampirR45S2.png" id="7_io4ft"]
+[ext_resource type="Texture2D" uid="uid://ddx115cqqgr3x" path="res://actors/draco/stdvampirR90S0.png" id="8_aff6y"]
+[ext_resource type="Texture2D" uid="uid://c1qo51wycd3vt" path="res://actors/draco/stdvampirR90S1.png" id="9_lws05"]
+[ext_resource type="Texture2D" uid="uid://dkr6wwr3ynma0" path="res://actors/draco/stdvampirR90S2.png" id="10_lfukg"]
+[ext_resource type="Texture2D" uid="uid://cfb4bxuegt4sj" path="res://actors/draco/stdvampirR135S0.png" id="11_wvtls"]
+[ext_resource type="Texture2D" uid="uid://dkvmgaiswa65j" path="res://actors/draco/stdvampirR135S1.png" id="12_klk8a"]
+[ext_resource type="Texture2D" uid="uid://celwr2b2ct4av" path="res://actors/draco/stdvampirR135S2.png" id="13_baits"]
+[ext_resource type="Texture2D" uid="uid://2eqvy6eb1y1j" path="res://actors/draco/stdvampirR180S0.png" id="14_kjtvw"]
+[ext_resource type="Texture2D" uid="uid://cy4xpkf2gyr8g" path="res://actors/draco/stdvampirR180S1.png" id="15_pmipj"]
+[ext_resource type="Texture2D" uid="uid://ckrimr14g05yw" path="res://actors/draco/stdvampirR180S2.png" id="16_k7jg7"]
+[ext_resource type="Texture2D" uid="uid://tx0tm2hqpv6p" path="res://actors/draco/stdvampirR225S0.png" id="17_ew3m2"]
+[ext_resource type="Texture2D" uid="uid://h3mnjxv0p0m5" path="res://actors/draco/stdvampirR225S1.png" id="18_xaxw6"]
+[ext_resource type="Texture2D" uid="uid://cbt54177ishol" path="res://actors/draco/stdvampirR225S2.png" id="19_x477h"]
+[ext_resource type="Texture2D" uid="uid://b7ipjwow32vjq" path="res://actors/draco/stdvampirR270S0.png" id="20_qr8eb"]
+[ext_resource type="Texture2D" uid="uid://8p13iqdof81c" path="res://actors/draco/stdvampirR270S1.png" id="21_6j6nk"]
+[ext_resource type="Texture2D" uid="uid://ban28vcuw6qxc" path="res://actors/draco/stdvampirR270S2.png" id="22_riwuh"]
+[ext_resource type="Texture2D" uid="uid://bb6dbpj3dsfh1" path="res://actors/draco/stdvampirR315S0.png" id="23_58pfd"]
+[ext_resource type="Texture2D" uid="uid://lbl1hur2ny50" path="res://actors/draco/stdvampirR315S1.png" id="24_mam1a"]
+[ext_resource type="Texture2D" uid="uid://dqjdydx53ad7k" path="res://actors/draco/stdvampirR315S2.png" id="25_fg3th"]
+[ext_resource type="Texture2D" uid="uid://bb1c3nak4swj2" path="res://actors/draco/stdvampirT01.png" id="26_1627w"]
+[ext_resource type="Texture2D" uid="uid://bkrxwy3jqy1je" path="res://actors/draco/stdvampirT02.png" id="27_c10hw"]
+[ext_resource type="Texture2D" uid="uid://b2ev8thq10w8g" path="res://actors/draco/stdvampirT03.png" id="28_iiooe"]
+[ext_resource type="Texture2D" uid="uid://dnm5osgngrsi6" path="res://actors/draco/stdvampirT04.png" id="29_28wmq"]
+[ext_resource type="Texture2D" uid="uid://dxgmmcsbs8roe" path="res://actors/draco/stdvampirT05.png" id="30_02u6e"]
+[ext_resource type="Texture2D" uid="uid://dyhphjj1mr54d" path="res://actors/draco/stdvampirT06.png" id="31_a3gjd"]
+[ext_resource type="Texture2D" uid="uid://c2r807lfrkk5j" path="res://actors/draco/stdvampirT07.png" id="32_v56x5"]
 
-[node name="Draco" instance=ExtResource( 1 )]
+[sub_resource type="SpriteFrames" id="2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_m0h4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_v5nlg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_w6vhh")
+}],
+"loop": true,
+"name": &"R000",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_580v5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rrw02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_io4ft")
+}],
+"loop": true,
+"name": &"R045",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_aff6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_lws05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lfukg")
+}],
+"loop": true,
+"name": &"R090",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_wvtls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_klk8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_baits")
+}],
+"loop": true,
+"name": &"R135",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_kjtvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_pmipj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_k7jg7")
+}],
+"loop": true,
+"name": &"R180",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_ew3m2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_xaxw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_x477h")
+}],
+"loop": true,
+"name": &"R225",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_qr8eb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_6j6nk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_riwuh")
+}],
+"loop": true,
+"name": &"R270",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_58pfd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_mam1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_fg3th")
+}],
+"loop": true,
+"name": &"R315",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_1627w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_c10hw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_iiooe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_28wmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_02u6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_a3gjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_v56x5")
+}],
+"loop": true,
+"name": &"T",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="3"]
+resource_name = "Hit"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6ur8u"]
+_data = {
+&"Hit": SubResource("3")
+}
+
+[node name="Draco" instance=ExtResource("1")]
+position = Vector2(0, 0)
 collision_mask = 14
-max_contacts_reported = 100
 contact_monitor = true
+max_contacts_reported = 100
 actorType = 1
 damageMode = 1
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, -5)
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(0, -19)
+sprite_frames = SubResource("2")
+animation = &"R000"
+offset = Vector2(0, 0)
+
+[node name="AnimationPlayer" parent="." index="2"]
+libraries = {
+&"": SubResource("AnimationLibrary_6ur8u")
+}
